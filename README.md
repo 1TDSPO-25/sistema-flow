@@ -1,2 +1,2 @@
 # front-aula-16-2sem
-Vite+React+Ts / Git Flow
+Vite+React+Ts / Git Flowcelar
