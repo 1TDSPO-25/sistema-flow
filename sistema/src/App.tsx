@@ -1,5 +1,5 @@
 export default function App () {
   return (
-    console.log("Teste.")
+    <h1>App</h1>
   );
 }
