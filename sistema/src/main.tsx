@@ -1,13 +1,10 @@
-import React, { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-<<<<<<< HEAD
-import Produtos from './routes/Produtos/index.tsx'
-import './index.css'
-=======
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
->>>>>>> 23f629570589793641e34996d157e06dc7a2d1c4
 import App from './App.tsx'
 import Error from './routes/Error/index.tsx';
+import Home from './routes/Home/index.tsx'
+import React from 'react';
+import Produtos from './routes/Produtos/index.tsx';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createRoot } from 'react-dom/client';
 
 const router = createBrowserRouter([
     {
@@ -15,6 +12,8 @@ const router = createBrowserRouter([
         element: <App/>,
         errorElement: <Error/>,
         children: [
+            {path: "/", element: <Home/>},
+            {path: "/produtos", element: <Produtos/>}
         ]
     }
 ]);
