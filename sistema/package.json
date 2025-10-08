@@ -7,9 +7,11 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "api": "json-server --watch usuario.json --port 5000"
   },
   "dependencies": {
+    "json-server": "^1.0.0-beta.3",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
   },

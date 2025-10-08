@@ -1,0 +1,27 @@
+{
+    "usuarios": [
+        {
+            "id": "1",
+            "nome": "Alexandre",
+            "nomeUser": "Careca",
+            "email": "alexandre@luthorcorp.com",
+            "avatar": "https://rollingstone.com.br/wp-content/uploads/2025/06/lex-luthor-lanterna-verde-e-mais-personagens-de-superman-ganham-posteres-individuais.jpg"
+        },
+        {
+            "id": "2",
+            "nome": "Gustavo - inimigo do careca",
+            "nomeUser": "Cabeludo",
+            "email": "gustavoinimigo@luthorcorp.com",
+            "avatar": "https://static.dc.com/2025-07/2025_07_02_FirstMeetSupermanLex_Marquee_3x1.jpg?w=1200"
+        },
+        {
+            "id":"3",
+            "nome": "Soteras",
+            "nomeUser": "Vini Braga",
+            "email": "viniciussolteiras@gmail.com",
+            "avatar": "https://wallpapers.com/images/hd/peter-griffin-family-guy-superman-0xi2lha29mexyuac.jpg"
+        }
+        
+
+    ]
+}
