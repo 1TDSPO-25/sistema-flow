@@ -1,5 +1,8 @@
-export default function App () {
-  return (
-    console.log("Teste.")
+export default function App(){
+
+  return(
+    <main>
+      <h1>App</h1>
+    </main>
   );
 }
