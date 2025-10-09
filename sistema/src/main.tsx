@@ -5,6 +5,7 @@ import React from 'react';
 import Produtos from './routes/Produtos/index.tsx';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
+import Login from './routes/Login/index.tsx';
 
 const router = createBrowserRouter([
     {
@@ -13,7 +14,8 @@ const router = createBrowserRouter([
         errorElement: <Error/>,
         children: [
             {path: "/", element: <Home/>},
-            {path: "/produtos", element: <Produtos/>}
+            {path: "/produtos", element: <Produtos/>},
+            {path: "/login", element: <Login/>}
         ]
     }
 ]);
