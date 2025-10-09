@@ -6,6 +6,7 @@ import Produtos from './routes/Produtos/index.tsx';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
 import Cadastro from './routes/Cadastro/index.tsx';
+import Login from './routes/Login/index.tsx';
 
 const router = createBrowserRouter([
     {
@@ -16,7 +17,7 @@ const router = createBrowserRouter([
             {path: "/", element: <Home/>},
             {path: "/produtos", element: <Produtos/>},
             {path: "/cadastro", element: <Cadastro/>}
-
+            {path: "/login", element: <Login/>}
         ]
     }
 ]);
