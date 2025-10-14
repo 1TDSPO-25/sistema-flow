@@ -26,7 +26,7 @@
 <li>[   ] FEATURE / Criar API de notícas na página HOME, onde estas notícias vão ficar aleatórias. Ex: UOL, MSN, crie cards para apresentar estas noticias. / Grazi - Diego - MatheusA </li>
 <li>[   ] FEATURE / Criar mostrador de dados da BMF/DOLAR e CLIMA no CABEÇALHO, veja exemplos nos sites UOL, MSN e TERRA. Utilize componentes separados para apresentar estes elementos. / Bebé - Jonas - Julia</li>
 <li>[   ] FEATURE / Criar mostrador de dados da BMF/DOLAR e CLIMA no CABEÇALHO, veja exemplos nos sites UOL, MSN e TERRA. Utilize componentes separados para apresentar estes elementos. / Bebé - Jonas - Julia</li>
-<li>[   ] FEATURE / Responsividade com Tailwind - APlicar @media-queria em um arquivo globals.css, se a lib não existir instale.Faça a responsividade para 3 resoluções. / Gabriel - Enzo - PedroA <span style="color:red">DEADLINE[22:05]</span></li>
+<li>[   ] FEATURE / Responsividade com Tailwind - APlicar @media-queria em um arquivo globals.css, se a lib não existir instale.Faça a responsividade para 3 resoluções. / Gabriel - Enzo - PedroA <span style="color:red">DEADLINE[22:40]</span></li>
 <li>[   ] FEATURE / Criação de um componente de login e cadastro, com validação de campos por useForm e estilização com tailwind / Isabela - BrunoA - GustavoC </li>
 <li>[   ] FEATURE / Criar uma api de produtos com pelo menos 30 produtos para pet  diferentes, com o seguinte endpoint produtos e os dados[id,nome,descricao, qtd, preco,avatar] / Lucca - Rafa - Crevelari </li>
 <li>[   ] FEATURE / Criar cards para produtos / Stalise - Alef - GustavoG</li>
