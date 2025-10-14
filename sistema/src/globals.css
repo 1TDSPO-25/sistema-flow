@@ -17,3 +17,11 @@ body {
 .card {
   @apply bg-white p-6 rounded-2xl shadow hover:shadow-lg transition;
 }
+
+.title {
+  @apply text-3xl font-bold text-gray-800 mb-4;
+}
+
+.text-muted {
+  @apply text-gray-500 text-sm;
+}
