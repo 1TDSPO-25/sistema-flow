@@ -10,6 +10,8 @@ import App from './App.tsx'
 import Noticias from './routes/Noticias/index.tsx'
 
 
+import './global.css'
+
 const router = createBrowserRouter([
     {
         path: "/",
