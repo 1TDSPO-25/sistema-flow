@@ -13,9 +13,10 @@ interface WeatherData {
 
 
 export default function CardWeather(){
-    return(
-        <div>
-            <h1>Weather</h1>
-        </div>
-    );
+    const[city, setCity] = useState("São Paulo");
+    const[data, setData] = useState<WeatherData | null>(null);
+    const[loading, setLoading] = useState(false);
+    const[error, setError] = useState("");
+
+    const apiKey = "c0a23509a1bfccf9a4c75934e9cf09c8";
 }
