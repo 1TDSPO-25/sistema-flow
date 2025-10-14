@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 
 import type { Artigo } from "../../types/noticias";
-import { CardNoticias } from '../../components/CardNoticiais';
 import { Link } from 'react-router-dom';
+import { CardNoticias } from '../../components/CardNoticias';
 
 
 export default function Home() {
