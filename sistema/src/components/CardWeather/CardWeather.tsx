@@ -44,7 +44,7 @@ export default function CardWeather(){
         
         useEffect(() => {
             getWeather(city);
-        }, []);
+        }, [city]);
 
         function handleSubmit(e: React.FormEvent){
             e.preventDefault();
