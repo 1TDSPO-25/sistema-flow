@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 export default function App(){
 
   return(
