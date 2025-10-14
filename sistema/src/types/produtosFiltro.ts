@@ -1,5 +1,5 @@
 export type ProdutosFiltro = {
-    id: 1,
+    id: number,
     nome: string,
     descricao: string,
     qtd: number,
