@@ -15,10 +15,9 @@ export default function Produtos() {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const json = await res.json();
 
-        // Coerção defensiva: garante número
         const coerced: Produto[] = json.map((p: any) => ({
           ...p,
-          preco: Number(p.preco),     // "129,90" -> NaN (se vier com vírgula). Ideal: arrumar no db.
+          preco: Number(p.preco),
           qtd: Number(p.qtd)
         }));
 
