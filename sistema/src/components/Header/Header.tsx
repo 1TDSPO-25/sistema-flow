@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
-
+import { Menu } from "../Menu/Menu";
 interface NavLink {
   href: string;
   label: string;
@@ -14,7 +14,9 @@ const navLinks: NavLink[] = [
 ];
 
 export function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const closeMenu = () => setIsMenuOpen(false);
 
   return (
     <header className="bg-gray-800 text-white shadow-md sticky top-0 z-50">
@@ -24,14 +26,8 @@ export function Header() {
           Logo
         </a>
 
-        {/* Links de Navegação para Desktop */}
-        <nav className="hidden md:flex space-x-6">
-          {navLinks.map((link) => (
-            <a key={link.label} href={link.href} className="hover:text-gray-300 transition-colors">
-              {link.label}
-            </a>
-          ))}
-        </nav>
+        {/* Menu Desktop: Usa o componente Menu com orientação horizontal */}
+        <Menu links={navLinks} orientation="horizontal" />
 
         {/* Botão do Menu Hambúrguer para Mobile */}
         <div className="md:hidden">
@@ -45,24 +41,14 @@ export function Header() {
         </div>
       </div>
 
-      {/* Menu Mobile (condicionalmente renderizado com transição) */}
+      {/* Container do Menu Mobile */}
       <div
         className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-          isMenuOpen ? "max-h-screen" : "max-h-0"
+          isMenuOpen ? "max-h-96" : "max-h-0"
         }`}
       >
-        <nav className="px-2 pt-2 pb-4 space-y-1 sm:px-3 flex flex-col items-center">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="block w-full text-center px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700 transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {link.label}
-            </a>
-          ))}
-        </nav>
+        {/* Menu Mobile: Usa o mesmo componente Menu, mas com orientação vertical */}
+        <Menu links={navLinks} orientation="vertical" onItemClick={closeMenu} />
       </div>
     </header>
   );
