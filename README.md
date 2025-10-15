@@ -41,8 +41,6 @@
 ---
 ## TEAM FREE
 
-Time MatheusB-PedroF
-
 Time Rafa-Lucca
 
 Time Soteras-Sabelli-Kubagawa
