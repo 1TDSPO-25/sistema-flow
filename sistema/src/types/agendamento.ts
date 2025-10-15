@@ -1,6 +1,6 @@
   export interface Agendamento {
-  id: ;
-  nomePet: ;
-  data: ;
-  horario: ;
+  id: number;
+  nomePet: string;
+  data: Date;
+  horario: number;
 }
