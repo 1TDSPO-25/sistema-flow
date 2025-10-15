@@ -8,16 +8,21 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
+<<<<<<< HEAD
     "api": "json-server --watch db.json --port 5000"
+=======
+    "api": "json-server --watch ./data/db.json --port 5000"
+>>>>>>> 0aeade2855b3bae6b50a7dc5573d3a986c55a8e7
   },
   "dependencies": {
+    "@tailwindcss/vite": "^4.1.14",
     "json-server": "^1.0.0-beta.3",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-hook-form": "^7.64.0",
     "react-icons": "^5.5.0",
-    "react-router-dom": "^7.9.3",
-    "tailwindcss": "^4.1.14"
+    "tailwindcss": "^4.1.14",
+    "react-router-dom": "^7.9.4"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",
