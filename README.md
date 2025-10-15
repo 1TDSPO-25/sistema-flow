@@ -31,7 +31,6 @@
 <li>[   ] FEATURE / Responsividade com Tailwind - APlicar @media-queria em um arquivo globals.css, se a lib não existir instale.Faça a responsividade para 3 resoluções. / Gabriel - Enzo - PedroA <span style="color:red">DEADLINE[22:40]</span></li>
 <li>[   ] FEATURE / Criação de um componente de login e cadastro, com validação de campos por useForm e estilização com tailwind / Isabela - BrunoA - GustavoC </li>
 <li>[   ] FEATURE / Criar cards para produtos / Stalise - Alef - GustavoG</li>
-<li>[   ] FEATURE / Criar componente(produtos) de produtos, onde estes devem ser listados em uma tabela e deve ser dada a opção neste mesmo componente para o usuário pesquisar em um campo acima da tabela por qualquer produto, conforme ele for digitando o nome do produto a tabela vai se atualizando para trazer o novo resultado de acordo  com os dados inseridos pelo usuário. Esse é um tipo de filtro de pesquisa  / Soteras-Sabelli-Kubagawa </li><span style="color:red">DEADLINE[22:40]</span>
 <li>[   ] FEATURE / Criar um Carrossel de IMAGENS sobre os produtos com pelomenos 8 produtos na home / GabrielMuller-Emanuel-PedroPereira</li><span style="color:red">DEADLINE[22:40]</span>
 <li>[   ] FEATURE / Criar a página home referente ao petshop, a estilização toda inline. / MatheusB - PedroF</li><span style="color:red">DEADLINE[20:40]</span>
 <li>[   ] FEATURE / Criar a rota faq com componentes / Alef - Paulo - Emanuel</li><span style="color:red">DEADLINE[20:40]</span>
@@ -41,8 +40,6 @@
 
 ---
 ## TEAM FREE
-
-Time MatheusB-PedroF
 
 Time Rafa-Lucca
 
