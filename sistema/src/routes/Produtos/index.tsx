@@ -31,16 +31,12 @@ export default function Produtos() {
   }, []);
 
 
-  return (
-    <div></div>
-  )
-
   return (<section style={{ padding: 16 }}>
     <h1>Produtos</h1>
-
+ 
     {loading && <p>Carregando...</p>}
     {err && <p style={{ color: "crimson" }}>{err}</p>}
-
+ 
     {!loading && !err && (
       data.length ? (
         <ul
@@ -86,8 +82,5 @@ export default function Produtos() {
       )
     )}
   </section>
-
-
-    
-  );
+);
 }
