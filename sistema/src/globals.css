@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+:root { scroll-behavitor:smooth; }
+
+body {
+    @apply bg-gray-200;
+}
+
+.container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.btn {
+  @apply px-6 py-3 rounded-full text-white font-semibold bg-blue-600 hover:bg-blue-700 transition;
+}
+
+.card {
+  @apply bg-white p-6 rounded-2xl shadow hover:shadow-lg transition;
+}
+
+.title {
+  @apply text-3xl font-bold text-gray-800 mb-4;
+}
+
+.text-muted {
+  @apply text-gray-500 text-sm;
+}

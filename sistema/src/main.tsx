@@ -7,6 +7,7 @@ import { createRoot } from 'react-dom/client';
 import Cadastro from './routes/Cadastro/index.tsx';
 import Login from './routes/Login/index.tsx';
 import App from './App.tsx'
+<<<<<<< HEAD
 import Noticias from './routes/Noticias/index.tsx'
 
 
@@ -26,6 +27,9 @@ const router = createBrowserRouter([
         ]
     }
 ]);
+=======
+import './globals.css'
+>>>>>>> feature/css-tailwind-responsivo
 
 createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
