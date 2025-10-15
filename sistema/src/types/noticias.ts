@@ -1,15 +1,14 @@
 export interface Source {
-    id: string | null;
-    nome : string;
+    name: string;
+    url: string;
 }
 
 export interface Artigo {
-    source : Source;
-    author : string | null;
-    title : string;
-    description : string;
+    source: Source;
+    title: string;
+    description: string;
     url: string;
-    urlToImage: string | null;
+    image: string | null;
     publishedAt: string;
     content: string | null;
 }
