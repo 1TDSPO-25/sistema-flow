@@ -1,5 +1,4 @@
 import Error from './routes/Error/index.tsx';
-import Home from './routes/Home/index.tsx'
 import React from 'react';
 import Produtos from './routes/Produtos/index.tsx';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
@@ -8,9 +7,8 @@ import Cadastro from './routes/Cadastro/index.tsx';
 import Login from './routes/Login/index.tsx';
 import App from './App.tsx'
 import Noticias from './routes/Noticias/index.tsx'
-
-
 import './global.css'
+import Home from './routes/Home/index.tsx';
 
 const router = createBrowserRouter([
     {
