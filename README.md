@@ -35,6 +35,7 @@
 <li>[   ] FEATURE / Criar a página home referente ao petshop, a estilização toda inline. / MatheusB - PedroF</li><span style="color:red">DEADLINE[20:40]</span>
 <li>[   ] FEATURE / Criar a rota faq com componentes / Alef - Paulo - Emanuel</li><span style="color:red">DEADLINE[20:40]</span>
 <li>[   ] FEATURE / Tipar os dados para o sistema de agendamento: id, nomePet, data, horário / Lucca - Rafa</li><span style="color:red">DEADLINE[20:50]</span>
+<li>[   ] FEATURE / Criar componente de forms para puxando as tipagem de dados do sistema de agendamento, com os elementos: id, nomePet, data, horário/ Soteras-Sabelli-Kubagawa</li><span style="color:red">DEADLINE[ATÉ A PRÓXIMA AULA]</span>
 </ul>
 
 
