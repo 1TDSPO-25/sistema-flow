@@ -35,6 +35,7 @@
 <li>[   ] FEATURE / Criar um Carrossel de IMAGENS sobre os produtos com pelomenos 8 produtos na home / GabrielMuller-Emanuel-PedroPereira</li><span style="color:red">DEADLINE[22:40]</span>
 <li>[   ] FEATURE / Criar a página home referente ao petshop, a estilização toda inline. / MatheusB - PedroF</li><span style="color:red">DEADLINE[20:40]</span>
 <li>[   ] FEATURE / Criar a rota faq com componentes / Alef - Paulo - Emanuel</li><span style="color:red">DEADLINE[20:40]</span>
+<li>[   ] FEATURE / Tipar os dados para o sistema de agendamento: id, nomePet, data, horário / Lucca - Rafa</li><span style="color:red">DEADLINE[20:50]</span>
 </ul>
 
 
