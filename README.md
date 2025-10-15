@@ -31,13 +31,15 @@
 <li>[   ] FEATURE / Criar uma api de produtos com pelo menos 30 produtos para pet  diferentes, com o seguinte endpoint produtos e os dados[id,nome,descricao, qtd, preco,avatar] / Lucca - Rafa - Crevelari </li>
 <li>[   ] FEATURE / Criar cards para produtos / Stalise - Alef - GustavoG</li>
 <li>[ x ] FEATURE / Criar componente(produtos) de produtos, onde estes devem ser listados em uma tabela e deve ser dada a opção neste mesmo componente para o usuário pesquisar em um campo acima da tabela por qualquer produto, conforme ele for digitando o nome do produto a tabela vai se atualizando para trazer o novo resultado de acordo  com os dados inseridos pelo usuário. Esse é um tipo de filtro de pesquisa  / Soteras-Sabelli-Kubagawa </li><span style="color:red">DEADLINE[22:40]</span>
-<li>[   ] FEATURE / Criar um Carrossel de IMAGENS sobre os produtos com pelomenos 8 produtos na home / GabrielMuller-Emanuel-PedroPereira</li><span style="color:red">DEADLINE[22:40]</span>
+<li>[  ] FEATURE / Criar um Carrossel de IMAGENS sobre os produtos com pelomenos 8 produtos na home / GabrielMuller-Emanuel-PedroPereira</li><span style="color:red">DEADLINE[22:40]</span>
 </ul>
 
 
 ---
 ## TEAM FREE
 
-Time MatheusB - PedroF
+Time MatheusB-PedroF
+
+Time Paulo-Emanuel-Alef
 
 
