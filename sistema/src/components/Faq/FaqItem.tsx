@@ -22,3 +22,19 @@ export default function FaqItem({ index, question, answer }: FaqItemProps) {
           onClick={() => setIsOpen((prev) => !prev)}
           className="w-9 h-9 flex items-center justify-center rounded-full border border-gray-300 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
         ></button>
+
+<span className="text-xl font-bold">{isOpen ? "−" : "+"}</span>
+        </button>
+      </div>
+
+      {isOpen && (
+        <p
+          id={contentId}
+          className="mt-3 text-gray-700 leading-relaxed transition-all duration-300"
+        >
+          {answer}
+        </p>
+      )}
+    </li>
+  );
+}
