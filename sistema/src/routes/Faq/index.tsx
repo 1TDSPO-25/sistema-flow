@@ -35,18 +35,34 @@ const faqData: FaqItemType[] = [
 
 export default function Faq() {
   return (
-    <main>
-      <h1>Perguntas Frequentes</h1>
-      <ul>
-        {faqData.map((item, i) => (
-          <FaqItem
-            key={i}
-            index={i + 1}
-            question={item.question}
-            answer={item.answer}
-          />
-        ))}
-      </ul>
+    <main className="min-h-screen bg-gray-100 p-6 flex items-start justify-center">
+      <section
+        className="w-full max-w-2xl"
+        aria-labelledby="faq-heading"
+        role="region"
+      >
+        <h1
+          id="faq-heading"
+          className="text-center text-2xl font-bold mb-4 text-[#005b96]"
+        >
+          Perguntas Frequentes — Pet Shop
+        </h1>
+
+        <ul
+          className="space-y-3"
+          role="list"
+          aria-label="Lista de perguntas frequentes sobre o Pet Shop"
+        >
+          {faqData.map((item, i) => (
+            <FaqItem
+              key={i}
+              index={i + 1}
+              question={item.question}
+              answer={item.answer}
+            />
+          ))}
+        </ul>
+      </section>
     </main>
   );
 }
