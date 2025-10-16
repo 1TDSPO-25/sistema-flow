@@ -30,17 +30,13 @@ export default function Produtos() {
     })();
   }, []);
 
-<<<<<<< HEAD
   return (
-    <div></div>
-  )
-=======
-  return (<section style={{ padding: 16 }}>
+    <section style={{ padding: 16 }}>
     <h1>Produtos</h1>
-
+ 
     {loading && <p>Carregando...</p>}
     {err && <p style={{ color: "crimson" }}>{err}</p>}
-
+ 
     {!loading && !err && (
       data.length ? (
         <ul
@@ -86,9 +82,6 @@ export default function Produtos() {
       )
     )}
   </section>
-
-
-    
+);
   );
->>>>>>> feature/api-produtos
 }
