@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import FaqItem from "../../components/Faq/FaqItem";
 
 type FaqItemType = {
@@ -34,6 +35,10 @@ const faqData: FaqItemType[] = [
 ];
 
 export default function Faq() {
+  useEffect(() => {
+    document.title = "FAQ — Pet Shop";
+  }, []);
+
   return (
     <main className="min-h-screen bg-gray-100 p-6 flex items-start justify-center">
       <section
