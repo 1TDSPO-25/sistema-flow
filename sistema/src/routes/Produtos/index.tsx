@@ -30,8 +30,8 @@ export default function Produtos() {
     })();
   }, []);
 
-  return (
-    <section style={{ padding: 16 }}>
+
+  return (<section style={{ padding: 16 }}>
     <h1>Produtos</h1>
  
     {loading && <p>Carregando...</p>}
@@ -83,5 +83,4 @@ export default function Produtos() {
     )}
   </section>
 );
-  );
 }

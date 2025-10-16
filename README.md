@@ -21,6 +21,7 @@
 <li>[  ] FEATURE / Criar componente(produtos) de produtos, onde estes devem ser listados em uma tabela e deve ser dada a opção neste mesmo componente para o usuário pesquisar em um campo acima da tabela por qualquer produto, conforme ele for digitando o nome do produto a tabela vai se atualizando para trazer o novo resultado de acordo  com os dados inseridos pelo usuário. Esse é um tipo de filtro de pesquisa  / Soteras-Sabelli-Kubagawa </li>
 <li>[   ] FEATURE / Criar API de notícas na página HOME, onde estas notícias vão ficar aleatórias. Ex: UOL, MSN, crie cards para apresentar estas noticias. / Grazi - Diego - MatheusA </li>
 <li>[   ] FEATURE / Criar mostrador de dados da BMF/DOLAR e CLIMA no CABEÇALHO, veja exemplos nos sites UOL, MSN e TERRA. Utilize componentes separados para apresentar estes elementos. / Bebé - Jonas - Julia</li>
+<li>[   ] FEATURE / Tipar os dados para o sistema de agendamento: id, nomePet, data, horário / Lucca - Rafa</li>
 </ul>
 
 ---
@@ -34,7 +35,7 @@
 <li>[   ] FEATURE / Criar um Carrossel de IMAGENS sobre os produtos com pelomenos 8 produtos na home / GabrielMuller-Emanuel-PedroPereira</li><span style="color:red">DEADLINE[22:40]</span>
 <li>[   ] FEATURE / Criar a página home referente ao petshop, a estilização toda inline. / MatheusB - PedroF</li><span style="color:red">DEADLINE[20:40]</span>
 <li>[   ] FEATURE / Criar a rota faq com componentes / Alef - Paulo - Emanuel</li><span style="color:red">DEADLINE[20:40]</span>
-<li>[   ] FEATURE / Tipar os dados para o sistema de agendamento: id, nomePet, data, horário / Lucca - Rafa</li><span style="color:red">DEADLINE[20:50]</span>
+<span style="color:red">DEADLINE[20:50]</span>
 <li>[   ] FEATURE / Criar componente de forms para puxando as tipagem de dados do sistema de agendamento, com os elementos: id, nomePet, data, horário/ Soteras-Sabelli-Kubagawa</li><span style="color:red">DEADLINE[ATÉ A PRÓXIMA AULA]</span>
 </ul>
 
@@ -45,4 +46,6 @@
 Time Soteras-Sabelli-Kubagawa
 
 Time Grazi - Diego - MatheusA
+
+Time Lucca-Rafa
 
