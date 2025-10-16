@@ -5,3 +5,7 @@ type FaqItem = {
   question: string;
   answer: string;
 };
+
+export default function FaqItem({ index, question, answer }: FaqItemProps) {
+  const [isOpen, setIsOpen] = useState(false);
+  const contentId = `faq-item-${index}`;
