@@ -1,6 +1,5 @@
 import App from './App.tsx'
 import Error from './routes/Error/index.tsx';
-import Home from './routes/Home/index.tsx'
 import React from 'react';
 import Produtos from './routes/Produtos/index.tsx';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
@@ -14,6 +13,7 @@ import App from './App.tsx'
 >>>>>>> a9e7bf185c216608c45b63ef526ced5d71b30a1e
 import Noticias from './routes/Noticias/index.tsx'
 import './global.css'
+import Home from './routes/Home/index.tsx';
 
 
 const router = createBrowserRouter([
