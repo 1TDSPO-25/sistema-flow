@@ -1,9 +1,16 @@
 import { FaPaw, FaHeart, FaShoppingCart, FaStar } from 'react-icons/fa';
 
 const servicos = [
-    { nome: 'Banho & Tosa', icone: <FaPaw size={32} />, descricao: 'Higiene e estilo para deixar seu pet impecável e cheiroso.' },
-    { nome: 'Consultas', icone: <FaHeart size={32} />, descricao: 'Veterinários dedicados para cuidar da saúde do seu amigo.' },
-    { nome: 'Produtos', icone: <FaShoppingCart size={32} />, descricao: 'As melhores marcas de rações, brinquedos e acessórios.' },
+  { nome: 'Banho & Tosa', icone: <FaPaw size={32} />, descricao: 'Higiene e estilo para deixar seu pet impecável e cheiroso.' },
+  { nome: 'Consultas', icone: <FaHeart size={32} />, descricao: 'Veterinários dedicados para cuidar da saúde do seu amigo.' },
+  { nome: 'Produtos', icone: <FaShoppingCart size={32} />, descricao: 'As melhores marcas de rações, brinquedos e acessórios.' },
+];
+
+const produtosDestaque = [
+    { nome: 'Ração Premium', preco: 'R$ 189,90', imagem: '/img/ração_premium.png' },
+    { nome: 'Caminha Confortável', preco: 'R$ 129,90', imagem: '/img/brinquedo.jpg' }, // Ajuste o nome do arquivo se for outro
+    { nome: 'Arranhador para Gatos', preco: 'R$ 99,90', imagem: '/img/arranhador_gato.jpg' },
+    { nome: 'Brinquedo Interativo', preco: 'R$ 49,90', imagem: '/img/brinquedo.jpg' },
 ];
 
 export default function Home() {
@@ -38,6 +45,30 @@ export default function Home() {
                 <p className="text-slate-600">{servico.descricao}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-slate-100 py-20">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold mb-4">Produtos em Destaque</h2>
+          <p className="max-w-2xl mx-auto mb-12 text-slate-600">Uma seleção especial dos itens favoritos dos nossos clientes de quatro patas.</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {produtosDestaque.map((produto) => (
+              <div key={produto.nome} className="bg-white rounded-lg shadow-md overflow-hidden group">
+                <img src={produto.imagem} alt={produto.nome} className="w-full h-48 object-cover group-hover:scale-105 transition-transform" />
+                <div className="p-6">
+                  <h3 className="text-lg font-bold">{produto.nome}</h3>
+                  <p className="text-orange-500 font-semibold mt-2 mb-4">{produto.preco}</p>
+                  <a href="#" className="w-full block text-center bg-slate-800 text-white py-2 rounded-md hover:bg-orange-500 transition-colors">Ver Detalhes</a>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="mt-12">
+            <a href="/produtos" className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors duration-300">
+              Ver todos os produtos
+            </a>
           </div>
         </div>
       </section>
