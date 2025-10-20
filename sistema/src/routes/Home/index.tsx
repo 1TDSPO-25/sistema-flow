@@ -7,10 +7,15 @@ const servicos = [
 ];
 
 const produtosDestaque = [
-    { nome: 'Ração Premium', preco: 'R$ 189,90', imagem: '/img/ração_premium.png' },
-    { nome: 'Caminha Confortável', preco: 'R$ 129,90', imagem: '/img/brinquedo.jpg' }, // Ajuste o nome do arquivo se for outro
-    { nome: 'Arranhador para Gatos', preco: 'R$ 99,90', imagem: '/img/arranhador_gato.jpg' },
-    { nome: 'Brinquedo Interativo', preco: 'R$ 49,90', imagem: '/img/brinquedo.jpg' },
+  { nome: 'Ração Premium', preco: 'R$ 189,90', imagem: '/img/ração_premium.png' },
+  { nome: 'Caminha Confortável', preco: 'R$ 129,90', imagem: '/img/brinquedo.jpg' },
+  { nome: 'Arranhador para Gatos', preco: 'R$ 99,90', imagem: '/img/arranhador_gato.jpg' },
+  { nome: 'Brinquedo Interativo', preco: 'R$ 49,90', imagem: '/img/brinquedo.jpg' },
+];
+
+const depoimentos = [
+  { nome: 'Carla Souza', texto: '"O atendimento é incrível e meu cachorro volta sempre feliz do banho. Recomendo de olhos fechados!"' },
+  { nome: 'Marcos Andrade', texto: '"Encontrei a ração especial que meu gato precisava. A variedade de produtos é excelente."' },
 ];
 
 export default function Home() {
@@ -69,6 +74,25 @@ export default function Home() {
             <a href="/produtos" className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors duration-300">
               Ver todos os produtos
             </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold mb-12">O que nossos clientes dizem</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {depoimentos.map((depoimento) => (
+              <div key={depoimento.nome} className="bg-white p-8 rounded-lg shadow-lg">
+                <p className="text-slate-600 italic mb-6">{depoimento.texto}</p>
+                <div className="flex items-center justify-center">
+                  <div className="flex text-yellow-400">
+                    <FaStar size={20} /> <FaStar size={20} /> <FaStar size={20} /> <FaStar size={20} /> <FaStar size={20} />
+                  </div>
+                  <h4 className="font-bold ml-4">{depoimento.nome}</h4>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
