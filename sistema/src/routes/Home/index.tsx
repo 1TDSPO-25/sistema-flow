@@ -1,20 +1,24 @@
-export default function Home(){
-    return(
-        <main>
-        <section>
-            <h2>Sobre Nós</h2>
-            <p>
-                A PetLove & Cia nasceu de um amor simples: o amor pelos animais.
-Tudo começou com a vontade de criar um lugar onde os pets fossem tratados com o mesmo carinho que recebem em casa e onde os tutores se sentissem tranquilos e acolhidos.
+import { FaPaw, FaHeart, FaShoppingCart, FaStar } from 'react-icons/fa';
 
-Desde o primeiro dia nossa missão é cuidar com amor. Aqui, cada banho, cada tosa e cada pacotinho de ração é escolhido com atenção, porque sabemos que por trás de cada pet existe uma família cheia de afeto.
-
-Temos uma equipe apaixonada pelo que faz, sempre pronta para atender com um sorriso no rosto e um carinho extra para o seu bichinho. Além dos produtos e serviços, queremos que cada visita à PetLove & Cia seja uma experiência boa tanto para você quanto para o seu melhor amigo.
-
-Mais do que um pet shop, somos um cantinho de amor, cuidado e alegria.
-Porque pra gente, eles não são só pets, são parte da família. ❤️
-            </p>
-        </section>
-    </main>
+export default function Home() {
+    return (
+        <main className="bg-slate-50 text-slate-800">
+            <section
+                className="relative flex items-center justify-center h-[80vh] bg-cover bg-center text-white"
+                style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/img/foto_golden_retriever.jpg')` }}
+            >
+                <div className="text-center max-w-3xl mx-auto px-4">
+                    <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-4">
+                        O melhor para quem você mais ama
+                    </h1>
+                    <p className="text-lg md:text-xl mb-8">
+                        Tudo que seu pet precisa em um só lugar. Qualidade, carinho e confiança para sua família.
+                    </p>
+                    <a href="/produtos" className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors duration-300">
+                        Ver Produtos
+                    </a>
+                </div>
+            </section>
+        </main>
     );
 }
