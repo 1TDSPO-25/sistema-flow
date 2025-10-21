@@ -6,7 +6,7 @@ interface CurrencyData {
   pctChange: string;
 }
 
-export default function HeaderPrice() {
+export function CardPrice() {
   const [prices, setPrices] = useState<Record<string, CurrencyData> | null>(null);
   const [error, setError] = useState("");
 
@@ -20,14 +20,10 @@ export default function HeaderPrice() {
       setPrices({
         USD: { code: "USD", bid: json.USDBRL.bid, pctChange: json.USDBRL.pctChange },
         EUR: { code: "EUR", bid: json.EURBRL.bid, pctChange: json.EURBRL.pctChange },
-        BTC: { code: "BTC", bid: json.BTCBRL.bid, pctChange: json.BTCBRL.pctChange },
       });
     } catch (err: unknown) {
-      if (err instanceof Error) {
-        setError(err.message);
-      } else {
-        setError("Erro desconhecido");
-      }
+      if (err instanceof Error) setError(err.message);
+      else setError("Erro desconhecido");
     }
   }
 
@@ -36,27 +32,16 @@ export default function HeaderPrice() {
   }, []);
 
   return (
-    <header
-      style={{
-        backgroundColor: "#222",
-        color: "#fff",
-        padding: "10px 20px",
-        fontSize: "14px",
-        display: "flex",
-        justifyContent: "center",
-        gap: "30px",
-      }}
-    >
-      {error && <span style={{ color: "red" }}>{error}</span>}
-      {prices ? (
-        <>
-          <span>USD: R$ {parseFloat(prices.USD.bid).toFixed(2)} ({prices.USD.pctChange}%)</span>
-          <span>EUR: R$ {parseFloat(prices.EUR.bid).toFixed(2)} ({prices.EUR.pctChange}%)</span>
-          <span>BTC: R$ {parseFloat(prices.BTC.bid).toFixed(2)} ({prices.BTC.pctChange}%)</span>
-        </>
+    <div className="flex items-center gap-3 bg-gray-700 text-white rounded-2xl px-4 py-2 text-sm shadow-md border border-gray-600 select-none">
+      {error ? (
+        <span className="text-red-400">{error}</span>
+      ) : prices ? (
+        <div className="flex flex-col items-start">
+          <span>USD: R$ {parseFloat(prices.USD.bid).toFixed(2)} | EUR: R$ {parseFloat(prices.EUR.bid).toFixed(2)} </span>
+        </div>
       ) : (
-        <span>Carregando cotações...</span>
+        <span>Carregando...</span>
       )}
-    </header>
+    </div>
   );
 }
