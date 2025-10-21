@@ -60,7 +60,7 @@ export default function Produtos() {
     {err && <p style={{ color: "crimson" }}>{err}</p>}
  
     {!loading && !err && (
-      produtos.length ? (
+      filtro.length ? (
         <ul
           style={{
             display: "grid",
@@ -71,7 +71,7 @@ export default function Produtos() {
             margin: 0
           }}
         >
-          {produtos.map((p) => (
+          {filtro.map((p) => (
             <li
               key={p.id}
               style={{
