@@ -1,5 +1,7 @@
+import { Link } from "react-router-dom";
+
 interface NavLink {
-  href: string;
+  to: string;
   label: string;
 }
 
@@ -23,14 +25,14 @@ export function Menu({ links, onItemClick, orientation = 'horizontal' }: MenuPro
   return (
     <nav className={layoutClasses[orientation]}>
       {links.map((link) => (
-        <a
+        <Link
           key={link.label}
-          href={link.href}
+          to={link.to}
           className={linkClasses[orientation]}
           onClick={onItemClick}
         >
           {link.label}
-        </a>
+        </Link>
       ))}
     </nav>
   );
