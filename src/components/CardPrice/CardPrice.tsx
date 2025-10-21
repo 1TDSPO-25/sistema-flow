@@ -38,7 +38,6 @@ export function CardPrice() {
       ) : prices ? (
         <div className="flex flex-col items-start">
           <span>USD: R$ {parseFloat(prices.USD.bid).toFixed(2)} | EUR: R$ {parseFloat(prices.EUR.bid).toFixed(2)} </span>
-          <span></span>
         </div>
       ) : (
         <span>Carregando...</span>
