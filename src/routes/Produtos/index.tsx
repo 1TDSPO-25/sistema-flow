@@ -1,17 +1,20 @@
 import { useEffect, useState } from "react";
 import type { Produto } from "../../types/produto";
 
+const API_URL = import.meta.env.VITE_API_URL;
 const brl = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" });
 
 export default function Produtos() {
-  const [data, setData] = useState<Produto[]>([]);
+  const [produtos, setProdutos] = useState<Produto[]>([]);
+  const [filtro, setFiltro] = useState<Produto[]>([]);
+  const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(true);
   const [err, setErr] = useState<string | null>(null);
 
   useEffect(() => {
     (async () => {
       try {
-        const res = await fetch("/api/produtos?_sort=nome&_order=asc");
+        const res = await fetch(`${API_URL}/produtos`);
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const json = await res.json();
 
@@ -21,7 +24,8 @@ export default function Produtos() {
           qtd: Number(p.qtd)
         }));
 
-        setData(coerced);
+        setProdutos(coerced);
+        setFiltro(coerced);
       } catch (e: unknown ) {
 
         if(e instanceof Error){
@@ -34,15 +38,29 @@ export default function Produtos() {
     })();
   }, []);
 
+  useEffect(() => {
+    const lower = search.toLowerCase();
+    setFiltro(
+      produtos.filter((p) => p.nome.toLowerCase().includes(lower))
+    );
+  }, [search, produtos]);
 
   return (<section style={{ padding: 16 }}>
     <h1>Produtos</h1>
- 
+    <input type="text" placeholder="Pesquisar produto..." value={search} onChange={(e) => setSearch(e.target.value)} style={{
+        border: "1px solid #ccc",
+        borderRadius: 8,
+        padding: "8px 12px",
+        marginBottom: 16,
+        width: "100%",
+        maxWidth: 400,
+        fontSize: 16
+      }}/>
     {loading && <p>Carregando...</p>}
     {err && <p style={{ color: "crimson" }}>{err}</p>}
  
     {!loading && !err && (
-      data.length ? (
+      filtro.length ? (
         <ul
           style={{
             display: "grid",
@@ -53,7 +71,7 @@ export default function Produtos() {
             margin: 0
           }}
         >
-          {data.map((p) => (
+          {filtro.map((p) => (
             <li
               key={p.id}
               style={{
