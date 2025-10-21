@@ -1,0 +1,86 @@
+import { useEffect, useState } from "react";
+import type { Produto } from "../../types/produto";
+
+const brl = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" });
+
+export default function Produtos() {
+  const [data, setData] = useState<Produto[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [err, setErr] = useState<string | null>(null);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const res = await fetch("/api/produtos?_sort=nome&_order=asc");
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const json = await res.json();
+
+        const coerced: Produto[] = json.map((p: any) => ({
+          ...p,
+          preco: Number(p.preco),
+          qtd: Number(p.qtd)
+        }));
+
+        setData(coerced);
+      } catch (e: any) {
+        setErr(e?.message ?? "Erro ao carregar produtos");
+      } finally {
+        setLoading(false);
+      }
+    })();
+  }, []);
+
+
+  return (<section style={{ padding: 16 }}>
+    <h1>Produtos</h1>
+ 
+    {loading && <p>Carregando...</p>}
+    {err && <p style={{ color: "crimson" }}>{err}</p>}
+ 
+    {!loading && !err && (
+      data.length ? (
+        <ul
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))",
+            gap: 16,
+            listStyle: "none",
+            padding: 0,
+            margin: 0
+          }}
+        >
+          {data.map((p) => (
+            <li
+              key={p.id}
+              style={{
+                border: "1px solid #ddd",
+                borderRadius: 12,
+                padding: 12
+              }}
+            >
+              <img
+                src={p.avatar}
+                alt={p.nome}
+                style={{
+                  width: "100%",
+                  height: 140,
+                  objectFit: "cover",
+                  borderRadius: 8,
+                  marginBottom: 8
+                }}
+                loading="lazy"
+              />
+              <h3 style={{ margin: "4px 0" }}>{p.nome}</h3>
+              <p style={{ fontSize: 14, minHeight: 40 }}>{p.descricao}</p>
+              <p style={{ fontWeight: 600 }}>{brl.format(Number(p.preco))}</p>
+              <p style={{ fontSize: 12, color: "#555" }}>Estoque: {p.qtd}</p>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p>Nenhum produto encontrado.</p>
+      )
+    )}
+  </section>
+);
+}
