@@ -5,7 +5,7 @@ const API_URL = import.meta.env.VITE_API_URL;
 const brl = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" });
 
 export default function Produtos() {
-  const [data, setData] = useState<Produto[]>([]);
+  const [produtos, setProdutos] = useState<Produto[]>([]);
   const [loading, setLoading] = useState(true);
   const [err, setErr] = useState<string | null>(null);
 
@@ -22,7 +22,7 @@ export default function Produtos() {
           qtd: Number(p.qtd)
         }));
 
-        setData(coerced);
+        setProdutos(coerced);
       } catch (e: unknown ) {
 
         if(e instanceof Error){
@@ -43,7 +43,7 @@ export default function Produtos() {
     {err && <p style={{ color: "crimson" }}>{err}</p>}
  
     {!loading && !err && (
-      data.length ? (
+      produtos.length ? (
         <ul
           style={{
             display: "grid",
@@ -54,7 +54,7 @@ export default function Produtos() {
             margin: 0
           }}
         >
-          {data.map((p) => (
+          {produtos.map((p) => (
             <li
               key={p.id}
               style={{
