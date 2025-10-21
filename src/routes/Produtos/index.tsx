@@ -6,6 +6,8 @@ const brl = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" 
 
 export default function Produtos() {
   const [produtos, setProdutos] = useState<Produto[]>([]);
+  const [filtro, setFiltro] = useState<Produto[]>([]);
+  const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(true);
   const [err, setErr] = useState<string | null>(null);
 
@@ -23,6 +25,7 @@ export default function Produtos() {
         }));
 
         setProdutos(coerced);
+        setFiltro(coerced);
       } catch (e: unknown ) {
 
         if(e instanceof Error){
@@ -35,6 +38,12 @@ export default function Produtos() {
     })();
   }, []);
 
+  useEffect(() => {
+    const lower = search.toLowerCase();
+    setFiltro(
+      produtos.filter((p) => p.nome.toLowerCase().includes(lower))
+    );
+  }, [search, produtos]);
 
   return (<section style={{ padding: 16 }}>
     <h1>Produtos</h1>
