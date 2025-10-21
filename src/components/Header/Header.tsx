@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { Menu } from "../Menu/Menu";
+import { CardWeather } from "../CardWeather/CardWeather";
+
 interface NavLink {
   href: string;
   label: string;
@@ -27,7 +29,10 @@ export function Header() {
         </a>
 
         {/* Menu Desktop: Usa o componente Menu com orientação horizontal */}
-        <Menu links={navLinks} orientation="horizontal" />
+        <div className="hidden md:flex items-center gap-6">
+          <CardWeather />
+          <Menu links={navLinks} orientation="horizontal" />
+        </div>
 
         {/* Botão do Menu Hambúrguer para Mobile */}
         <div className="md:hidden">
