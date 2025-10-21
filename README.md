@@ -37,6 +37,7 @@
 <li>[   ] FEATURE / Criar a página home referente ao petshop, a estilização toda inline. / MatheusB - PedroF</li><span style="color:red">DEADLINE[20:40]</span>
 <span style="color:red">DEADLINE[20:50]</span>
 <li>[   ] FEATURE / Criar componente de forms para puxando as tipagem de dados do sistema de agendamento, com os elementos: id, nomePet, data, horário/ Soteras-Sabelli-Kubagawa</li><span style="color:red">DEADLINE[ATÉ A PRÓXIMA AULA]</span>
+<li>[   ] <strong>FEATURE / Criar Rota e Página "Detalhes do Produto":</strong> <ol> <li>Registrar a rota dinâmica <code>/produto/:id</code> em <code>main.tsx</code>.</li> <li>Criar o componente <code>routes/ProdutoDetalhe/index.tsx</code>.</li> <li>A página deve buscar os dados de um único produto (<code>http://localhost:5000/produtos/:id</code>).</li> <li>A página deve exibir todas as informações (imagem, nome, descrição, preço) e um botão "Adicionar ao Carrinho" (que usará o <code>CartContext</code>).</li> <li>Atualizar os Cards de Produto (na Home e em <code>/produtos</code>) para linkarem para esta página.</li> </ol> / <strong>Time: Alef - Paulo - Emanuel</strong> </li>
 </ul>
 
 
@@ -49,4 +50,3 @@ Time Grazi - Diego - MatheusA
 
 Time Lucca-Rafa
 
-Time Alef - Paulo - Emanuel
