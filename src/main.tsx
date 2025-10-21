@@ -5,8 +5,11 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
 import Cadastro from './routes/Cadastro/index.tsx';
 import Login from './routes/Login/index.tsx';
+<<<<<<< HEAD
 import App from './App.tsx'
 
+=======
+>>>>>>> feature/header-weather
 import Noticias from './routes/Noticias/index.tsx'
 import './global.css'
 import Home from './routes/Home/index.tsx';

@@ -44,8 +44,6 @@
 ---
 ## TEAM FREE
 
-Time Soteras-Sabelli-Kubagawa
-
 Time Grazi - Diego - MatheusA
 
 Time Lucca-Rafa
