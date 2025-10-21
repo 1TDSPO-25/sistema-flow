@@ -15,15 +15,19 @@ export default function Produtos() {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const json = await res.json();
 
-        const coerced: Produto[] = json.map((p: any) => ({
+        const coerced: Produto[] = json.map((p:Produto) => ({
           ...p,
           preco: Number(p.preco),
           qtd: Number(p.qtd)
         }));
 
         setData(coerced);
-      } catch (e: any) {
-        setErr(e?.message ?? "Erro ao carregar produtos");
+      } catch (e: unknown ) {
+
+        if(e instanceof Error){
+          setErr(e?.message  ?? "Erro ao carregar produtos");
+        }
+
       } finally {
         setLoading(false);
       }
