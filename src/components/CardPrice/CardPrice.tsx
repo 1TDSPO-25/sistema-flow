@@ -32,7 +32,7 @@ export function CardPrice() {
   }, []);
 
   return (
-    <div className="flex flex-col items-center bg-gray-700 text-white rounded-xl px-4 py-2 text-sm shadow-md hover:bg-gray-600 transition-all">
+    <div className="flex items-center gap-3 bg-gray-700 text-white rounded-2xl px-4 py-2 text-sm shadow-md border border-gray-600 select-none">
       {error ? (
         <span className="text-red-400">{error}</span>
       ) : prices ? (
