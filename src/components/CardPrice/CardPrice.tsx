@@ -6,104 +6,42 @@ interface CurrencyData {
   pctChange: string;
 }
 
-export function HeaderPrice() {
+export function CardPrice() {
   const [prices, setPrices] = useState<Record<string, CurrencyData> | null>(null);
   const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
 
   async function fetchPrices() {
     try {
-      setLoading(true);
-      setError("");
-
       const res = await fetch(
         "https://economia.awesomeapi.com.br/json/last/USD-BRL,EUR-BRL,BTC-BRL"
       );
       if (!res.ok) throw new Error("Erro ao buscar cotações");
-
       const json = await res.json();
-
       setPrices({
-        USD: {
-          code: "USD",
-          bid: json.USDBRL.bid,
-          pctChange: json.USDBRL.pctChange,
-        },
-        EUR: {
-          code: "EUR",
-          bid: json.EURBRL.bid,
-          pctChange: json.EURBRL.pctChange,
-        },
-        BTC: {
-          code: "BTC",
-          bid: json.BTCBRL.bid,
-          pctChange: json.BTCBRL.pctChange,
-        },
+        USD: { code: "USD", bid: json.USDBRL.bid, pctChange: json.USDBRL.pctChange },
+        EUR: { code: "EUR", bid: json.EURBRL.bid, pctChange: json.EURBRL.pctChange },
       });
     } catch (err: unknown) {
       if (err instanceof Error) setError(err.message);
       else setError("Erro desconhecido");
-    } finally {
-      setLoading(false);
     }
   }
 
   useEffect(() => {
     fetchPrices();
-
-    const interval = setInterval(fetchPrices, 10 * 60 * 1000);
-    return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="text-sm text-gray-100 bg-gray-700 px-3 py-1 rounded-lg flex gap-4 items-center">
-      {loading && <span>Carregando...</span>}
-      {error && <span className="text-red-400">{error}</span>}
-
-      {prices && !loading && (
-        <>
-          <span>
-            USD: R${" "}
-            {parseFloat(prices.USD.bid).toFixed(2)}{" "}
-            <span
-              className={
-                parseFloat(prices.USD.pctChange) >= 0
-                  ? "text-green-400"
-                  : "text-red-400"
-              }
-            >
-              ({prices.USD.pctChange}%)
-            </span>
-          </span>
-
-          <span>
-            EUR: R${" "}
-            {parseFloat(prices.EUR.bid).toFixed(2)}{" "}
-            <span
-              className={
-                parseFloat(prices.EUR.pctChange) >= 0
-                  ? "text-green-400"
-                  : "text-red-400"
-              }
-            >
-              ({prices.EUR.pctChange}%)
-            </span>
-          </span>
-
-          <span>
-            BTC: R${" "}
-            {parseFloat(prices.BTC.bid).toFixed(2)}{" "}
-            <span
-              className={
-                parseFloat(prices.BTC.pctChange) >= 0
-                  ? "text-green-400"
-                  : "text-red-400"
-              }
-            >
-              ({prices.BTC.pctChange}%)
-            </span>
-          </span>
-        </>
+    <div className="flex flex-col items-center bg-gray-700 text-white rounded-xl px-4 py-2 text-sm shadow-md hover:bg-gray-600 transition-all">
+      {error ? (
+        <span className="text-red-400">{error}</span>
+      ) : prices ? (
+        <div className="flex flex-col items-start">
+          <span>USD: R$ {parseFloat(prices.USD.bid).toFixed(2)} | EUR: R$ {parseFloat(prices.EUR.bid).toFixed(2)} </span>
+          <span></span>
+        </div>
+      ) : (
+        <span>Carregando...</span>
       )}
     </div>
   );
