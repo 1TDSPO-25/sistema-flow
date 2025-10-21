@@ -44,7 +44,7 @@ export function CardWeather() {
       {error && <span style={{ color: "red" }}>{error}</span>}
       {data && (
         <span>
-          {data.name}: {Math.round(data.main.temp)}°C •{" "}
+          {data.name}: {Math.round(data.main.temp)}°C | {" "}
           {data.weather[0].description}
         </span>
       )}
