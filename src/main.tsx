@@ -25,7 +25,7 @@ const router = createBrowserRouter([
             {path:"/noticias", element:<Noticias/>}
         ]
     }
-]);
+], { basename: "/sistema-flow" });
 
 createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

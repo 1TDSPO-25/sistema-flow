@@ -1,4 +1,10 @@
 import { FaPaw, FaHeart, FaShoppingCart, FaStar } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+
+import ImgGolden from '../../assets/foto-golden.jpg';
+import ImgRacao from '../../assets/racao-premium.png';
+import ImgBrinquedo from '../../assets/brinquedo.jpg';
+import ImgArranhador from '../../assets/arranhador-gato.jpg';
 
 const servicos = [
   { nome: 'Banho & Tosa', icone: <FaPaw size={32} />, descricao: 'Higiene e estilo para deixar seu pet impecável e cheiroso.' },
@@ -7,10 +13,10 @@ const servicos = [
 ];
 
 const produtosDestaque = [
-  { nome: 'Ração Premium', preco: 'R$ 189,90', imagem: '/img/ração_premium.png' },
-  { nome: 'Caminha Confortável', preco: 'R$ 129,90', imagem: '/img/brinquedo.jpg' },
-  { nome: 'Arranhador para Gatos', preco: 'R$ 99,90', imagem: '/img/arranhador_gato.jpg' },
-  { nome: 'Brinquedo Interativo', preco: 'R$ 49,90', imagem: '/img/brinquedo.jpg' },
+  { nome: 'Ração Premium', preco: 'R$ 189,90', imagem: ImgRacao },
+  { nome: 'Caminha Confortável', preco: 'R$ 129,90', imagem: ImgBrinquedo },
+  { nome: 'Arranhador para Gatos', preco: 'R$ 99,90', imagem: ImgArranhador },
+  { nome: 'Brinquedo Interativo', preco: 'R$ 49,90', imagem: ImgBrinquedo },
 ];
 
 const depoimentos = [
@@ -23,7 +29,7 @@ export default function Home() {
     <main className="bg-slate-50 text-slate-800">
       <section
         className="relative flex items-center justify-center h-[80vh] bg-cover bg-center text-white"
-        style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/img/foto_golden_retriever.jpg')` }}
+        style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${ImgGolden})` }}
       >
         <div className="text-center max-w-3xl mx-auto px-4">
           <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-4">
@@ -32,9 +38,9 @@ export default function Home() {
           <p className="text-lg md:text-xl mb-8">
             Tudo que seu pet precisa em um só lugar. Qualidade, carinho e confiança para sua família.
           </p>
-          <a href="/produtos" className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors duration-300">
+          <Link to="/produtos" className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors duration-300">
             Ver Produtos
-          </a>
+          </Link>
         </div>
       </section>
 
@@ -65,15 +71,15 @@ export default function Home() {
                 <div className="p-6">
                   <h3 className="text-lg font-bold">{produto.nome}</h3>
                   <p className="text-orange-500 font-semibold mt-2 mb-4">{produto.preco}</p>
-                  <a href="#" className="w-full block text-center bg-slate-800 text-white py-2 rounded-md hover:bg-orange-500 transition-colors">Ver Detalhes</a>
+                  <Link to="#" className="w-full block text-center bg-slate-800 text-white py-2 rounded-md hover:bg-orange-500 transition-colors">Ver Detalhes</Link>
                 </div>
               </div>
             ))}
           </div>
           <div className="mt-12">
-            <a href="/produtos" className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors duration-300">
+            <Link to="/produtos" className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors duration-300">
               Ver todos os produtos
-            </a>
+            </Link>
           </div>
         </div>
       </section>
