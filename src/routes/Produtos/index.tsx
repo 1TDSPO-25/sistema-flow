@@ -47,7 +47,7 @@ export default function Produtos() {
 
   return (<section style={{ padding: 16 }}>
     <h1>Produtos</h1>
- 
+    <input type="text" placeholder="Pesquisar produto..." value={search} onChange={(e) => setSearch(e.target.value)}/>
     {loading && <p>Carregando...</p>}
     {err && <p style={{ color: "crimson" }}>{err}</p>}
  
