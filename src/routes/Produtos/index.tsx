@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import type { Produto } from "../../types/produto";
 
+const API_URL = import.meta.env.VITE_API_URL;
 const brl = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" });
 
 export default function Produtos() {
@@ -11,7 +12,7 @@ export default function Produtos() {
   useEffect(() => {
     (async () => {
       try {
-        const res = await fetch("/api/produtos?_sort=nome&_order=asc");
+        const res = await fetch(`${API_URL}/produtos`);
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const json = await res.json();
 
