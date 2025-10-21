@@ -10,6 +10,7 @@ import App from './App.tsx'
 import Noticias from './routes/Noticias/index.tsx'
 import './global.css'
 import Home from './routes/Home/index.tsx';
+import Faq from './routes/Faq/index.tsx';
 
 
 const router = createBrowserRouter([
@@ -22,7 +23,8 @@ const router = createBrowserRouter([
             {path: "/produtos", element: <Produtos/>},
             {path: "/cadastro", element: <Cadastro/>},
             {path: "/login", element: <Login/>},
-            {path:"/noticias", element:<Noticias/>}
+            {path:"/noticias", element:<Noticias/>},
+            {path:"/faq", element:<Faq/>}
         ]
     }
 ], { basename: "/sistema-flow" });
