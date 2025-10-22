@@ -5,7 +5,26 @@ export default function Login() {
         <h1 className="text-3xl md:text-4xl font-bold text-center text-orange-500 mb-8">
           Login
         </h1>
-        
+
+        <form className="flex flex-col gap-6">
+          <input
+            type="email"
+            placeholder="Email"
+            className="border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700"
+          />
+          <input
+            type="password"
+            placeholder="Senha"
+            className="border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700"
+          />
+          <button
+            type="submit"
+            className="bg-orange-500 hover:bg-orange-200 text-white font-semibold py-3 rounded-lg transition duration-300"
+          >
+            Entrar
+          </button>
+        </form>
+
       </section>
     </main>
   );
