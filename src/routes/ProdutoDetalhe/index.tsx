@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import type { Produto } from "../../types/produto";
 
 const API_URL = "http://localhost:5000";
+const brl = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" });
 
 export default function ProdutoDetalhe() {
   const { id } = useParams<{ id: string }>();
@@ -41,9 +42,36 @@ export default function ProdutoDetalhe() {
 
   return (
     <section className="max-w-6xl mx-auto px-6 py-10">
-      <h1>{produto.nome}</h1>
-      <p>{produto.descricao}</p>
-      <p>{produto.preco}</p>
+      <div className="grid md:grid-cols-2 gap-10 items-start">
+        <img
+          src={produto.avatar}
+          alt={produto.nome}
+          className="w-full rounded-2xl shadow-md object-cover max-h-[520px]"
+        />
+
+        <div className="flex flex-col gap-3">
+          <span className="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded-full w-fit">
+            {produto.categoria}
+          </span>
+
+          <h1 className="text-4xl font-extrabold text-gray-900">{produto.nome}</h1>
+          <p className="text-2xl text-blue-600 font-semibold">
+            {brl.format(Number(produto.preco))}
+          </p>
+
+          <div className="mt-3">
+            <p className="text-gray-600 text-sm mb-1">Disponibilidade:</p>
+            <span className="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium">
+              {produto.qtd ?? 0} em estoque
+            </span>
+          </div>
+
+          <div className="mt-5">
+            <h2 className="text-lg font-semibold mb-1">Descrição</h2>
+            <p className="text-gray-700 leading-relaxed">{produto.descricao}</p>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
