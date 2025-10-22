@@ -1,5 +1,6 @@
+// src/routes/ProdutoDetalhe/index.tsx
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import type { Produto } from "../../types/produto";
 
 const API_URL = "http://localhost:5000";
@@ -10,6 +11,7 @@ export default function ProdutoDetalhe() {
   const [produto, setProduto] = useState<Produto | null>(null);
   const [loading, setLoading] = useState(true);
   const [err, setErr] = useState<string | null>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     (async () => {
@@ -42,11 +44,19 @@ export default function ProdutoDetalhe() {
 
   return (
     <section className="max-w-6xl mx-auto px-6 py-10">
+      <button
+        onClick={() => navigate(-1)}
+        className="text-[#005b96] hover:underline text-sm mb-6 inline-flex items-center"
+      >
+        ← Voltar para Produtos
+      </button>
+
       <div className="grid md:grid-cols-2 gap-10 items-start">
         <img
           src={produto.avatar}
           alt={produto.nome}
           className="w-full rounded-2xl shadow-md object-cover max-h-[520px]"
+          onError={(e) => { (e.target as HTMLImageElement).src = "/placeholder.png"; }}
         />
 
         <div className="flex flex-col gap-3">
@@ -56,7 +66,7 @@ export default function ProdutoDetalhe() {
 
           <h1 className="text-4xl font-extrabold text-gray-900">{produto.nome}</h1>
           <p className="text-2xl text-blue-600 font-semibold">
-            {brl.format(Number(produto.preco))}
+            {Number(produto.preco).toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}
           </p>
 
           <div className="mt-3">
