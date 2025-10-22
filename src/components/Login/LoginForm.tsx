@@ -18,7 +18,7 @@ export function LoginForm() {
     <div className="bg-white p-8  rounded-lg shadow-lg" >
             <form onSubmit={handleSubmit} className="flex flex-col items-center justify-center gap-6 w-full max-w-sm mx-auto" >
         <input
-          className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           type="email"
           placeholder="Digite seu E-mail"
           value={email}
@@ -34,7 +34,7 @@ export function LoginForm() {
         />
 
         <button 
-          
+          className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors duration-300"
           type="submit">Entrar na conta
         </button>
       </form>
