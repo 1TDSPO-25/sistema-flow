@@ -12,10 +12,10 @@ interface NavLink {
 }
 
 const navLinks: NavLink[] = [
-  { to: "/", label: "Início" },
-  { to: "/sobre", label: "Sobre" },
-  { to: "/servicos", label: "Serviços" },
-  { to: "/faq", label: "FAQ" },
+  { to: "", label: "Início" },
+  { to: "sobre", label: "Sobre" },
+  { to: "servicos", label: "Serviços" },
+  { to: "faq", label: "FAQ" },
 ];
 
 export function Header() {
@@ -28,7 +28,7 @@ export function Header() {
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
         <Link
-          to="/"
+          to=""
           className="text-3xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-orange-400 hover:opacity-90 transition-opacity"
         >
           ColocaAlogoGrazi
@@ -48,13 +48,13 @@ export function Header() {
           </button>
           {/* Botões de Login e Cadastro */}
           <Link
-            to="/login"
+            to="login"
             className="flex items-center px-5 py-2 bg-orange-400 text-white font-semibold rounded-full shadow-md hover:bg-orange-500 transition-all"
           ><BiUser className="inline mr-2 text-xl" />
             Login
           </Link>
           <Link
-            to="/cadastro"
+            to="cadastro"
             className="px-5 py-2 bg-orange-500 text-white font-semibold rounded-full shadow-md hover:bg-orange-400 transition-all"
           >
             Cadastro
@@ -82,14 +82,14 @@ export function Header() {
         <Menu links={navLinks} orientation="vertical" onItemClick={closeMenu} />
         <div className="flex flex-col items-center gap-4 mt-4">
           <Link
-            to="/login"
+            to="login"
             className="flex items-center justify-center w-3/4 px-5 py-2 bg-orange-400 text-white font-semibold rounded-full shadow-md hover:bg-orange-400 transition-all text-center"
             onClick={closeMenu}
           ><BiUser className="inline mr-2 text-xl" />
             Login
           </Link>
           <Link
-            to="/cadastro"
+            to="cadastro"
             className="w-3/4 px-5 py-2 bg-orange-500 text-white font-semibold rounded-full shadow-md hover:bg-orange-400 transition-all text-center mb-8"
             onClick={closeMenu}
           >
