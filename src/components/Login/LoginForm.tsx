@@ -12,8 +12,8 @@ export function LoginForm() {
 
   return (
     <div>
-      <h2>Login</h2>
-            <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
+
         <input
           type="email"
           placeholder="Digite seu E-mail"
