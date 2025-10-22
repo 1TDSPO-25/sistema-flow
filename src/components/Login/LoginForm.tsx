@@ -18,12 +18,12 @@ export function LoginForm() {
         className=" md:flex w-1/2 bg-cover bg-center"
         style={{ backgroundImage: ` url(${ImgCaoGato})` }}
       ></div>
-    <section className="py-20 flex flex-col items-center">
-    <div className="container mx-70 px-4 text-center">
-          <h2 className="text-3xl font-bold mb-3">Login</h2>
+    <section className="flex w-1/2 bg-white items-center justify-center min-h-screen">
+    <div className="w-3/4 max-w-lg shadow-lg rounded-lg">
+          <h2 className="text-3xl font-bold mb-8 text-center text-gray-800">Login</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto"></div>
-    <div className="bg-white p-8  rounded-lg shadow-lg" >
-            <form onSubmit={handleSubmit} className="flex flex-col items-center justify-center gap-6 w-full max-w-sm mx-auto" >
+    <div className="bg-white p-8  rounded-lg shadow-lg " >
+            <form onSubmit={handleSubmit} className="flex flex-col items-center justify-center gap-6 w-full" >
         <input
           className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           type="email"
