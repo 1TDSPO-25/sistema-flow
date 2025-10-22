@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FiMenu, FiX, FiShoppingCart } from "react-icons/fi";
 import { Menu } from "../Menu/Menu";
 import { CardWeather } from "../CardWeather/CardWeather";
@@ -21,11 +21,19 @@ const navLinks: NavLink[] = [
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  useEffect(() => {
+    // bloqueia scroll do body enquanto menu mobile está aberto
+    document.body.style.overflow = isMenuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMenuOpen]);
+
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
     <header className="bg-linear-to-r from-gray-800 via-gray-700 to-gray-800 text-white shadow-lg sticky top-0 z-50">
-      <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-3 md:py-4 flex items-center justify-between flex-wrap gap-3">
         {/* Logo */}
         <Link
           to=""
@@ -61,22 +69,23 @@ export function Header() {
           </Link>
         </div>
 
-        {/* Botão do Menu Hambúrguer para Mobile */}
-        <div className="md:hidden">
+        {/* Mobile menu button */}
+        <div className="md:hidden ml-auto">
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
-            className="text-2xl text-white hover:text-orange-400 transition-colors"
+            aria-expanded={isMenuOpen}
+            className="text-2xl text-white hover:text-orange-400 transition-colors p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-400"
           >
             {isMenuOpen ? <FiX /> : <FiMenu />}
           </button>
         </div>
       </div>
 
-      {/* Menu Mobile */}
+      {/* Mobile menu */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-          isMenuOpen ? "max-h-96" : "max-h-0"
+        className={`md:hidden overflow-hidden transition-[max-height] duration-300 ease-in-out bg-gray-800/90 ${
+          isMenuOpen ? "max-h-[600px] border-t border-gray-700" : "max-h-0"
         }`}
       >
         <Menu links={navLinks} orientation="vertical" onItemClick={closeMenu} />
