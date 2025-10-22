@@ -1,5 +1,5 @@
 import Error from './routes/Error/index.tsx';
-import React from 'react';
+import React, { Suspense } from 'react';
 import Produtos from './routes/Produtos/index.tsx';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
@@ -27,10 +27,12 @@ const router = createBrowserRouter([
             {path:"/faq", element:<Faq/>}
         ]
     }
-], { basename: "/sistema-flow" });
+], { basename: "/sistema-flow/" });
 
 createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Suspense fallback={<div>Loading</div>}>
+      <RouterProvider router={router} />
+    </Suspense>
   </React.StrictMode>,
 )
