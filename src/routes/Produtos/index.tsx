@@ -46,16 +46,18 @@ export default function Produtos() {
   }, [search, produtos]);
 
   return (<section style={{ padding: 16 }}>
-    <h1>Produtos</h1>
-    <input type="text" placeholder="Pesquisar produto..." value={search} onChange={(e) => setSearch(e.target.value)} style={{
-        border: "1px solid #ccc",
-        borderRadius: 8,
-        padding: "8px 12px",
-        marginBottom: 16,
-        width: "100%",
-        maxWidth: 400,
-        fontSize: 16
-      }}/>
+    <div className="flex justify-center my-3">
+      <input type="text" placeholder="Pesquisar produto..." className="focus:outline-orange-500"
+          value={search} onChange={(e) => setSearch(e.target.value)} style={{
+          border: "1px solid #ccc",
+          borderRadius: 8,
+          padding: "8px 12px",
+          marginBottom: 16,
+          width: "100%",
+          maxWidth: 400,
+          fontSize: 16
+        }}/>
+    </div>
     {loading && <p>Carregando...</p>}
     {err && <p style={{ color: "crimson" }}>{err}</p>}
  
