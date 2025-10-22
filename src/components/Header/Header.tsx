@@ -23,7 +23,7 @@ export function Header() {
 
   useEffect(() => {
     // bloqueia scroll do body enquanto menu mobile está aberto
-    document.body.style.overflow = isMenuOpen ?  "hidden" : "";
+    document.body.style.overflow = isMenuOpen ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
     };
@@ -68,14 +68,7 @@ export function Header() {
               className="flex items-center px-4 py-2 bg-orange-400 text-white font-semibold rounded-full shadow-md hover:bg-orange-500 transition-all gap-2"
             >
               <BiUser className="inline text-lg" />
-              <span className="hidden sm:inline">Login</span>
-            </Link>
-
-            <Link
-              to="/cadastro"
-              className="px-4 py-2 bg-orange-500 text-white font-semibold rounded-full shadow-md hover:bg-orange-400 transition-all"
-            >
-              Cadastro
+              <span>Entrar</span>
             </Link>
           </div>
         </div>
@@ -115,7 +108,6 @@ export function Header() {
             <Menu
               links={navLinks}
               orientation="vertical"
-              onItemClick={closeMenu}
               // assume que o Menu aceita estilização via className ou similar;
               // caso não aceite, o Menu já renderiza vertical responsivo.
             />
@@ -128,15 +120,7 @@ export function Header() {
               className="flex items-center justify-center w-11/12 max-w-md px-5 py-3 bg-orange-400 text-white font-semibold rounded-full shadow-md hover:bg-orange-500 transition-all gap-2"
             >
               <BiUser className="inline text-lg" />
-              <span>Login</span>
-            </Link>
-
-            <Link
-              to="/cadastro"
-              onClick={closeMenu}
-              className="w-11/12 max-w-md text-center px-5 py-3 bg-orange-500 text-white font-semibold rounded-full shadow-md hover:bg-orange-400 transition-all"
-            >
-              Cadastro
+              <span>Entrar</span>
             </Link>
 
             <button
