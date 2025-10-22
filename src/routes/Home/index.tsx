@@ -5,6 +5,7 @@ import ImgGolden from '../../assets/foto-golden.jpg';
 import ImgRacao from '../../assets/racao-premium.png';
 import ImgBrinquedo from '../../assets/brinquedo.jpg';
 import ImgArranhador from '../../assets/arranhador-gato.jpg';
+import { ListaProdutos } from '../../components/ListaProdutos/ListaProdutos';
 
 const servicos = [
   { nome: 'Banho & Tosa', icone: <FaPaw size={32} />, descricao: 'Higiene e estilo para deixar seu pet impecável e cheiroso.' },
@@ -83,6 +84,12 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+<section>
+  <div>
+    <ListaProdutos limit={5} />
+  </div>
+</section>
 
       <section className="py-20">
         <div className="container mx-auto px-4 text-center">
