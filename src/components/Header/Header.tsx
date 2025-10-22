@@ -12,10 +12,10 @@ interface NavLink {
 }
 
 const navLinks: NavLink[] = [
-  { to: "/", label: "Início" },
-  { to: "/sobre", label: "Sobre" },
-  { to: "/servicos", label: "Serviços" },
-  { to: "/faq", label: "FAQ" },
+  { to: "", label: "Início" },
+  { to: "sobre", label: "Sobre" },
+  { to: "servicos", label: "Serviços" },
+  { to: "faq", label: "FAQ" },
 ];
 
 export function Header() {
@@ -36,41 +36,37 @@ export function Header() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-3 md:py-4 flex items-center justify-between flex-wrap gap-3">
         {/* Logo */}
         <Link
-          to="/"
-          className="text-xl sm:text-2xl md:text-3xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-orange-400 hover:opacity-90 transition-opacity"
+          to=""
+          className="text-3xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-orange-400 hover:opacity-90 transition-opacity"
         >
           ColocaAlogoGrazi
         </Link>
 
-        {/* Right controls for desktop */}
-        <div className="hidden md:flex items-center gap-4 md:gap-8 flex-1 justify-end">
-          <div className="flex items-center gap-3">
-            <CardPrice />
-            <CardWeather />
-          </div>
-
-          <nav className="hidden lg:block">
-            <Menu links={navLinks} orientation="horizontal" />
-          </nav>
-
-          <div className="flex items-center gap-3">
-            <button
-              aria-label="Carrinho"
-              className="text-2xl hover:text-orange-400 transition-colors relative"
-            >
-              <FiShoppingCart />
-              {/* Exemplo de badge (remova ou ajuste conforme necessário) */}
-              <span className="absolute -top-1 -right-2 text-xs bg-red-600 text-white rounded-full px-1.5">0</span>
-            </button>
-
-            <Link
-              to="/login"
-              className="flex items-center px-4 py-2 bg-orange-400 text-white font-semibold rounded-full shadow-md hover:bg-orange-500 transition-all gap-2"
-            >
-              <BiUser className="inline text-lg" />
-              <span>Entrar</span>
-            </Link>
-          </div>
+        {/* Menu Desktop */}
+        <div className="hidden md:flex items-center gap-8">
+          <CardPrice />
+          <CardWeather />
+          <Menu links={navLinks} orientation="horizontal" />
+          {/* Ícone de Carrinho */}
+          <button
+            aria-label="Carrinho"
+            className="text-2xl hover:text-orange-400 transition-colors"
+          >
+            <FiShoppingCart />
+          </button>
+          {/* Botões de Login e Cadastro */}
+          <Link
+            to="login"
+            className="flex items-center px-5 py-2 bg-orange-400 text-white font-semibold rounded-full shadow-md hover:bg-orange-500 transition-all"
+          ><BiUser className="inline mr-2 text-xl" />
+            Login
+          </Link>
+          <Link
+            to="cadastro"
+            className="px-5 py-2 bg-orange-500 text-white font-semibold rounded-full shadow-md hover:bg-orange-400 transition-all"
+          >
+            Cadastro
+          </Link>
         </div>
 
         {/* Mobile menu button */}
@@ -92,46 +88,22 @@ export function Header() {
           isMenuOpen ? "max-h-[600px] border-t border-gray-700" : "max-h-0"
         }`}
       >
-        <div className="px-4 pt-4 pb-6 flex flex-col gap-4 items-center">
-          {/* Itens móveis: cards importantes */}
-          <div className="w-full flex flex-col gap-3 items-center">
-            <div className="w-full max-w-md">
-              <CardPrice />
-            </div>
-            <div className="w-full max-w-md">
-              <CardWeather />
-            </div>
-          </div>
-
-          {/* Menu vertical com touch targets maiores */}
-          <div className="w-full">
-            <Menu
-              links={navLinks}
-              orientation="vertical"
-              // assume que o Menu aceita estilização via className ou similar;
-              // caso não aceite, o Menu já renderiza vertical responsivo.
-            />
-          </div>
-
-          <div className="w-full flex flex-col items-center gap-3 mt-2">
-            <Link
-              to="/login"
-              onClick={closeMenu}
-              className="flex items-center justify-center w-11/12 max-w-md px-5 py-3 bg-orange-400 text-white font-semibold rounded-full shadow-md hover:bg-orange-500 transition-all gap-2"
-            >
-              <BiUser className="inline text-lg" />
-              <span>Entrar</span>
-            </Link>
-
-            <button
-              aria-label="Carrinho"
-              className="w-11/12 max-w-md flex items-center justify-center gap-2 px-5 py-3 bg-gray-700 text-white rounded-full hover:bg-gray-600 transition-all"
-              onClick={closeMenu}
-            >
-              <FiShoppingCart />
-              Carrinho
-            </button>
-          </div>
+        <Menu links={navLinks} orientation="vertical" onItemClick={closeMenu} />
+        <div className="flex flex-col items-center gap-4 mt-4">
+          <Link
+            to="login"
+            className="flex items-center justify-center w-3/4 px-5 py-2 bg-orange-400 text-white font-semibold rounded-full shadow-md hover:bg-orange-400 transition-all text-center"
+            onClick={closeMenu}
+          ><BiUser className="inline mr-2 text-xl" />
+            Login
+          </Link>
+          <Link
+            to="cadastro"
+            className="w-3/4 px-5 py-2 bg-orange-500 text-white font-semibold rounded-full shadow-md hover:bg-orange-400 transition-all text-center mb-8"
+            onClick={closeMenu}
+          >
+            Cadastro
+          </Link>
         </div>
       </div>
     </header>
