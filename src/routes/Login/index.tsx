@@ -25,6 +25,14 @@ export default function Login() {
           </button>
         </form>
 
+        
+        <p className="text-center text-sm text-gray-600 mt-6">
+                Ainda não tem conta?{" "}
+                <a href="#" className="text-blue-600 hover:underline">
+                    Cadastre-se
+                </a>
+                </p>
+
       </section>
     </main>
   );
