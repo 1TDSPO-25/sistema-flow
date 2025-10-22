@@ -11,7 +11,7 @@ import Noticias from './routes/Noticias/index.tsx'
 import './global.css'
 import Home from './routes/Home/index.tsx';
 import Faq from './routes/Faq/index.tsx';
-
+import Agendamento from './routes/Agendamento/index.tsx';
 
 const router = createBrowserRouter([
     {
@@ -25,6 +25,7 @@ const router = createBrowserRouter([
             {path: "/login", element: <Login/>},
             {path:"/noticias", element:<Noticias/>},
             {path:"/faq", element:<Faq/>}
+            {path:"/agendamento",element:<Agendamento/>}
         ]
     }
 ], { basename: "/sistema-flow" });
