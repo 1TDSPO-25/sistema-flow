@@ -13,12 +13,13 @@ export function LoginForm() {
 
 
   return (
-    <section className="flex min-h-screen">
+    <section className="flex min-h-screen max-[800px]:flex-col">
       <div
-        className=" md:flex w-1/2 bg-cover bg-center"
+        className="w-1/2 bg-cover bg-center max-[800px]:w-full max-[800px]:h-48"
         style={{ backgroundImage: ` url(${ImgCaoGato})` }}
       ></div>
-    <section className="flex w-1/2 bg-white items-center justify-center min-h-screen">
+
+    <section className="flex w-1/2 items-center justify-center bg-white min-h-screen max-[800px]:w-full max-[800px]:min-h-[calc(100vh-12rem)] max-[800px]:py-10">
     <div className="w-3/4 max-w-lg shadow-lg rounded-lg">
           <h2 className="text-3xl font-bold mb-8 text-center text-gray-800">Login</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto"></div>
