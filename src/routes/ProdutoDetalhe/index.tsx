@@ -4,7 +4,6 @@ import { useParams, useNavigate } from "react-router-dom";
 import type { Produto } from "../../types/produto";
 
 const API_URL = "http://localhost:5000";
-const brl = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" });
 
 export default function ProdutoDetalhe() {
   const { id } = useParams<{ id: string }>();
@@ -18,19 +17,19 @@ export default function ProdutoDetalhe() {
       try {
         if (!id) throw new Error("ID ausente");
         const res = await fetch(`${API_URL}/produtos/${id}`);
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        if (!res.ok) throw new Error(`Erro HTTP ${res.status}`);
         const json = await res.json();
         const p: Produto = {
           id: json.id ?? json._id,
           nome: json.nome,
           descricao: json.descricao,
-          preco: Number(json.preco ?? json.valor ?? 0),
+          preco: Number(json.preco ?? 0),
           avatar: json.avatar ?? json.imagem ?? "/placeholder.png",
           qtd: Number(json.qtd ?? 0),
           categoria: json.categoria ?? "Produto",
         };
         setProduto(p);
-      } catch (e: unknown) {
+      } catch (e) {
         setErr(e instanceof Error ? e.message : "Erro ao carregar produto");
       } finally {
         setLoading(false);
@@ -65,8 +64,12 @@ export default function ProdutoDetalhe() {
           </span>
 
           <h1 className="text-4xl font-extrabold text-gray-900">{produto.nome}</h1>
+
           <p className="text-2xl text-blue-600 font-semibold">
-            {Number(produto.preco).toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}
+            {produto.preco.toLocaleString("pt-BR", {
+              style: "currency",
+              currency: "BRL",
+            })}
           </p>
 
           <div className="mt-3">
