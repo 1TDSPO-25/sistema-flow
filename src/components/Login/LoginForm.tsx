@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import ImgCaoGato from '../../assets/cao-gato.jpg';
+
 export function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -11,6 +13,11 @@ export function LoginForm() {
 
 
   return (
+    <section className="flex min-h-screen">
+      <div
+        className=" md:flex w-1/2 bg-cover bg-center"
+        style={{ backgroundImage: ` url(${ImgCaoGato})` }}
+      ></div>
     <section className="py-20 flex flex-col items-center">
     <div className="container mx-70 px-4 text-center">
           <h2 className="text-3xl font-bold mb-3">Login</h2>
@@ -41,5 +48,6 @@ export function LoginForm() {
     </div>
     </div>
     </section>
+  </section>
   );
 }
