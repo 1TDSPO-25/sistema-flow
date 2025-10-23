@@ -38,7 +38,7 @@ export default function Home() {
           <p className="text-lg md:text-xl mb-8">
             Tudo que seu pet precisa em um só lugar. Qualidade, carinho e confiança para sua família.
           </p>
-          <Link to="/produtos" className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors duration-300">
+          <Link to="/produtos" className="bg-orange-500 hover:bg-orange-400 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors duration-300">
             Ver Produtos
           </Link>
         </div>
@@ -71,13 +71,13 @@ export default function Home() {
                 <div className="p-6">
                   <h3 className="text-lg font-bold">{produto.nome}</h3>
                   <p className="text-orange-500 font-semibold mt-2 mb-4">{produto.preco}</p>
-                  <Link to="#" className="w-full block text-center bg-slate-800 text-white py-2 rounded-md hover:bg-orange-500 transition-colors">Ver Detalhes</Link>
+                  <Link to="#" className="w-full block text-center bg-slate-800 text-white py-2 rounded-md hover:bg-orange-400 transition-colors">Ver Detalhes</Link>
                 </div>
               </div>
             ))}
           </div>
           <div className="mt-12">
-            <Link to="/produtos" className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors duration-300">
+            <Link to="/produtos" className="bg-orange-500 hover:bg-orange-400 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors duration-300">
               Ver todos os produtos
             </Link>
           </div>

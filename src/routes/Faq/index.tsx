@@ -48,7 +48,7 @@ export default function Faq() {
       >
         <h1
           id="faq-heading"
-          className="text-center text-2xl font-bold mb-4 text-[#005b96]"
+          className="text-center text-3xl font-bold mb-4 text-slate-800"
         >
           Perguntas Frequentes — Pet Shop
         </h1>
