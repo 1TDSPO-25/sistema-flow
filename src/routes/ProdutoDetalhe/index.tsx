@@ -56,7 +56,7 @@ export default function ProdutoDetalhe() {
 
   function handleAddToCart() {
     if (!produto) return;
-    const cart = readCart(); // sempre um array
+    const cart = readCart();
     const idx = Array.isArray(cart)
       ? cart.findIndex((i: any) => String(i.id) === String(produto.id))
       : -1;
@@ -96,12 +96,13 @@ export default function ProdutoDetalhe() {
         />
 
         <div className="flex flex-col gap-3">
-          <span className="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded-full w-fit">
+          <span className="text-sm bg-orange-100 text-orange-700 px-3 py-1 rounded-full w-fit">
             {produto.categoria}
           </span>
 
           <h1 className="text-4xl font-extrabold text-gray-900">{produto.nome}</h1>
-          <p className="text-2xl text-blue-600 font-semibold">
+
+          <p className="text-2xl text-gray-700 font-bold">
             {brl.format(Number(produto.preco))}
           </p>
 
@@ -118,11 +119,12 @@ export default function ProdutoDetalhe() {
           </div>
 
           <div className="flex items-center gap-3 mt-6">
+          
             <button
               onClick={handleAddToCart}
-              className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-all flex items-center justify-center gap-2"
+              className="bg-amber-800 hover:bg-amber-900 text-white font-semibold py-3 px-6 rounded-lg transition-all"
             >
-              <span>🛒</span> Adicionar ao Carrinho
+              Adicionar ao Carrinho
             </button>
 
             <button
@@ -133,7 +135,7 @@ export default function ProdutoDetalhe() {
             </button>
           </div>
 
-          {added && <p className="text-green-600 mt-3">Adicionado ao carrinho ✔</p>}
+          {added && <p className="text-green-600 mt-3">Adicionado ao carrinho </p>}
         </div>
       </div>
     </section>
