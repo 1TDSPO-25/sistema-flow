@@ -24,12 +24,12 @@ export function Header() {
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <header className="bg-linear-to-r from-gray-800 via-gray-700 to-gray-800 text-white shadow-lg sticky top-0 z-50">
+    <header className="bg-linear-to-r from-gray-900 via-gray-800 to-gray-900 text-white shadow-lg sticky top-0 z-50">
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
         <Link
           to="/"
-          className="text-3xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-orange-400 hover:opacity-90 transition-opacity"
+          className="text-3xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-orange-500 hover:opacity-90 transition-opacity"
         >
           ColocaAlogoGrazi
         </Link>
@@ -49,7 +49,7 @@ export function Header() {
           {/* Botões de Login e Cadastro */}
           <Link
             to="/login"
-            className="flex items-center px-5 py-2 bg-orange-400 text-white font-semibold rounded-full shadow-md hover:bg-orange-500 transition-all"
+            className="flex items-center px-5 py-2 bg-orange-500 text-white font-semibold rounded-full shadow-md hover:bg-orange-400 transition-all"
           ><BiUser className="inline mr-2 text-xl" />
             Login
           </Link>
@@ -83,7 +83,7 @@ export function Header() {
         <div className="flex flex-col items-center gap-4 mt-4">
           <Link
             to="/login"
-            className="flex items-center justify-center w-3/4 px-5 py-2 bg-orange-400 text-white font-semibold rounded-full shadow-md hover:bg-orange-400 transition-all text-center"
+            className="flex items-center justify-center w-3/4 px-5 py-2 bg-orange-500 text-white font-semibold rounded-full shadow-md hover:bg-orange-400 transition-all text-center"
             onClick={closeMenu}
           ><BiUser className="inline mr-2 text-xl" />
             Login
