@@ -76,51 +76,32 @@ export default function Home() {
           <h2 className="text-3xl font-bold mb-4">Produtos em Destaque</h2>
           <p className="max-w-2xl mx-auto mb-12 text-slate-600">Uma seleção especial dos itens favoritos dos nossos clientes de quatro patas.</p>
 
-          <div>
+          <div className="relative w-full max-w-5xl mx-auto">
 
-            <button onClick={() => setCurrentIndex((prev) => (prev === 0 ? produtosDestaque.length - 1 : prev - 1))}>◀</button>
+            <button onClick={() => setCurrentIndex((prev) => (prev === 0 ? produtosDestaque.length - 1 : prev - 1))} className="absolute left-0 top-1/2 transform -translate-y-1/2 text-3xl bg-white/70 rounded-full px-2 py-1 shadow hover:bg-white transition">◀</button>
             
-            <div>
-              <div>
-                <img src={produtosDestaque[currentIndex].imagem} alt={produtosDestaque[currentIndex].nome}/>
-                <div>
-                  <h3>{produtosDestaque[currentIndex].nome}</h3>
-                  <p>{produtosDestaque[currentIndex].preco}</p>
-                  <Link to="#">Ver Detalhes</Link>
+            <div className="overflow-hidden rounded-xl shadow-md flex justify-center">
+              <div className="transition-all duration-700">
+                <img src={produtosDestaque[currentIndex].imagem} alt={produtosDestaque[currentIndex].nome} className="w-[300px] h-64 object-cover"/>
+                <div className="p-6 bg-white">
+                  <h3 className="text-lg font-bold">{produtosDestaque[currentIndex].nome}</h3>
+                  <p className="text-orange-500 font-semibold mt-2 mb-4">{produtosDestaque[currentIndex].preco}</p>
+                  <Link to="#" className="w-full block text-center bg-slate-800 text-white py-2 rounded-md hover:bg-orange-500 transition-colors">Ver Detalhes</Link>
                 </div>
               </div>
             </div>
             
-            <button onClick={() => setCurrentIndex((prev) => (prev === produtosDestaque.length - 1 ? 0 : prev + 1))}>▶</button>
+            <button onClick={() => setCurrentIndex((prev) => (prev === produtosDestaque.length - 1 ? 0 : prev + 1))} className="absolute right-0 top-1/2 transform -translate-y-1/2 text-3xl bg-white/70 rounded-full px-2 py-1 shadow hover:bg-white transition">▶</button>
 
-            <div>
+            <div className="flex justify-center gap-2 mt-4">
               {produtosDestaque.map((_, index) => (
-                <button key={index} onClick={() => setCurrentIndex(index)}></button>
+                <button key={index} onClick={() => setCurrentIndex(index)} className={`w-3 h-3 rounded-full transition ${index === currentIndex ? 'bg-gray-800' : 'bg-gray-400'}`}></button>
               ))}
             </div>
           </div>
 
-          <div>
-            <Link to="/produtos">Ver todos os produtos</Link>
-          </div>
-
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {produtosDestaque.map((produto) => (
-              <div key={produto.nome} className="bg-white rounded-lg shadow-md overflow-hidden group">
-                <img src={produto.imagem} alt={produto.nome} className="w-full h-48 object-cover group-hover:scale-105 transition-transform" />
-                <div className="p-6">
-                  <h3 className="text-lg font-bold">{produto.nome}</h3>
-                  <p className="text-orange-500 font-semibold mt-2 mb-4">{produto.preco}</p>
-                  <Link to="#" className="w-full block text-center bg-slate-800 text-white py-2 rounded-md hover:bg-orange-500 transition-colors">Ver Detalhes</Link>
-                </div>
-              </div>
-            ))}
-          </div>
           <div className="mt-12">
-            <Link to="/produtos" className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors duration-300">
-              Ver todos os produtos
-            </Link>
+            <Link to="/produtos" className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors duration-300">Ver todos os produtos</Link>
           </div>
         </div>
       </section>
