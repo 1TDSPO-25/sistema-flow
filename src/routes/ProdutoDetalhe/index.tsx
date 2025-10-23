@@ -5,11 +5,11 @@ import type { Produto } from "../../types/produto";
 const API_URL = "http://localhost:5000";
 const brl = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" });
 
-function readCart() {
+function readCart(): any[] {
   try {
     const raw = localStorage.getItem("cart");
-    if (!raw) return [];
-    return JSON.parse(raw);
+    const parsed = JSON.parse(raw || "[]");
+    return Array.isArray(parsed) ? parsed : [];
   } catch {
     return [];
   }
@@ -54,26 +54,34 @@ export default function ProdutoDetalhe() {
     })();
   }, [id]);
 
-  if (loading) return <p className="text-center mt-10">Carregando...</p>;
-  if (err) return <p className="text-center text-red-600 mt-10">{err}</p>;
-  if (!produto) return <p className="text-center mt-10">Produto não encontrado.</p>;
-
   function handleAddToCart() {
-    const cart = readCart();
-    const idx = cart.findIndex((i: any) => String(i.id) === String(produto.id));
+    if (!produto) return;
+    const cart = readCart(); // sempre um array
+    const idx = Array.isArray(cart)
+      ? cart.findIndex((i: any) => String(i.id) === String(produto.id))
+      : -1;
+
     if (idx >= 0) {
       cart[idx].quantidade = (cart[idx].quantidade || 1) + 1;
     } else {
       cart.push({ ...produto, quantidade: 1 });
     }
+
     writeCart(cart);
     setAdded(true);
     setTimeout(() => setAdded(false), 1200);
   }
 
+  if (loading) return <p className="text-center mt-10">Carregando...</p>;
+  if (err) return <p className="text-center text-red-600 mt-10">{err}</p>;
+  if (!produto) return <p className="text-center mt-10">Produto não encontrado.</p>;
+
   return (
     <section className="max-w-6xl mx-auto px-6 py-10">
-      <button onClick={() => navigate(-1)} className="text-[#005b96] hover:underline text-sm mb-6 inline-flex items-center">
+      <button
+        onClick={() => navigate(-1)}
+        className="text-[#005b96] hover:underline text-sm mb-6 inline-flex items-center"
+      >
         ← Voltar para Produtos
       </button>
 
@@ -82,7 +90,9 @@ export default function ProdutoDetalhe() {
           src={produto.avatar || "/placeholder.png"}
           alt={produto.nome}
           className="w-full rounded-2xl shadow-md object-cover max-h-[520px]"
-          onError={(e) => { (e.target as HTMLImageElement).src = "/placeholder.png"; }}
+          onError={(e) => {
+            (e.target as HTMLImageElement).src = "/placeholder.png";
+          }}
         />
 
         <div className="flex flex-col gap-3">
