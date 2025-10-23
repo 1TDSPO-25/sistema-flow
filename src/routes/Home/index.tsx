@@ -6,6 +6,7 @@ import ImgRacao from '../../assets/racao-premium.png';
 import ImgBrinquedo from '../../assets/brinquedo.jpg';
 import ImgArranhador from '../../assets/arranhador-gato.jpg';
 import { ListaProdutos } from '../../components/ListaProdutos/ListaProdutos';
+import { useEffect, useState } from 'react';
 
 const servicos = [
   { nome: 'Banho & Tosa', icone: <FaPaw size={32} />, descricao: 'Higiene e estilo para deixar seu pet impecável e cheiroso.' },
@@ -26,6 +27,15 @@ const depoimentos = [
 ];
 
 export default function Home() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % produtosDestaque.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <main className="bg-slate-50 text-slate-800">
       <section
@@ -65,6 +75,36 @@ export default function Home() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4">Produtos em Destaque</h2>
           <p className="max-w-2xl mx-auto mb-12 text-slate-600">Uma seleção especial dos itens favoritos dos nossos clientes de quatro patas.</p>
+
+          <div>
+
+            <button onClick={() => setCurrentIndex((prev) => (prev === 0 ? produtosDestaque.length - 1 : prev - 1))}>◀</button>
+            
+            <div>
+              <div>
+                <img src={produtosDestaque[currentIndex].imagem} alt={produtosDestaque[currentIndex].nome}/>
+                <div>
+                  <h3>{produtosDestaque[currentIndex].nome}</h3>
+                  <p>{produtosDestaque[currentIndex].preco}</p>
+                  <Link to="#">Ver Detalhes</Link>
+                </div>
+              </div>
+            </div>
+            
+            <button onClick={() => setCurrentIndex((prev) => (prev === produtosDestaque.length - 1 ? 0 : prev + 1))}>▶</button>
+
+            <div>
+              {produtosDestaque.map((_, index) => (
+                <button key={index} onClick={() => setCurrentIndex(index)}></button>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <Link to="/produtos">Ver todos os produtos</Link>
+          </div>
+
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {produtosDestaque.map((produto) => (
               <div key={produto.nome} className="bg-white rounded-lg shadow-md overflow-hidden group">
