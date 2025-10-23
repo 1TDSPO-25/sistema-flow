@@ -1,7 +1,10 @@
+import { RegisterForm } from "../../components/Cadastro/Cadastro";
+
 export default function Cadastro() {
     return(
         <main>
-            Cadastro
+            <h1>Cadastro de Usuário</h1> 
+            <RegisterForm />
         </main>
     )
 }
