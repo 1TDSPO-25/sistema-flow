@@ -1,5 +1,5 @@
 import Error from './routes/Error/index.tsx';
-import React from 'react';
+import React, { Suspense } from 'react';
 import Produtos from './routes/Produtos/index.tsx';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
@@ -11,7 +11,11 @@ import Noticias from './routes/Noticias/index.tsx'
 import './global.css'
 import Home from './routes/Home/index.tsx';
 import Faq from './routes/Faq/index.tsx';
+import Agendamento from './routes/Agendamento/index.tsx';
+import ProdutoDetalhe from "./routes/ProdutoDetalhe/index.tsx";
 
+
+import CartPage from "./routes/Cart/index.tsx";
 
 const router = createBrowserRouter([
     {
@@ -24,13 +28,18 @@ const router = createBrowserRouter([
             {path: "/cadastro", element: <Cadastro/>},
             {path: "/login", element: <Login/>},
             {path:"/noticias", element:<Noticias/>},
-            {path:"/faq", element:<Faq/>}
+            {path: "/produto/:id", element: <ProdutoDetalhe/>},
+            {path:"/faq", element:<Faq/>},
+            {path:"/agendamento",element:<Agendamento/>},
+            {path:"/carrinho", element: <CartPage/>} 
         ]
     }
-], { basename: "/sistema-flow" });
+], { basename: "/sistema-flow/" });
 
 createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Suspense fallback={<div>Loading</div>}>
+      <RouterProvider router={router} />
+    </Suspense>
   </React.StrictMode>,
 )

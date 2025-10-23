@@ -39,7 +39,7 @@ export function CardWeather() {
   }, []);
 
   return (
-    <div className="text-sm text-gray-100 bg-gray-700 px-3 py-1 rounded-lg weather-card">
+    <div className="flex items-center gap-3 bg-gray-700 text-white rounded-2xl px-4 py-2 text-sm shadow-md border border-gray-600 select-none">
       {loading && <span>Carregando...</span>}
       {error && <span style={{ color: "red" }}>{error}</span>}
       {data && (

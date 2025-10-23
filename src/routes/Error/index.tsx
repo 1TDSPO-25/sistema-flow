@@ -1,14 +1,12 @@
-import { Link } from "react-router-dom";
+import cachorrinhoError from '../../assets/cachorro.png';
 
 export default function Error(){
     return(
-        <main>
-            <div className="bg-linear-to-r from-gray-800 via-gray-700 to-gray-800 text-white shadow-lg rounded-3xl p-5 w-200 mx-auto text-center mt-50 mb-10">
-                <h1 className="border-b-1 border-orange-400 text-3xl p-3 mb-4">Error 404 - Página não encontrada</h1>
-                <h3 className="text-xl">A página que você está tentando acessar não foi encontrada!</h3>
-            </div>
-            <div className="mx-auto p-2 w-60 text-center bg-orange-500 text-white font-semibold rounded-full shadow-md hover:bg-orange-400 transition-all">
-                <Link to="/" className="text-white">Voltar ao início</Link>
+        <main className='bg-[#e4c5a1] w-full h-[100vh] flex items-center justify-center'>
+            <div className='w-[80%] flex flex-col items-center justify-center'>
+                <img src={cachorrinhoError} alt="imagem de cachorro page not found" className='w-[25rem]'/>
+                <h1 className='text-[3rem] font-bold text-[#f52323]'>Page Not Found</h1>
+                <h2 className='text-[2rem] font-bold text-[#f52323]'>404</h2>
             </div>
         </main>
     );
