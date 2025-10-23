@@ -45,6 +45,3 @@
 
 ---
 ## TEAM FREE
-
-Time Lucca-Rafa
-
