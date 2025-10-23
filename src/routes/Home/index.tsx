@@ -78,7 +78,7 @@ export default function Home() {
 
           <div className="relative w-full max-w-5xl mx-auto">
 
-            <button onClick={() => setCurrentIndex((prev) => (prev === 0 ? produtosDestaque.length - 1 : prev - 1))} className="absolute left-0 top-1/2 transform -translate-y-1/2 text-3xl bg-white/70 rounded-full px-2 py-1 shadow hover:bg-white transition">◀</button>
+            <button onClick={() => setCurrentIndex((prev) => (prev === 0 ? produtosDestaque.length - 1 : prev - 1))} className="cursor-pointer absolute left-0 top-1/2 transform -translate-y-1/2 text-3xl bg-gray-800 rounded-full px-2 py-1 shadow hover:bg-orange-500 transition">◀</button>
             
             <div className="overflow-hidden rounded-xl shadow-md flex justify-center">
               <div className="transition-all duration-700">
@@ -91,7 +91,7 @@ export default function Home() {
               </div>
             </div>
             
-            <button onClick={() => setCurrentIndex((prev) => (prev === produtosDestaque.length - 1 ? 0 : prev + 1))} className="absolute right-0 top-1/2 transform -translate-y-1/2 text-3xl bg-white/70 rounded-full px-2 py-1 shadow hover:bg-white transition">▶</button>
+            <button onClick={() => setCurrentIndex((prev) => (prev === produtosDestaque.length - 1 ? 0 : prev + 1))} className="cursor-pointer absolute right-0 top-1/2 transform -translate-y-1/2 text-3xl bg-gray-800 rounded-full px-2 py-1 shadow hover:bg-orange-500 transition">▶</button>
 
             <div className="flex justify-center gap-2 mt-4">
               {produtosDestaque.map((_, index) => (
