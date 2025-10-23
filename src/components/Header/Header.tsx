@@ -1,3 +1,4 @@
+// src/components/Header/index.tsx
 import { useEffect, useState } from "react";
 import { FiMenu, FiX, FiShoppingCart } from "react-icons/fi";
 import { Menu } from "../Menu/Menu";
@@ -48,17 +49,15 @@ export function Header() {
           <CardWeather />
           <Menu links={navLinks} orientation="horizontal" />
           {/* Ícone de Carrinho */}
-          <button
-            aria-label="Carrinho"
-            className="text-2xl hover:text-orange-400 transition-colors"
-          >
+          <button aria-label="Carrinho" className="text-2xl hover:text-orange-400 transition-colors">
             <FiShoppingCart />
           </button>
           {/* Botões de Login e Cadastro */}
           <Link
             to="login"
             className="flex items-center px-5 py-2 bg-orange-400 text-white font-semibold rounded-full shadow-md hover:bg-orange-500 transition-all"
-          ><BiUser className="inline mr-2 text-xl" />
+          >
+            <BiUser className="inline mr-2 text-xl" />
             Login
           </Link>
           <Link
@@ -94,7 +93,8 @@ export function Header() {
             to="login"
             className="flex items-center justify-center w-3/4 px-5 py-2 bg-orange-400 text-white font-semibold rounded-full shadow-md hover:bg-orange-400 transition-all text-center"
             onClick={closeMenu}
-          ><BiUser className="inline mr-2 text-xl" />
+          >
+            <BiUser className="inline mr-2 text-xl" />
             Login
           </Link>
           <Link
