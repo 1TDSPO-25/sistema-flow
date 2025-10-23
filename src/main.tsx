@@ -14,6 +14,9 @@ import Faq from './routes/Faq/index.tsx';
 import Agendamento from './routes/Agendamento/index.tsx';
 import ProdutoDetalhe from "./routes/ProdutoDetalhe/index.tsx";
 
+
+import CartPage from "./routes/Cart/index.tsx";
+
 const router = createBrowserRouter([
     {
         path: "/",
@@ -27,7 +30,8 @@ const router = createBrowserRouter([
             {path:"/noticias", element:<Noticias/>},
             {path: "/produto/:id", element: <ProdutoDetalhe/>},
             {path:"/faq", element:<Faq/>},
-            {path:"/agendamento",element:<Agendamento/>}
+            {path:"/agendamento",element:<Agendamento/>},
+            {path:"/carrinho", element: <CartPage/>} 
         ]
     }
 ], { basename: "/sistema-flow/" });
