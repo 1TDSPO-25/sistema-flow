@@ -1,4 +1,3 @@
-// src/routes/ProdutoDetalhe/index.tsx
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import type { Produto } from "../../types/produto";
