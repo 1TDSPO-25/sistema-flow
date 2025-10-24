@@ -1,113 +1,97 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import type { Produto } from "../../types/produto";
-
-type CartItem = {
-  id: number | string;
-  nome: string;
-  preco: number;
-  qtd: number;
-};
-
+ 
 const API_URL = "http://localhost:5000";
-
-function readCart(): CartItem[] {
-  try {
-    const data = localStorage.getItem("cart");
-    if (!data) return [];
-    return JSON.parse(data);
-  } catch {
-    return [];
-  }
-}
-
-function writeCart(cart: CartItem[]) {
-  try {
-    localStorage.setItem("cart", JSON.stringify(cart));
-  } catch (e) {
-    console.error("Erro ao salvar no carrinho:", e);
-  }
-}
-
-function addToCart(produto: CartItem) {
-  const cart = readCart();
-  const idx = cart.findIndex((i) => String(i.id) === String(produto.id));
-  if (idx >= 0) {
-    cart[idx].qtd += 1;
-  } else {
-    cart.push({ ...produto, qtd: 1 });
-  }
-  writeCart(cart);
-  return cart;
-}
-
+ 
 export default function ProdutoDetalhe() {
   const { id } = useParams<{ id: string }>();
-  const navigate = useNavigate();
   const [produto, setProduto] = useState<Produto | null>(null);
   const [loading, setLoading] = useState(true);
-  const [err, setErr] = useState("");
-
+  const [err, setErr] = useState<string | null>(null);
+  const navigate = useNavigate();
+ 
   useEffect(() => {
     (async () => {
       try {
         if (!id) throw new Error("ID ausente");
         const res = await fetch(`${API_URL}/produtos/${id}`);
-        if (!res.ok) throw new Error("Erro ao buscar produto");
+        if (!res.ok) throw new Error(`Erro HTTP ${res.status}`);
         const json = await res.json();
-        setProduto({
+        const p: Produto = {
           id: json.id ?? json._id,
           nome: json.nome,
           descricao: json.descricao,
-          preco: Number(json.preco ?? json.valor ?? 0),
+          preco: Number(json.preco ?? 0),
           avatar: json.avatar ?? json.imagem ?? "/placeholder.png",
-        });
+          qtd: Number(json.qtd ?? 0),
+          categoria: json.categoria ?? "Produto",
+        };
+        setProduto(p);
       } catch (e) {
-        if (e instanceof Error) setErr(e.message);
-        else setErr("Erro ao carregar");
+        setErr(e instanceof Error ? e.message : "Erro ao carregar produto");
       } finally {
         setLoading(false);
       }
     })();
   }, [id]);
-
-  const handleAdd = () => {
-    if (!produto) return;
-    addToCart({
-      id: produto.id,
-      nome: produto.nome,
-      preco: produto.preco,
-      qtd: 1,
-    });
-    navigate("/carrinho");
-  };
-
-  if (loading) return <p>Carregando...</p>;
-  if (err) return <p>{err}</p>;
-  if (!produto) return <p>Produto não encontrado.</p>;
-
+ 
+  if (loading) return <p className="text-center mt-10">Carregando...</p>;
+  if (err) return <p className="text-center text-red-600 mt-10">{err}</p>;
+  if (!produto) return <p className="text-center mt-10">Produto não encontrado.</p>;
+ 
   return (
-    <div className="p-6 flex flex-col gap-6 max-w-xl mx-auto">
-      <img
-        src={produto.avatar}
-        alt={produto.nome}
-        className="w-full rounded-md shadow"
-      />
-
-      <h1 className="text-2xl font-semibold">{produto.nome}</h1>
-
-      <p className="text-gray-600">{produto.descricao}</p>
-
-      <p className="text-xl font-bold text-gray-500">
-        R$ {produto.preco.toFixed(2)}
-      </p>
-
+    <section className="max-w-6xl mx-auto px-6 py-10">
       <button
-        onClick={handleAdd}
-        className="bg-[#6b4f2a] text-white px-4 py-2 rounded hover:opacity-90"
+        onClick={() => navigate(-1)}
+        className="text-[#005b96] hover:underline text-sm mb-6 inline-flex items-center"
       >
-        Adicionar ao Carrinho
+        ← Voltar para Produtos
       </button>
-    </div>
+ 
+      <div className="grid md:grid-cols-2 gap-10 items-start">
+        <img
+          src={produto.avatar}
+          alt={produto.nome}
+          className="w-full rounded-2xl shadow-md object-cover max-h-[520px]"
+          onError={(e) => { (e.target as HTMLImageElement).src = "/placeholder.png"; }}
+        />
+ 
+        <div className="flex flex-col gap-3">
+          <span className="text-sm bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full w-fit">
+            {produto.categoria}
+          </span>
+ 
+          <h1 className="text-4xl font-extrabold text-gray-900">{produto.nome}</h1>
+ 
+          <p className="text-2xl text-gray-600 font-semibold">
+            {produto.preco.toLocaleString("pt-BR", {
+              style: "currency",
+              currency: "BRL",
+            })}
+          </p>
+ 
+          <div className="mt-3">
+            <p className="text-gray-600 text-sm mb-1">Disponibilidade:</p>
+            <span className="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm font-medium">
+              {produto.qtd ?? 0} em estoque
+            </span>
+          </div>
+ 
+          <button
+            className="mt-5 bg-orange-600 hover:bg-orange-700 text-white font-semibold py-2 px-4 rounded-lg w-fit"
+            onClick={() => alert(`Adicionado ${produto.nome} ao carrinho!`)}
+          >
+            Adicionar ao carrinho
+          </button>
+ 
+          <div className="mt-5">
+            <h2 className="text-lg font-semibold mb-1">Descrição</h2>
+            <p className="text-gray-700 leading-relaxed">{produto.descricao}</p>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
+ 
