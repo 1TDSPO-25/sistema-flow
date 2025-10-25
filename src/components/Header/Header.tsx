@@ -6,6 +6,7 @@ import { CardWeather } from "../CardWeather/CardWeather";
 import { CardPrice } from "../CardPrice/CardPrice";
 import { Link } from "react-router-dom";
 import { BiUser } from "react-icons/bi";
+import { useCarrinho } from '../CartContext/CartContext.tsx';
 
 interface NavLink {
   to: string;
@@ -21,6 +22,16 @@ const navLinks: NavLink[] = [
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { quantidadeTotal, addedTicker } = useCarrinho();
+  const [animate, setAnimate] = useState(false);
+
+  useEffect(() => {
+    if (addedTicker > 0) {
+      setAnimate(true);
+      const timeout = setTimeout(() => setAnimate(false), 600);
+      return () => clearTimeout(timeout);
+    }
+  }, [addedTicker]);
 
   useEffect(() => {
     // bloqueia scroll do body enquanto menu mobile está aberto
@@ -49,8 +60,17 @@ export function Header() {
           <CardWeather />
           <Menu links={navLinks} orientation="horizontal" />
           {/* Ícone de Carrinho */}
-          <button aria-label="Carrinho" className="text-2xl hover:text-orange-400 transition-colors">
-            <FiShoppingCart />
+          {/* Ícone de Carrinho com animação */}
+          <button
+            aria-label="Carrinho"
+            className={`relative text-2xl transition-transform duration-300 ${
+                animate ? 'scale-125 text-orange-400' : 'hover:text-orange-400'
+            }`}>
+          <FiShoppingCart />
+          {quantidadeTotal > 0 && (
+            <span className="absolute -top-2 -right-2 bg-orange-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+              {quantidadeTotal}
+            </span>)}
           </button>
           {/* Botões de Login e Cadastro */}
           <Link
