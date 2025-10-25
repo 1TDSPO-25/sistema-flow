@@ -29,7 +29,7 @@ export default function FaqItem({ index, question, answer }: FaqItemProps) {
       {isOpen && (
         <p
           id={contentId}
-          className="mt-3 text-gray-700 leading-relaxed transition-all duration-300"
+          className="mt-3 text-slate-600 leading-relaxed transition-all duration-300"
         >
           {answer}
         </p>
