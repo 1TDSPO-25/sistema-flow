@@ -16,6 +16,7 @@ import ProdutoDetalhe from "./routes/ProdutoDetalhe/index.tsx";
 
 
 import CartPage from "./routes/Cart/index.tsx";
+import { CarrinhoProvider } from './components/CartContext/CartContext.tsx';
 
 const router = createBrowserRouter([
     {
@@ -39,7 +40,9 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <Suspense fallback={<div>Loading</div>}>
-      <RouterProvider router={router} />
+      <CarrinhoProvider>
+        <RouterProvider router={router} />
+      </CarrinhoProvider>
     </Suspense>
   </React.StrictMode>,
 )
