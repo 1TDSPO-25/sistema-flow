@@ -6,6 +6,9 @@ export function CardProdutos({ produto }: { produto: Produto }) {
   return (
     <li
       style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
         border: "1px solid #ddd",
         borderRadius: 12,
         padding: 12
@@ -23,6 +26,7 @@ export function CardProdutos({ produto }: { produto: Produto }) {
         }}
         loading="lazy"
       />
+      <div>
       <h3 style={{ margin: "4px 0" }}>{produto.nome}</h3>
       <p style={{ fontSize: 14, minHeight: 40 }}>{produto.descricao}</p>
       <div>    
@@ -35,6 +39,7 @@ export function CardProdutos({ produto }: { produto: Produto }) {
           >
             button
         </span>
+      </div>
       </div>
     </li>
   );
