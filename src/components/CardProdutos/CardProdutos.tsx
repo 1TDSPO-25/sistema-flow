@@ -30,8 +30,10 @@ export function CardProdutos({ produto }: { produto: Produto }) {
           <p style={{ fontWeight: 600 }}>{brl.format(Number(produto.preco))}</p>
           <p style={{ fontSize: 12, color: "#555" }}>Estoque: {produto.qtd}</p>
         </span>
-        <span style={{float: "inline-end"}}>
-          button
+        <span style={{float: "inline-end"}}
+          className="flex items-center px-5 py-2 bg-orange-400 text-white font-semibold rounded-full shadow-md hover:bg-orange-500 transition-all"
+          >
+            button
         </span>
       </div>
     </li>
