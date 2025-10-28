@@ -48,7 +48,6 @@ export default function AddToCart({ produto }: { produto: Produto }) {
     setShowModal(false);
     setQuantidade(1);
     setErroEstoque("");
-    alert("Produto adicionado ao carrinho!");
   };
 
   return (
