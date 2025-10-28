@@ -61,29 +61,33 @@ export function Header() {
           <Menu links={navLinks} orientation="horizontal" />
           {/* Ícone de Carrinho */}
           {/* Ícone de Carrinho com animação */}
-          <button
-  aria-label="Carrinho"
-  className={`relative text-2xl transition-transform duration-300 ${
-    animate ? 'scale-125 text-orange-400' : 'hover:text-orange-400'
-  }`}
->
-  <FiShoppingCart />
 
-  {quantidadeTotal > 0 && (
-    <span
-      className="
-        absolute -top-2 -right-2
-        bg-orange-500 text-white
-        text-xs font-bold
-        rounded-full w-5 h-5
-        flex items-center justify-center
-        shadow-md
-      "
-    >
-      {quantidadeTotal}
-    </span>
-  )}
-</button>
+          <Link to="carrinho">
+            <button
+              aria-label="Carrinho"
+              className={`relative text-2xl transition-transform duration-300 ${animate ? 'scale-125 text-orange-400' : 'hover:text-orange-400'
+                }`}
+            >
+              <FiShoppingCart />
+
+              {quantidadeTotal > 0 && (
+                <span
+                  className="
+          absolute -top-2 -right-2
+          bg-orange-500 text-white
+          text-xs font-bold
+          rounded-full w-5 h-5
+          flex items-center justify-center
+          shadow-md
+        "
+                >
+                  {quantidadeTotal}
+                </span>
+              )}
+            </button>
+          </Link>
+
+
           {/* Botões de Login e Cadastro */}
           <Link
             to="login"
@@ -115,9 +119,8 @@ export function Header() {
 
       {/* Mobile menu */}
       <div
-        className={`md:hidden overflow-hidden transition-[max-height] duration-300 ease-in-out bg-gray-800/90 ${
-          isMenuOpen ? "max-h-[600px] border-t border-gray-700" : "max-h-0"
-        }`}
+        className={`md:hidden overflow-hidden transition-[max-height] duration-300 ease-in-out bg-gray-800/90 ${isMenuOpen ? "max-h-[600px] border-t border-gray-700" : "max-h-0"
+          }`}
       >
         <Menu links={navLinks} orientation="vertical" onItemClick={closeMenu} />
         <div className="flex flex-col items-center gap-4 mt-4">
