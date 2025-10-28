@@ -7,6 +7,7 @@ import { CardPrice } from "../CardPrice/CardPrice";
 import { Link } from "react-router-dom";
 import { BiUser } from "react-icons/bi";
 import { useCarrinho } from '../CartContext/CartContext.tsx';
+import logo from '../../assets/logo.png';
 
 interface NavLink {
   to: string;
@@ -47,12 +48,15 @@ export function Header() {
     <header className="bg-linear-to-r from-gray-800 via-gray-700 to-gray-800 text-white shadow-lg sticky top-0 z-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-3 md:py-4 flex items-center justify-between flex-wrap gap-3">
         {/* Logo */}
+
+
         <Link
-          to=""
-          className="text-3xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-orange-400 hover:opacity-90 transition-opacity"
-        >
-          ColocaAlogoGrazi
+          to="/"
+          className="text-3xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-orange-400 hover:opacity-90 transition-opacity">
+          <img src={logo} alt="logo Petdev" width={122} />
         </Link>
+
+
 
         {/* Menu Desktop */}
         <div className="hidden md:flex items-center gap-8">
@@ -61,29 +65,33 @@ export function Header() {
           <Menu links={navLinks} orientation="horizontal" />
           {/* Ícone de Carrinho */}
           {/* Ícone de Carrinho com animação */}
-          <button
-  aria-label="Carrinho"
-  className={`relative text-2xl transition-transform duration-300 ${
-    animate ? 'scale-125 text-orange-400' : 'hover:text-orange-400'
-  }`}
->
-  <FiShoppingCart />
 
-  {quantidadeTotal > 0 && (
-    <span
-      className="
-        absolute -top-2 -right-2
-        bg-orange-500 text-white
-        text-xs font-bold
-        rounded-full w-5 h-5
-        flex items-center justify-center
-        shadow-md
-      "
-    >
-      {quantidadeTotal}
-    </span>
-  )}
-</button>
+          <Link to="carrinho">
+            <button
+              aria-label="Carrinho"
+              className={`relative text-2xl transition-transform duration-300 ${animate ? 'scale-125 text-orange-400' : 'hover:text-orange-400'
+                }`}
+            >
+              <FiShoppingCart />
+
+              {quantidadeTotal > 0 && (
+                <span
+                  className="
+          absolute -top-2 -right-2
+          bg-orange-500 text-white
+          text-xs font-bold
+          rounded-full w-5 h-5
+          flex items-center justify-center
+          shadow-md
+        "
+                >
+                  {quantidadeTotal}
+                </span>
+              )}
+            </button>
+          </Link>
+
+
           {/* Botões de Login e Cadastro */}
           <Link
             to="login"
@@ -115,9 +123,8 @@ export function Header() {
 
       {/* Mobile menu */}
       <div
-        className={`md:hidden overflow-hidden transition-[max-height] duration-300 ease-in-out bg-gray-800/90 ${
-          isMenuOpen ? "max-h-[600px] border-t border-gray-700" : "max-h-0"
-        }`}
+        className={`md:hidden overflow-hidden transition-[max-height] duration-300 ease-in-out bg-gray-800/90 ${isMenuOpen ? "max-h-[600px] border-t border-gray-700" : "max-h-0"
+          }`}
       >
         <Menu links={navLinks} orientation="vertical" onItemClick={closeMenu} />
         <div className="flex flex-col items-center gap-4 mt-4">
