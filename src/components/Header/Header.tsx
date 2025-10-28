@@ -7,6 +7,7 @@ import { CardPrice } from "../CardPrice/CardPrice";
 import { Link } from "react-router-dom";
 import { BiUser } from "react-icons/bi";
 import { useCarrinho } from '../CartContext/CartContext.tsx';
+import logo from '../../assets/logo.png';
 
 interface NavLink {
   to: string;
@@ -47,12 +48,15 @@ export function Header() {
     <header className="bg-linear-to-r from-gray-800 via-gray-700 to-gray-800 text-white shadow-lg sticky top-0 z-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-3 md:py-4 flex items-center justify-between flex-wrap gap-3">
         {/* Logo */}
+
+
         <Link
-          to=""
-          className="text-3xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-orange-400 hover:opacity-90 transition-opacity"
-        >
-          ColocaAlogoGrazi
+          to="/"
+          className="text-3xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-orange-400 hover:opacity-90 transition-opacity">
+          <img src={logo} alt="logo Petdev" width={122} />
         </Link>
+
+
 
         {/* Menu Desktop */}
         <div className="hidden md:flex items-center gap-8">
