@@ -12,18 +12,20 @@ export default function AddToCart({ produto }: { produto: Produto }) {
     const raw = localStorage.getItem("cart");
     let cart: (Produto & { quantidade: number })[] = [];
 
-  if (raw) {
-    try {
-      const parsed = JSON.parse(raw);
-      if (Array.isArray(parsed)) {
-        cart = parsed;
+    if (raw) {
+      try {
+        const parsed = JSON.parse(raw);
+        if (Array.isArray(parsed)) {
+          cart = parsed;
+        }
+      } catch {
+        // Carrinho inicia vazio
       }
-    } catch {
-      // Carrinho inicia vazio
     }
-  }
 
-    const index = cart.findIndex((item) => String(item.id) === String(produto.id));
+    const index = cart.findIndex(
+      (item) => String(item.id) === String(produto.id)
+    );
     const quantidadeAtual = index >= 0 ? cart[index].quantidade : 0;
 
     if (quantidade <= 0) {
@@ -70,14 +72,21 @@ export default function AddToCart({ produto }: { produto: Produto }) {
                 max={estoqueDisponivel}
                 value={quantidade}
                 onChange={(e) => {
-                  setQuantidade(Number(e.target.value));
+                  const valorDigitado = Number(e.target.value);
+                  const valorCorrigido = Math.min(
+                    valorDigitado,
+                    estoqueDisponivel
+                  );
+                  setQuantidade(valorCorrigido);
                   setErroEstoque("");
                 }}
                 className="w-full mt-1 p-2 border rounded"
               />
             </label>
             <p className="mb-2">Estoque disponível: {estoqueDisponivel}</p>
-            <p className="mb-4">Preço total: R$ {(produto.preco * quantidade).toFixed(2)}</p>
+            <p className="mb-4">
+              Preço total: R$ {(produto.preco * quantidade).toFixed(2)}
+            </p>
             {erroEstoque && (
               <p className="text-red-500 text-sm mb-2">{erroEstoque}</p>
             )}
