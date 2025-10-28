@@ -61,7 +61,8 @@ export function Header() {
           <Menu links={navLinks} orientation="horizontal" />
           {/* Ícone de Carrinho */}
           {/* Ícone de Carrinho com animação */}
-          <button
+          
+          <Link to="carrinho"
   aria-label="Carrinho"
   className={`relative text-2xl transition-transform duration-300 ${
     animate ? 'scale-125 text-orange-400' : 'hover:text-orange-400'
@@ -83,7 +84,7 @@ export function Header() {
       {quantidadeTotal}
     </span>
   )}
-</button>
+</Link>
           {/* Botões de Login e Cadastro */}
           <Link
             to="login"
