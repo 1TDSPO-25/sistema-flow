@@ -66,7 +66,7 @@ export default function AddToCart({ produto }: { produto: Produto }) {
       </button>
 
       {showModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+        <div className="fixed inset-0 bg-black/20 backdrop-blur-sm flex justify-center items-center z-50">
           <div className="bg-white p-6 rounded-lg shadow-lg w-80">
             <h2 className="text-lg font-bold mb-4">{produto.nome}</h2>
             <label className="block mb-2">
@@ -118,7 +118,7 @@ export default function AddToCart({ produto }: { produto: Produto }) {
       )}
 
 {showSuccess && (
-  <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+  <div className="fixed inset-0 bg-black/20 backdrop-blur-sm flex justify-center items-center z-50">
     <div className="bg-white p-6 rounded-lg shadow-lg w-80 text-center animate-fade-in">
       <p className="text-orange-500 text-lg font-semibold mb-4">
         Produto adicionado ao carrinho!
