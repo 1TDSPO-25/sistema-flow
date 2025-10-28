@@ -10,8 +10,9 @@ export function LoginForm() {
     e.preventDefault();
     console.log("Login:", { email, password });
   };
-
-
+    
+    const validEmail = "1tdspo@fiap.com.br";
+    
   return (
     <section className="flex min-h-screen max-[800px]:flex-col">
       <div
