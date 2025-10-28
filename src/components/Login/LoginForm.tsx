@@ -18,6 +18,7 @@ export function LoginForm() {
       alert("✅ Login realizado com sucesso! ✅");
       console.log("Login bem-sucedido:", { email, password });
       setErrorMessage("");
+      navigate("/")
     } else {
       setErrorMessage("❌ E-mail ou senha incorretos. ❌");
       console.warn("Falha no login:", { email, password });
