@@ -37,7 +37,7 @@ export function CardProdutos({ produto }: { produto: Produto }) {
         <span style={{float: "inline-end"}}
           className="flex items-center px-5 py-2 bg-orange-400 text-white font-semibold rounded-full shadow-md hover:bg-orange-500 transition-all"
           >
-            button
+            Comprar
         </span>
       </div>
       </div>
