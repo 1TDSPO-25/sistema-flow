@@ -1,26 +1,41 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import type { Produto } from "../../types/produto";
 
 export default function AddToCart({ produto }: { produto: Produto }) {
   const [showModal, setShowModal] = useState(false);
   const [quantidade, setQuantidade] = useState(1);
+  const [erroEstoque, setErroEstoque] = useState("");
 
-  const handleAdd = () => {
+  const estoqueDisponivel = produto.qtd ?? 0;
+
+  const handleConfirmar = () => {
     const raw = localStorage.getItem("cart");
     let cart: (Produto & { quantidade: number })[] = [];
 
-    if (raw) {
-      try {
-        const parsed = JSON.parse(raw);
-        if (Array.isArray(parsed)) {
-          cart = parsed;
-        }
-      } catch {
-        // erro ao fazer parse, começa com carrinho vazio
+  if (raw) {
+    try {
+      const parsed = JSON.parse(raw);
+      if (Array.isArray(parsed)) {
+        cart = parsed;
       }
+    } catch {
+      // Carrinho inicia vazio
     }
+  }
 
     const index = cart.findIndex((item) => String(item.id) === String(produto.id));
+    const quantidadeAtual = index >= 0 ? cart[index].quantidade : 0;
+
+    if (quantidade <= 0) {
+      setErroEstoque("Informe uma quantidade válida.");
+      return;
+    }
+
+    if (quantidade + quantidadeAtual > estoqueDisponivel) {
+      setErroEstoque("Quantidade excede o estoque disponível.");
+      return;
+    }
+
     if (index >= 0) {
       cart[index].quantidade += quantidade;
     } else {
@@ -29,6 +44,8 @@ export default function AddToCart({ produto }: { produto: Produto }) {
 
     localStorage.setItem("cart", JSON.stringify(cart));
     setShowModal(false);
+    setQuantidade(1);
+    setErroEstoque("");
     alert("Produto adicionado ao carrinho!");
   };
 
@@ -50,21 +67,33 @@ export default function AddToCart({ produto }: { produto: Produto }) {
               <input
                 type="number"
                 min="1"
+                max={estoqueDisponivel}
                 value={quantidade}
-                onChange={(e) => setQuantidade(Number(e.target.value))}
+                onChange={(e) => {
+                  setQuantidade(Number(e.target.value));
+                  setErroEstoque("");
+                }}
                 className="w-full mt-1 p-2 border rounded"
               />
             </label>
+            <p className="mb-2">Estoque disponível: {estoqueDisponivel}</p>
             <p className="mb-4">Preço total: R$ {(produto.preco * quantidade).toFixed(2)}</p>
+            {erroEstoque && (
+              <p className="text-red-500 text-sm mb-2">{erroEstoque}</p>
+            )}
             <div className="flex justify-between">
               <button
-                onClick={() => setShowModal(false)}
+                onClick={() => {
+                  setShowModal(false);
+                  setQuantidade(1);
+                  setErroEstoque("");
+                }}
                 className="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400"
               >
                 Cancelar
               </button>
               <button
-                onClick={handleAdd}
+                onClick={handleConfirmar}
                 className="px-4 py-2 bg-orange-500 text-white rounded hover:bg-orange-600"
               >
                 Adicionar
