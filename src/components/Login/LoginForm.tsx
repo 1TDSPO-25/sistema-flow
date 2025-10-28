@@ -13,12 +13,13 @@ export function LoginForm() {
     const validPassword = "281025"; //Dia da entrega da CP  
     
     if (email === validEmail && password === validPassword) {
+      alert("✅ O Login foi realizado com sucesso! ✅");
       console.log("Login bem-sucedido:", { email, password });
     } else {
+      alert("❌ E-mail ou senha incorretos. ❌");
       console.warn("Falha no login:", { email, password });
     }
-
-   };
+};
     
     
 
