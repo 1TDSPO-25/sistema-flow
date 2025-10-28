@@ -119,8 +119,10 @@ export default function AddToCart({ produto }: { produto: Produto }) {
 
       {showSuccess && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-          <div className="bg-white p-4 rounded-lg shadow-lg text-center w-72">
-            <p className="text-lg font-semibold">Produto adicionado ao carrinho!</p>
+          <div className="bg-linear-to-r from-gray-800 via-gray-700 to-gray-800 p-6 rounded-lg shadow-lg w-80 text-center animate-fade-in">
+            <p className="text-orange-500 text-lg font-semibold mb-2">
+              Produto adicionado ao carrinho!
+            </p>
           </div>
         </div>
       )}
