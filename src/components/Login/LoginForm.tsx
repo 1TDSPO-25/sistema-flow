@@ -8,11 +8,13 @@ export function LoginForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Login:", { email, password });
-  };
-    
+
     const validEmail = "1tdspo@fiap.com.br"; //Email com o nome da sala
-    const validPassword = "281025"; //Dia da entrega da CP
+    const validPassword = "281025"; //Dia da entrega da CP  
+    
+   };
+    
+    
 
   return (
     <section className="flex min-h-screen max-[800px]:flex-col">
