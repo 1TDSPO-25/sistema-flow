@@ -25,8 +25,15 @@ export function CardProdutos({ produto }: { produto: Produto }) {
       />
       <h3 style={{ margin: "4px 0" }}>{produto.nome}</h3>
       <p style={{ fontSize: 14, minHeight: 40 }}>{produto.descricao}</p>
-      <p style={{ fontWeight: 600 }}>{brl.format(Number(produto.preco))}</p>
-      <p style={{ fontSize: 12, color: "#555" }}>Estoque: {produto.qtd}</p>
+      <div>    
+        <span style={{float: "inline-start"}}>
+          <p style={{ fontWeight: 600 }}>{brl.format(Number(produto.preco))}</p>
+          <p style={{ fontSize: 12, color: "#555" }}>Estoque: {produto.qtd}</p>
+        </span>
+        <span style={{float: "inline-end"}}>
+          button
+        </span>
+      </div>
     </li>
   );
 }
