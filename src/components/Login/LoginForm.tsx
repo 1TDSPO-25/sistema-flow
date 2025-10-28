@@ -12,7 +12,8 @@ export function LoginForm() {
   };
     
     const validEmail = "1tdspo@fiap.com.br";
-    
+    const validPassword = "281025"; 
+
   return (
     <section className="flex min-h-screen max-[800px]:flex-col">
       <div
