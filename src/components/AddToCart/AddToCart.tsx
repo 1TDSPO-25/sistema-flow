@@ -117,15 +117,23 @@ export default function AddToCart({ produto }: { produto: Produto }) {
         </div>
       )}
 
-      {showSuccess && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-          <div className="bg-linear-to-r from-gray-800 via-gray-700 to-gray-800 p-6 rounded-lg shadow-lg w-80 text-center animate-fade-in">
-            <p className="text-orange-500 text-lg font-semibold mb-2">
-              Produto adicionado ao carrinho!
-            </p>
-          </div>
-        </div>
-      )}
+{showSuccess && (
+  <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+    <div className="bg-white p-6 rounded-lg shadow-lg w-80 text-center animate-fade-in">
+      <p className="text-orange-500 text-lg font-semibold mb-4">
+        Produto adicionado ao carrinho!
+      </p>
+      <div className="flex justify-center gap-4">
+        <button
+          onClick={() => (window.location.href = "/sistema-flow/carrinho")}
+          className="px-4 py-2 bg-orange-500 text-white rounded hover:bg-orange-600 transition-all"
+        >
+          Ir ao carrinho
+        </button>
+      </div>
+    </div>
+  </div>
+)}
     </>
   );
 }
