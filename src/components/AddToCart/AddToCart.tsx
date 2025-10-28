@@ -5,7 +5,7 @@ export default function AddToCart({ produto }: { produto: Produto }) {
   const [showModal, setShowModal] = useState(false);
   const [quantidade, setQuantidade] = useState(1);
   const [erroEstoque, setErroEstoque] = useState("");
-  const [showSuccess, setShowSuccess] = useState(false); // ✅ Novo estado
+  const [showSuccess, setShowSuccess] = useState(false);
 
   const estoqueDisponivel = produto.qtd ?? 0;
 
@@ -49,11 +49,11 @@ export default function AddToCart({ produto }: { produto: Produto }) {
     setShowModal(false);
     setQuantidade(1);
     setErroEstoque("");
-    setShowSuccess(true); // ✅ Exibe o modal de sucesso
+    setShowSuccess(true);
 
     setTimeout(() => {
-      setShowSuccess(false); // ✅ Oculta após 2 segundos
-    }, 2000);
+      setShowSuccess(false);
+    }, 15000);
   };
 
   return (
