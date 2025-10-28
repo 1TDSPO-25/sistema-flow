@@ -1,5 +1,10 @@
 import type { Produto } from "../../types/produto";
-const brl = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" });
+import AddToCart from "../../components/AddToCart/AddToCart"; 
+
+const brl = new Intl.NumberFormat("pt-BR", {
+  style: "currency",
+  currency: "BRL",
+});
 
 export function CardProdutos({ produto }: { produto: Produto }) {
 
@@ -11,7 +16,7 @@ export function CardProdutos({ produto }: { produto: Produto }) {
         justifyContent: "space-between",
         border: "1px solid #ddd",
         borderRadius: 12,
-        padding: 12
+        padding: 12,
       }}
     >
       <img
@@ -22,24 +27,27 @@ export function CardProdutos({ produto }: { produto: Produto }) {
           height: 140,
           objectFit: "cover",
           borderRadius: 8,
-          marginBottom: 8
+          marginBottom: 8,
         }}
         loading="lazy"
       />
       <div>
-      <h3 style={{ margin: "4px 0" }}>{produto.nome}</h3>
-      <p style={{ fontSize: 14, minHeight: 40 }}>{produto.descricao}</p>
-      <div>    
-        <span style={{float: "inline-start"}}>
-          <p style={{ fontWeight: 600 }}>{brl.format(Number(produto.preco))}</p>
-          <p style={{ fontSize: 12, color: "#555" }}>Estoque: {produto.qtd}</p>
-        </span>
-        <span style={{float: "inline-end"}}
-          className="flex items-center px-5 py-2 bg-orange-400 text-white font-semibold rounded-full shadow-md hover:bg-orange-500 transition-all"
-          >
-            Comprar
-        </span>
-      </div>
+        <h3 style={{ margin: "4px 0" }}>{produto.nome}</h3>
+        <p style={{ fontSize: 14, minHeight: 40 }}>{produto.descricao}</p>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            marginTop: 8,
+          }}
+        >
+          <div>
+            <p style={{ fontWeight: 600 }}>{brl.format(Number(produto.preco))}</p>
+            <p style={{ fontSize: 12, color: "#555" }}>Estoque: {produto.qtd}</p>
+          </div>
+          <AddToCart produto={produto} />
+        </div>
       </div>
     </li>
   );
