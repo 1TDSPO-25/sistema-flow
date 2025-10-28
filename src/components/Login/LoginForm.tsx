@@ -11,8 +11,8 @@ export function LoginForm() {
     console.log("Login:", { email, password });
   };
     
-    const validEmail = "1tdspo@fiap.com.br";
-    const validPassword = "281025"; 
+    const validEmail = "1tdspo@fiap.com.br"; //Email com o nome da sala
+    const validPassword = "281025"; //Dia da entrega da CP
 
   return (
     <section className="flex min-h-screen max-[800px]:flex-col">
