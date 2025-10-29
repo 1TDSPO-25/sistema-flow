@@ -1,6 +1,5 @@
-
 import { useState } from "react";
-import ImgGatoCao from "../../assets/img-cao-gato.png"
+import ImgGatoCao from "../../assets/img-cao-gato.png";
 
 interface User {
   name: string;
@@ -23,7 +22,6 @@ export function RegisterForm() {
 
   const saveUser = (userData: User): boolean => {
     const users = getUsers();
-
     const emailExists = users.some((user) => user.email === userData.email);
 
     if (emailExists) {
@@ -55,7 +53,6 @@ export function RegisterForm() {
       return;
     }
 
- 
     const userData: User = {
       name,
       email,
@@ -69,89 +66,99 @@ export function RegisterForm() {
       setEmail("");
       setPassword("");
       setConfirmPassword("");
+
       setTimeout(() => {
         console.log("Redirecionar para login");
-
       }, 2000);
     }
   };
 
   return (
     <div>
+      
       <section className="flex min-h-screen max-[800px]:flex-col">
-      <div
-        className="w-1/2 bg-cover bg-center max-[800px]:w-full max-[800px]:h-48"
-        style={{ backgroundImage: `url(${ImgGatoCao})` }}
-      ></div>
+        <section className="flex w-1/2 items-center justify-center bg-white min-h-screen max-[800px]:w-full max-[800px]:min-h-[calc(100vh-12rem)] max-[800px]:py-10">
+          <div className="w-3/4 max-w-lg shadow-lg rounded-lg bg-white p-8">
+            <h2 className="text-3xl font-bold mb-8 text-center text-gray-800">
+              Cadastro
+            </h2>
 
-      <section className="flex w-1/2 items-center justify-center bg-white min-h-screen max-[800px]:w-full max-[800px]:min-h-[calc(100vh-12rem)] max-[800px]:py-10">
-        <div className="w-3/4 max-w-lg shadow-lg rounded-lg">
-          <h2 className="text-3xl font-bold mb-8 text-center text-gray-800">Cadastro</h2>
+            <form onSubmit={handleSubmit} className="flex flex-col gap-4 w-full">
+              <input
+                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                type="text"
+                placeholder="Digite seu Nome"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
 
-          <div className="bg-white p-8 rounded-lg shadow-lg">
-            <form onSubmit={handleSubmit} className="flex flex-col items-center justify-center gap-6 w-full"></form>
-      
-      <form onSubmit={handleSubmit}
-      className="flex flex-col gap-4 w-full">
+              <input
+                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                type="email"
+                placeholder="Digite seu E-mail"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
 
-        <input
-        className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          type="text"
-          placeholder="Digite seu Nome"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
+              <input
+                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                type="password"
+                placeholder="Digite sua Senha"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
 
-        <input
-          className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          type="email"
-          placeholder="Digite seu E-mail"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
+              <input
+                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                type="password"
+                placeholder="Confirme sua Senha"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+              />
 
-        <input
-          className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          type="password"
-          placeholder="Digite sua Senha"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-
-        <input
-          className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          type="password"
-          placeholder="Confirme sua Senha"
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
-        />
-      
-        <button 
-          className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors duration-300"
-        type="submit">Criar Conta</button>
-      </form>
-      
+              <button
+                className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors duration-300"
+                type="submit"
+              >
+                Criar Conta
+              </button>
+            </form>
           </div>
-        </div>
-    
-      </section>
+        </section>
+
+        <div
+          className="
+            w-1/2 bg-cover bg-center
+            max-[800px]:w-full max-[800px]:h-48
+            min-h-screen
+            max-[800px]:min-h-0
+          "
+          style={{ backgroundImage: `url(${ImgGatoCao})` }}
+        ></div>
+
       </section>
 
       {message && (
-        <div style={{ 
-          marginTop: "10px", 
-          padding: "10px", 
-          backgroundColor: message.includes("sucesso") ? "#d4edda" : "#f8d7da",
-          color: message.includes("sucesso") ? "#155724" : "#721c24",
-          border: `1px solid ${message.includes("sucesso") ? "#c3e6cb" : "#f5c6cb"}`
-        }}>
+        <div
+          style={{
+            marginTop: "10px",
+            padding: "10px",
+            backgroundColor: message.includes("sucesso")
+              ? "#d4edda"
+              : "#f8d7da",
+            color: message.includes("sucesso") ? "#155724" : "#721c24",
+            border: `1px solid ${
+              message.includes("sucesso") ? "#c3e6cb" : "#f5c6cb"
+            }`,
+          }}
+        >
           {message}
         </div>
       )}
 
       <div style={{ marginTop: "20px", fontSize: "12px", color: "#666" }}>
-        <button 
-          type="button" 
+        <button
+          type="button"
           onClick={() => console.log("Usuários:", getUsers())}
           style={{ fontSize: "10px", padding: "5px" }}
         >
