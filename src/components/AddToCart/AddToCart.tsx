@@ -60,7 +60,7 @@ export default function AddToCart({ produto }: { produto: Produto }) {
     <>
       <button
         onClick={() => setShowModal(true)}
-        className="flex items-center px-5 py-2 bg-orange-400 text-white font-semibold rounded-full shadow-md hover:bg-orange-500 transition-all"
+        className="cursor-pointer flex items-center px-5 py-2 bg-orange-400 text-white font-semibold rounded-full shadow-md hover:bg-orange-500 transition-all"
       >
         Comprar
       </button>
