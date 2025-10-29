@@ -42,6 +42,5 @@
 <li>[   ] <strong>FEATURE / Criar Rota e Landing Page "Banho e Tosa":</strong> <ol> <li>Registrar a rota <code>/banho-e-tosa</code> em <code>main.tsx</code>.</li> <li>Criar o componente <code>routes/BanhoETosa/index.tsx</code>.</li> <li>Estilizar esta página com a identidade visual do petshop com seções de texto, imagens e benefícios.</li> <li>Implementar o formulário de agendamento (usando a tipagem de <code>agendamento.ts</code>) <strong>dentro</strong> desta página.</li> </ol> / <strong>Time: Lucca - Rafa - Nicolas</strong> </li>
 </ul>
 
-
 ---
 ## TEAM FREE
