@@ -11,12 +11,12 @@ import Noticias from './routes/Noticias/index.tsx'
 import './global.css'
 import Home from './routes/Home/index.tsx';
 import Faq from './routes/Faq/index.tsx';
-import Agendamento from './routes/Agendamento/index.tsx';
 import ProdutoDetalhe from "./routes/ProdutoDetalhe/index.tsx";
 
 
 import CartPage from "./routes/Cart/index.tsx";
 import { CarrinhoProvider } from './components/CartContext/CartContext.tsx';
+import BanhoETosa from './routes/BanhoeTosa/index.tsx';
 
 const router = createBrowserRouter([
     {
@@ -31,7 +31,7 @@ const router = createBrowserRouter([
             {path:"/noticias", element:<Noticias/>},
             {path: "/produto/:id", element: <ProdutoDetalhe/>},
             {path:"/faq", element:<Faq/>},
-            {path:"/agendamento",element:<Agendamento/>},
+            {path:"/BanhoeTosa",element:<BanhoETosa/>},
             {path:"/carrinho", element: <CartPage/>} 
         ]
     }
