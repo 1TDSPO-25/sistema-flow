@@ -5,16 +5,19 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
 import Cadastro from './routes/Cadastro/index.tsx';
 import Login from './routes/Login/index.tsx';
-import App from './App.tsx'
-
-import Noticias from './routes/Noticias/index.tsx'
-import './global.css'
+import App from './App.tsx';
+import Noticias from './routes/Noticias/index.tsx';
+import './global.css';
 import Home from './routes/Home/index.tsx';
 import Faq from './routes/Faq/index.tsx';
 import Agendamento from './routes/Agendamento/index.tsx';
 import ProdutoDetalhe from "./routes/ProdutoDetalhe/index.tsx";
+<<<<<<< HEAD
 
+=======
+>>>>>>> 339ebb2e6b50c9b048fe5c50d99b010f593a59d9
 import CartPage from "./routes/Cart/index.tsx";
+import Servicos from "./routes/Servicos/index.tsx"; // import da nova rota
 import { CarrinhoProvider } from './components/CartContext/CartContext.tsx';
 import Sobre from './routes/Sobre/index.tsx';
 
@@ -46,4 +49,4 @@ createRoot(document.getElementById('root')!).render(
       </CarrinhoProvider>
     </Suspense>
   </React.StrictMode>,
-)
+);
