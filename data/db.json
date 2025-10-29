@@ -192,7 +192,7 @@
       "descricao": "Petisco que ajuda na limpeza dos dentes",
       "qtd": 25,
       "preco": 28.90,
-      "avatar": "petisco_dental.jpg"
+      "avatar": ""
     },
     {
       "id": 22,
@@ -264,7 +264,7 @@
       "descricao": "Suplemento com glucosamina para articulações",
       "qtd": 12,
       "preco": 58.90,
-      "avatar": "suplemento_articular.jpg"
+      "avatar": ""
     }
   ]
 }
