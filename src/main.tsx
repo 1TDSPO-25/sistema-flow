@@ -14,9 +14,9 @@ import Faq from './routes/Faq/index.tsx';
 import Agendamento from './routes/Agendamento/index.tsx';
 import ProdutoDetalhe from "./routes/ProdutoDetalhe/index.tsx";
 
-
 import CartPage from "./routes/Cart/index.tsx";
 import { CarrinhoProvider } from './components/CartContext/CartContext.tsx';
+import Sobre from './routes/Sobre/index.tsx';
 
 const router = createBrowserRouter([
     {
@@ -28,6 +28,7 @@ const router = createBrowserRouter([
             {path: "/produtos", element: <Produtos/>},
             {path: "/cadastro", element: <Cadastro/>},
             {path: "/login", element: <Login/>},
+            {path: "/sobre", element: <Sobre/>},
             {path:"/noticias", element:<Noticias/>},
             {path: "/produto/:id", element: <ProdutoDetalhe/>},
             {path:"/faq", element:<Faq/>},
