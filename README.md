@@ -41,6 +41,7 @@
 <li>[   ] <strong>FEATURE / Criar Estado Global do Carrinho (Context API):</strong>  <li>Criar um <code>CartContext.tsx</code>. Ele deve gerenciar o estado do carrinho (lista de produtos, quantidade) e prover funções para <code>adicionarProduto</code>, <code>removerProduto</code>, e <code>atualizarQuantidade</code>.</li> / <strong>Time: Diego - Matheus A.</strong> </li>
 <li>[   ] <strong>FEATURE / Criar Rota e Landing Page "Banho e Tosa":</strong> <ol> <li>Registrar a rota <code>/banho-e-tosa</code> em <code>main.tsx</code>.</li> <li>Criar o componente <code>routes/BanhoETosa/index.tsx</code>.</li> <li>Estilizar esta página com a identidade visual do petshop com seções de texto, imagens e benefícios.</li> <li>Implementar o formulário de agendamento (usando a tipagem de <code>agendamento.ts</code>) <strong>dentro</strong> desta página.</li> </ol> / <strong>Time: Lucca - Rafa - Nicolas</strong> </li>
 <li>[   ] FEATURE / Criar rota Sobre e o conteúdo dela estilizado / <strong>Time: Diego - Matheus A.</strong></li>
+<li>[   ] FEATURE / Criar rota Serviços e o conteúdo dela estilizado com a identidade visual do projeto / <strong>Time: Alef - Paulo - Emanuel</strong></li>
 </ul>
 
 ---
