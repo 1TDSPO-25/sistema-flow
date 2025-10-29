@@ -96,7 +96,7 @@
       "descricao": "Caixa de transporte plástica para viagens",
       "qtd": 6,
       "preco": 89.90,
-      "avatar": "caixa_transporte.jpg"
+      "avatar": "../src/assets/caixa-transportadora.jpg"
     },
     {
       "id": 10,
@@ -104,7 +104,7 @@
       "descricao": "Vermífugo de amplo espectro para felinos",
       "qtd": 22,
       "preco": 35.50,
-      "avatar": "vermifugo_gatos.jpg"
+      "avatar": "../src/assets/vermifugo.jpg"
     },
     {
       "id": 11,
