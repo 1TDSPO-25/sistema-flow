@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import type { Produto } from "../../types/produto";
+import { CardProdutos } from "../../components/CardProdutos/CardProdutos";
 
 const API_URL = import.meta.env.VITE_API_URL;
-const brl = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" });
 
 export default function Produtos() {
   const [produtos, setProdutos] = useState<Produto[]>([]);
@@ -46,16 +46,18 @@ export default function Produtos() {
   }, [search, produtos]);
 
   return (<section style={{ padding: 16 }}>
-    <h1>Produtos</h1>
-    <input type="text" placeholder="Pesquisar produto..." value={search} onChange={(e) => setSearch(e.target.value)} style={{
-        border: "1px solid #ccc",
-        borderRadius: 8,
-        padding: "8px 12px",
-        marginBottom: 16,
-        width: "100%",
-        maxWidth: 400,
-        fontSize: 16
-      }}/>
+    <div className="flex justify-center my-3">
+      <input type="text" placeholder="Pesquisar produto..." className="focus:outline-orange-500"
+          value={search} onChange={(e) => setSearch(e.target.value)} style={{
+          border: "1px solid #ccc",
+          borderRadius: 8,
+          padding: "8px 12px",
+          marginBottom: 16,
+          width: "100%",
+          maxWidth: 400,
+          fontSize: 16
+        }}/>
+    </div>
     {loading && <p>Carregando...</p>}
     {err && <p style={{ color: "crimson" }}>{err}</p>}
  
@@ -72,31 +74,7 @@ export default function Produtos() {
           }}
         >
           {filtro.map((p) => (
-            <li
-              key={p.id}
-              style={{
-                border: "1px solid #ddd",
-                borderRadius: 12,
-                padding: 12
-              }}
-            >
-              <img
-                src={p.avatar}
-                alt={p.nome}
-                style={{
-                  width: "100%",
-                  height: 140,
-                  objectFit: "cover",
-                  borderRadius: 8,
-                  marginBottom: 8
-                }}
-                loading="lazy"
-              />
-              <h3 style={{ margin: "4px 0" }}>{p.nome}</h3>
-              <p style={{ fontSize: 14, minHeight: 40 }}>{p.descricao}</p>
-              <p style={{ fontWeight: 600 }}>{brl.format(Number(p.preco))}</p>
-              <p style={{ fontSize: 12, color: "#555" }}>Estoque: {p.qtd}</p>
-            </li>
+            <CardProdutos key={p.id} produto={p} />
           ))}
         </ul>
       ) : (
