@@ -24,12 +24,12 @@
 <li>[   ] FEATURE / Tipar os dados para o sistema de agendamento: id, nomePet, data, horário / Lucca - Rafa</li>
 <li>[   ] FEATURE / Criar a rota faq com componentes / Alef - Paulo - Emanuel</li>
 <li>[   ] FEATURE / Criar os componentes principais dentro dos padrões estabelecidos com nomes e pastas / Bebé - Jonas - Julia / </li>
+<li>[   ] FEATURE / Criar mostrador de dados da BMF/DOLAR e CLIMA no CABEÇALHO, veja exemplos nos sites UOL, MSN e TERRA. Utilize componentes separados para apresentar estes elementos. / Bebé - Jonas - Julia</li>
 </ul>
 
 ---
 ## EM DESENVOLVIMENTO:
 <ul style="color:yellow">
-<li>[   ] FEATURE / Criar mostrador de dados da BMF/DOLAR e CLIMA no CABEÇALHO, veja exemplos nos sites UOL, MSN e TERRA. Utilize componentes separados para apresentar estes elementos. / Bebé - Jonas - Julia</li>
 <li>[   ] FEATURE / Responsividade com Tailwind - APlicar @media-queria em um arquivo globals.css, se a lib não existir instale.Faça a responsividade para 3 resoluções. / Gabriel - Enzo - PedroA <span style="color:red">DEADLINE[22:40]</span></li>
 <li>[   ] FEATURE / Criação de um componente de login e cadastro, com validação de campos por useForm e estilização com tailwind / Isabela - BrunoA - GustavoC </li>
 <li>[   ] FEATURE / Criar cards para produtos / Stalise - Alef - GustavoG</li>
