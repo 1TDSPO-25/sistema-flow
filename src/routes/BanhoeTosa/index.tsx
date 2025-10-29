@@ -118,6 +118,18 @@ export default function BanhoETosa() {
           </div>
         </div>
       </section>
+
+      {/* CTA Final Section */}
+      <section className="bg-orange-500 py-16">
+        <div className="container mx-auto px-4 text-center text-white">
+          <h2 className="text-3xl font-bold mb-4">
+            Pronto para deixar seu pet ainda mais feliz?
+          </h2>
+          <p className="text-xl mb-8 max-w-2xl mx-auto">
+            Agende agora mesmo o banho e tosa do seu companheiro
+          </p>
+        </div>
+      </section>
     </main>
   );
 }
