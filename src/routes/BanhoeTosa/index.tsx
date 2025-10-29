@@ -130,6 +130,31 @@ export default function BanhoETosa() {
           </p>
         </div>
       </section>
+
+      {/* Benefícios Section */}
+      <section className="bg-slate-100 py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">
+              Porque Escolher Nossos Serviços?
+            </h2>
+            <p className="max-w-2xl mx-auto text-slate-600">
+              Comprometidos com o bem-estar e a satisfação do seu pet
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {beneficios.map((beneficio, index) => (
+              <div key={index} className="text-center">
+                <div className="bg-orange-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  {beneficio.icone}
+                </div>
+                <h3 className="text-xl font-bold mb-2">{beneficio.titulo}</h3>
+                <p className="text-slate-600">{beneficio.descricao}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
