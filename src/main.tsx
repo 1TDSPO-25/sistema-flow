@@ -5,20 +5,25 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
 import Cadastro from './routes/Cadastro/index.tsx';
 import Login from './routes/Login/index.tsx';
-import App from './App.tsx'
-
-import Noticias from './routes/Noticias/index.tsx'
-import './global.css'
+import App from './App.tsx';
+import Noticias from './routes/Noticias/index.tsx';
+import './global.css';
 import Home from './routes/Home/index.tsx';
 import Faq from './routes/Faq/index.tsx';
-import Agendamento from './routes/Agendamento/index.tsx';
 import ProdutoDetalhe from "./routes/ProdutoDetalhe/index.tsx";
-
-
 import CartPage from "./routes/Cart/index.tsx";
+import Servicos from "./routes/Servicos/index.tsx"; // import da nova rota
 import { CarrinhoProvider } from './components/CartContext/CartContext.tsx';
+<<<<<<< HEAD
+import BanhoETosa from './routes/BanhoeTosa/index.tsx';
 
 const router = createBrowserRouter([
+<<<<<<< HEAD
+=======
+import Sobre from './routes/Sobre/index.tsx';
+
+const router = createBrowserRouter([
+>>>>>>> de8795ac6ee237911a4ff2d0b24541e097b78329
     {
         path: "/",
         element: <App/>,
@@ -28,6 +33,35 @@ const router = createBrowserRouter([
             {path: "/produtos", element: <Produtos/>},
             {path: "/cadastro", element: <Cadastro/>},
             {path: "/login", element: <Login/>},
+<<<<<<< HEAD
+            {path:"/noticias", element:<Noticias/>},
+            {path: "/produto/:id", element: <ProdutoDetalhe/>},
+            {path:"/faq", element:<Faq/>},
+            {path:"/BanhoeTosa",element:<BanhoETosa/>},
+            {path:"/carrinho", element: <CartPage/>} 
+        ]
+    }
+=======
+  {
+    path: "/",
+    element: <App />,
+    errorElement: <Error />,
+    children: [
+      { path: "/", element: <Home /> },
+      { path: "/produtos", element: <Produtos /> },
+      { path: "/cadastro", element: <Cadastro /> },
+      { path: "/login", element: <Login /> },
+      { path: "/noticias", element: <Noticias /> },
+      { path: "/produto/:id", element: <ProdutoDetalhe /> },
+      { path: "/faq", element: <Faq /> },
+      { path: "/agendamento", element: <Agendamento /> },
+      { path: "/carrinho", element: <CartPage /> },
+      { path: "/servicos", element: <Servicos /> }, // nova rota adicionada
+    ]
+  }
+>>>>>>> 339ebb2e6b50c9b048fe5c50d99b010f593a59d9
+=======
+            {path: "/sobre", element: <Sobre/>},
             {path:"/noticias", element:<Noticias/>},
             {path: "/produto/:id", element: <ProdutoDetalhe/>},
             {path:"/faq", element:<Faq/>},
@@ -35,6 +69,7 @@ const router = createBrowserRouter([
             {path:"/carrinho", element: <CartPage/>} 
         ]
     }
+>>>>>>> de8795ac6ee237911a4ff2d0b24541e097b78329
 ], { basename: "/sistema-flow/" });
 
 createRoot(document.getElementById('root')!).render(
@@ -45,4 +80,4 @@ createRoot(document.getElementById('root')!).render(
       </CarrinhoProvider>
     </Suspense>
   </React.StrictMode>,
-)
+);
