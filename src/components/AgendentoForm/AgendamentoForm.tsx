@@ -24,15 +24,15 @@ export function AgendamentoForm({ agendamento, onSubmit, onCancel }: Agendamento
     });
   };
 
-  const formClasses = 'bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4';
-  const inputClasses = 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline';
+  const formClasses = 'space-y-6';
+  const inputClasses = 'shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-orange-500';
   const labelClasses = 'block text-gray-700 text-sm font-bold mb-2';
-  const buttonClasses = 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline';
-  const cancelButtonClasses = 'bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ml-2';
+  const buttonClasses = 'bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300';
+  const cancelButtonClasses = 'bg-gray-500 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 ml-4';
 
   return (
     <form className={formClasses} onSubmit={handleSubmit}>
-      <div className="mb-4">
+      <div className="mb-6">
         <label className={labelClasses} htmlFor="nomePet">
           Nome do Pet
         </label>
@@ -47,7 +47,7 @@ export function AgendamentoForm({ agendamento, onSubmit, onCancel }: Agendamento
         />
       </div>
 
-      <div className="mb-4">
+      <div className="mb-6">
         <label className={labelClasses} htmlFor="data">
           Data
         </label>
@@ -61,7 +61,7 @@ export function AgendamentoForm({ agendamento, onSubmit, onCancel }: Agendamento
         />
       </div>
 
-      <div className="mb-6">
+      <div className="mb-8">
         <label className={labelClasses} htmlFor="horario">
           Horário
         </label>
@@ -80,9 +80,9 @@ export function AgendamentoForm({ agendamento, onSubmit, onCancel }: Agendamento
         </select>
       </div>
 
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-center">
         <button type="submit" className={buttonClasses}>
-          {agendamento ? 'Atualizar' : 'Agendar'}
+          {agendamento ? 'Atualizar Agendamento' : 'Agendar Banho & Tosa'}
         </button>
         
         {onCancel && (
