@@ -88,8 +88,9 @@ export function RegisterForm() {
           <div className="bg-white p-8 rounded-lg shadow-lg">
             <form onSubmit={handleSubmit} className="flex flex-col items-center justify-center gap-6 w-full"></form>
       
-      <h2>Cadastro</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}
+      className="flex flex-col gap-4 w-full">
+
         <input
         className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           type="text"
@@ -99,6 +100,7 @@ export function RegisterForm() {
         />
 
         <input
+          className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           type="email"
           placeholder="Digite seu E-mail"
           value={email}
@@ -106,6 +108,7 @@ export function RegisterForm() {
         />
 
         <input
+          className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           type="password"
           placeholder="Digite sua Senha"
           value={password}
@@ -113,13 +116,16 @@ export function RegisterForm() {
         />
 
         <input
+          className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           type="password"
           placeholder="Confirme sua Senha"
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
         />
       
-        <button type="submit">Criar Conta</button>
+        <button 
+        
+        type="submit">Criar Conta</button>
       </form>
           </div>
         </div>
@@ -138,7 +144,6 @@ export function RegisterForm() {
         </div>
       )}
 
-      {/* Exemplo de como visualizar usuários cadastrados (apenas para desenvolvimento) */}
       <div style={{ marginTop: "20px", fontSize: "12px", color: "#666" }}>
         <button 
           type="button" 
