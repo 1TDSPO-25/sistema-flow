@@ -48,7 +48,7 @@
       "descricao": "Coleira com proteção contra pulgas e carrapatos",
       "qtd": 8,
       "preco": 45.00,
-      "avatar": "coleira_antipulgas.jpg"
+      "avatar": "../src/assets/coleira-antipulgas.jpg"
     },
     {
       "id": 4,
@@ -56,7 +56,7 @@
       "descricao": "Brinquedo com laser para entretenimento felino",
       "qtd": 12,
       "preco": 32.90,
-      "avatar": "brinquedo_gato.jpg"
+      "avatar": "../src/assets/brinquedo-interativo-gatos.jpg"
     },
     {
       "id": 5,
@@ -64,7 +64,7 @@
       "descricao": "Shampoo com extrato de aveia para pele sensível",
       "qtd": 18,
       "preco": 28.75,
-      "avatar": "shampoo_caes.jpg"
+      "avatar": "../src/assets/shampoo-hidratante-caes.jpg"
     },
     {
       "id": 6,
