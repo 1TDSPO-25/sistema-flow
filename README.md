@@ -33,7 +33,6 @@
 ## EM DESENVOLVIMENTO:
 <ul style="color:yellow">
 <li>[   ] FEATURE / Responsividade com Tailwind - APlicar @media-queria em um arquivo globals.css, se a lib não existir instale.Faça a responsividade para 3 resoluções. / Gabriel - Enzo - PedroA <span style="color:red">DEADLINE[22:40]</span></li>
-<li>[   ] FEATURE / Criar cards para produtos / Stalise - Alef - GustavoG</li>
 <li>[   ] FEATURE / Criar um Carrossel de IMAGENS sobre os produtos com pelomenos 8 produtos na home / GabrielMuller-PedroPereira</li><span style="color:red">DEADLINE[22:40]</span>
 <li>[   ] FEATURE / Criar a página home referente ao petshop, a estilização toda inline. / MatheusB - PedroF</li><span style="color:red">DEADLINE[20:40]</span>
 <span style="color:red">DEADLINE[20:50]</span>
