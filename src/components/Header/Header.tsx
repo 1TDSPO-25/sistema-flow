@@ -9,6 +9,8 @@ import { BiUser } from "react-icons/bi";
 import { useCarrinho } from '../CartContext/CartContext.tsx';
 import logo from '../../assets/logo.png';
 import { useTheme } from "../ThemeContext/useTheme.ts";
+import { MdDarkMode as DarkIcon } from "react-icons/md";
+import { FaSun as LightIcon } from "react-icons/fa";
 
 interface NavLink {
   to: string;
@@ -53,6 +55,7 @@ export function Header() {
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
 
+          <button onClick={toggleTheme} className="cursor-pointer"> {isDark ? <LightIcon/> : <DarkIcon/>} </button>
 
         <Link
           to="/"
