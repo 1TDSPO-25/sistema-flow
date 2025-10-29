@@ -124,7 +124,7 @@ export function RegisterForm() {
         />
       
         <button 
-        
+          className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors duration-300"
         type="submit">Criar Conta</button>
       </form>
           </div>
