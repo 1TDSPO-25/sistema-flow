@@ -61,18 +61,13 @@ export function RegisterForm() {
     };
 
     if (saveUser(userData)) {
-      setMessage("Cadastro realizado com sucesso!");
-      setName("");
-      setEmail("");
-      setPassword("");
-      setConfirmPassword("");
-
-      setTimeout(() => {
-        console.log("Redirecionar para login");
-      }, 2000);
-    }
+  setMessage("✅ Cadastro realizado com sucesso!");
+  setName("");
+  setEmail("");
+  setPassword("");
+  setConfirmPassword("");
   };
-
+}
   return (
     <div>
       
