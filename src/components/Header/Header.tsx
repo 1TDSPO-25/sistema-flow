@@ -17,8 +17,9 @@ interface NavLink {
 const navLinks: NavLink[] = [
   { to: "", label: "Início" },
   { to: "sobre", label: "Sobre" },
+  { to: "produtos", label: "Produtos" },
   { to: "servicos", label: "Serviços" },
-  { to: "faq", label: "FAQ" },
+  { to: "faq", label: "FAQ" }
 ];
 
 export function Header() {
