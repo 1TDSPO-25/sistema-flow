@@ -1,5 +1,7 @@
 
 import { useState } from "react";
+
+
 interface User {
   name: string;
   email: string;
@@ -76,9 +78,20 @@ export function RegisterForm() {
 
   return (
     <div>
+      <section className="flex min-h-screen max-[800px]:flex-col">
+      
+
+      <section className="flex w-1/2 items-center justify-center bg-white min-h-screen max-[800px]:w-full max-[800px]:min-h-[calc(100vh-12rem)] max-[800px]:py-10">
+        <div className="w-3/4 max-w-lg shadow-lg rounded-lg">
+          <h2 className="text-3xl font-bold mb-8 text-center text-gray-800">Cadastro</h2>
+
+          <div className="bg-white p-8 rounded-lg shadow-lg">
+            <form onSubmit={handleSubmit} className="flex flex-col items-center justify-center gap-6 w-full"></form>
+      
       <h2>Cadastro</h2>
       <form onSubmit={handleSubmit}>
         <input
+        className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           type="text"
           placeholder="Digite seu Nome"
           value={name}
@@ -105,9 +118,13 @@ export function RegisterForm() {
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
         />
-
+      
         <button type="submit">Criar Conta</button>
       </form>
+          </div>
+        </div>
+      </section>
+      </section>
 
       {message && (
         <div style={{ 
