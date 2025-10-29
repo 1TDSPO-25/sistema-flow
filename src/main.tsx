@@ -12,10 +12,6 @@ import Home from './routes/Home/index.tsx';
 import Faq from './routes/Faq/index.tsx';
 import Agendamento from './routes/Agendamento/index.tsx';
 import ProdutoDetalhe from "./routes/ProdutoDetalhe/index.tsx";
-<<<<<<< HEAD
-
-=======
->>>>>>> 339ebb2e6b50c9b048fe5c50d99b010f593a59d9
 import CartPage from "./routes/Cart/index.tsx";
 import Servicos from "./routes/Servicos/index.tsx"; // import da nova rota
 import { CarrinhoProvider } from './components/CartContext/CartContext.tsx';
