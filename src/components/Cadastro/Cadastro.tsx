@@ -26,7 +26,8 @@ export function RegisterForm() {
     const emailExists = users.some((user) => user.email === userData.email);
 
     if (emailExists) {
-      setErrorMessage("Email já cadastrado!");
+      setErrorMessage("❌ Email já cadastrado!");
+      setSuccessMessage("");
       return false;
     }
 
@@ -35,21 +36,25 @@ export function RegisterForm() {
     return true;
   };
 
-  if (!name || !email || !password || !confirmPassword) {
-  setErrorMessage("❌ Todos os campos são obrigatórios!");
-  return;
-}
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setErrorMessage("");
+    setSuccessMessage("");
 
-if (password !== confirmPassword) {
-  setErrorMessage("❌ As senhas não coincidem!");
-  return;
-}
+    if (!name || !email || !password || !confirmPassword) {
+      setErrorMessage("❌ Todos os campos são obrigatórios!");
+      return;
+    }
 
-if (password.length < 6) {
-  setErrorMessage("❌ A senha deve ter pelo menos 6 caracteres!");
-  return;
-}
+    if (password !== confirmPassword) {
+      setErrorMessage("❌ As senhas não coincidem!");
+      return;
+    }
 
+    if (password.length < 6) {
+      setErrorMessage("❌ A senha deve ter pelo menos 6 caracteres!");
+      return;
+    }
 
     const userData: User = {
       name,
@@ -59,17 +64,17 @@ if (password.length < 6) {
     };
 
     if (saveUser(userData)) {
-  setSuccessMessage("✅ Cadastro realizado com sucesso!");
-  setErrorMessage("");
-  setName("");
-  setEmail("");
-  setPassword("");
-  setConfirmPassword("");
+      setSuccessMessage("✅ Cadastro realizado com sucesso!");
+      setErrorMessage("");
+      setName("");
+      setEmail("");
+      setPassword("");
+      setConfirmPassword("");
+    }
   };
-}
+
   return (
     <div>
-      
       <section className="flex min-h-screen max-[800px]:flex-col">
         <section className="flex w-1/2 items-center justify-center bg-white min-h-screen max-[800px]:w-full max-[800px]:min-h-[calc(100vh-12rem)] max-[800px]:py-10">
           <div className="w-3/4 max-w-lg shadow-lg rounded-lg bg-white p-8">
@@ -110,6 +115,16 @@ if (password.length < 6) {
                 onChange={(e) => setConfirmPassword(e.target.value)}
               />
 
+              {(errorMessage || successMessage) && (
+                <p
+                  className={`text-center text-sm font-medium ${
+                    errorMessage ? "text-red-600" : "text-green-600"
+                  }`}
+                >
+                  {errorMessage || successMessage}
+                </p>
+              )}
+
               <button
                 className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors duration-300"
                 type="submit"
@@ -129,26 +144,7 @@ if (password.length < 6) {
           "
           style={{ backgroundImage: `url(${ImgGatoCao})` }}
         ></div>
-
       </section>
-
-      {message && (
-        <div
-          style={{
-            marginTop: "10px",
-            padding: "10px",
-            backgroundColor: message.includes("sucesso")
-              ? "#d4edda"
-              : "#f8d7da",
-            color: message.includes("sucesso") ? "#155724" : "#721c24",
-            border: `1px solid ${
-              message.includes("sucesso") ? "#c3e6cb" : "#f5c6cb"
-            }`,
-          }}
-        >
-          {message}
-        </div>
-      )}
 
       <div style={{ marginTop: "20px", fontSize: "12px", color: "#666" }}>
         <button
