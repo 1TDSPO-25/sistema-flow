@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-
+import ImgGatoCao from "../../assets/img-cao-gato.png"
 
 interface User {
   name: string;
@@ -79,7 +79,10 @@ export function RegisterForm() {
   return (
     <div>
       <section className="flex min-h-screen max-[800px]:flex-col">
-      
+      <div
+        className="w-1/2 bg-cover bg-center max-[800px]:w-full max-[800px]:h-48"
+        style={{ backgroundImage: `url(${ImgGatoCao})` }}
+      ></div>
 
       <section className="flex w-1/2 items-center justify-center bg-white min-h-screen max-[800px]:w-full max-[800px]:min-h-[calc(100vh-12rem)] max-[800px]:py-10">
         <div className="w-3/4 max-w-lg shadow-lg rounded-lg">
@@ -127,8 +130,10 @@ export function RegisterForm() {
           className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors duration-300"
         type="submit">Criar Conta</button>
       </form>
+      
           </div>
         </div>
+    
       </section>
       </section>
 
