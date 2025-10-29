@@ -5,6 +5,9 @@ import { CardProdutos } from "../../components/CardProdutos/CardProdutos";
 const API_URL = import.meta.env.VITE_API_URL;
 
 export default function Produtos() {
+  useEffect(() => {
+    document.title = "Produtos — Pet Shop";
+  }, []);
   const [produtos, setProdutos] = useState<Produto[]>([]);
   const [filtro, setFiltro] = useState<Produto[]>([]);
   const [search, setSearch] = useState("");
@@ -18,7 +21,7 @@ export default function Produtos() {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const json = await res.json();
 
-        const coerced: Produto[] = json.map((p:Produto) => ({
+        const coerced: Produto[] = json.map((p: Produto) => ({
           ...p,
           preco: Number(p.preco),
           qtd: Number(p.qtd)
@@ -26,10 +29,10 @@ export default function Produtos() {
 
         setProdutos(coerced);
         setFiltro(coerced);
-      } catch (e: unknown ) {
+      } catch (e: unknown) {
 
-        if(e instanceof Error){
-          setErr(e?.message  ?? "Erro ao carregar produtos");
+        if (e instanceof Error) {
+          setErr(e?.message ?? "Erro ao carregar produtos");
         }
 
       } finally {
@@ -48,17 +51,17 @@ export default function Produtos() {
   return (<section style={{ padding: 16 }}>
     <h1>Produtos</h1>
     <input type="text" placeholder="Pesquisar produto..." value={search} onChange={(e) => setSearch(e.target.value)} style={{
-        border: "1px solid #ccc",
-        borderRadius: 8,
-        padding: "8px 12px",
-        marginBottom: 16,
-        width: "100%",
-        maxWidth: 400,
-        fontSize: 16
-      }}/>
+      border: "1px solid #ccc",
+      borderRadius: 8,
+      padding: "8px 12px",
+      marginBottom: 16,
+      width: "100%",
+      maxWidth: 400,
+      fontSize: 16
+    }} />
     {loading && <p>Carregando...</p>}
     {err && <p style={{ color: "crimson" }}>{err}</p>}
- 
+
     {!loading && !err && (
       filtro.length ? (
         <ul
@@ -80,5 +83,5 @@ export default function Produtos() {
       )
     )}
   </section>
-);
+  );
 }
