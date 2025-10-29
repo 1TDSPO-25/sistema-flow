@@ -35,24 +35,21 @@ export function RegisterForm() {
     return true;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setMessage("");
+  if (!name || !email || !password || !confirmPassword) {
+  setErrorMessage("❌ Todos os campos são obrigatórios!");
+  return;
+}
 
-    if (!name || !email || !password || !confirmPassword) {
-      setMessage("Todos os campos são obrigatórios!");
-      return;
-    }
+if (password !== confirmPassword) {
+  setErrorMessage("❌ As senhas não coincidem!");
+  return;
+}
 
-    if (password !== confirmPassword) {
-      setMessage("As senhas não coincidem!");
-      return;
-    }
+if (password.length < 6) {
+  setErrorMessage("❌ A senha deve ter pelo menos 6 caracteres!");
+  return;
+}
 
-    if (password.length < 6) {
-      setMessage("A senha deve ter pelo menos 6 caracteres!");
-      return;
-    }
 
     const userData: User = {
       name,
