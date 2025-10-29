@@ -150,6 +150,7 @@ export function RegisterForm() {
         <button
           type="button"
           onClick={() => console.log("Usuários:", getUsers())}
+          className="hidden"
           style={{ fontSize: "10px", padding: "5px" }}
         >
           Ver Usuários no Console
