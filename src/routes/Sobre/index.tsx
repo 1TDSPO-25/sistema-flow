@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaHeart, FaShieldAlt, FaLightbulb } from 'react-icons/fa';
 import ImgEquipe from '../../assets/foto-equipe.png';
+import { HeroSobre } from '../../components/HeroSobre/HeroSobre';
 
 export default function Sobre(){
     const nossosValores = [
@@ -23,16 +24,7 @@ export default function Sobre(){
 
   return (
     <main className="bg-slate-50 text-slate-800">
-        <section className="bg-slate-100 py-24">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
-            Construído com Paixão por Pets
-          </h1>
-          <p className="text-lg md:text-xl max-w-3xl mx-auto text-slate-600">
-            Conheça a história e os valores que nos tornam a segunda casa do seu melhor amigo.
-          </p>
-        </div>
-      </section>
+        <HeroSobre />
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
