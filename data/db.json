@@ -72,7 +72,7 @@
       "descricao": "Cama com memory foam para conforto articular",
       "qtd": 5,
       "preco": 159.90,
-      "avatar": "cama_ortopedica.jpg"
+      "avatar": "../src/assets/cama-ortopedica-caes.jpg"
     },
     {
       "id": 7,
@@ -80,7 +80,7 @@
       "descricao": "Alimentador automático com timer digital",
       "qtd": 7,
       "preco": 120.00,
-      "avatar": "comedouro_auto.jpg"
+      "avatar": "../src/assets/comedouro-com-visor.jpg"
     },
     {
       "id": 8,
@@ -88,7 +88,7 @@
       "descricao": "Biscoito natural com frango e vegetais",
       "qtd": 30,
       "preco": 15.90,
-      "avatar": "biscoito_caes.jpg"
+      "avatar": "../src/assets/petisco-canino.jpg"
     },
     {
       "id": 9,
