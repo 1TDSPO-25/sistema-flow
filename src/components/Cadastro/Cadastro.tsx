@@ -26,7 +26,7 @@ export function RegisterForm() {
     const emailExists = users.some((user) => user.email === userData.email);
 
     if (emailExists) {
-      setMessage("Email já cadastrado!");
+      setErrorMessage("Email já cadastrado!");
       return false;
     }
 
@@ -59,7 +59,8 @@ if (password.length < 6) {
     };
 
     if (saveUser(userData)) {
-  setMessage("✅ Cadastro realizado com sucesso!");
+  setSuccessMessage("✅ Cadastro realizado com sucesso!");
+  setErrorMessage("");
   setName("");
   setEmail("");
   setPassword("");
