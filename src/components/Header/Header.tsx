@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { BiUser } from "react-icons/bi";
 import { useCarrinho } from '../CartContext/CartContext.tsx';
 import logo from '../../assets/logo.png';
+import { useTheme } from "../ThemeContext/useTheme.ts";
 
 interface NavLink {
   to: string;
@@ -44,8 +45,11 @@ export function Header() {
 
   const closeMenu = () => setIsMenuOpen(false);
 
+  const { isDark, toggleTheme } = useTheme();
+
+
   return (
-    <header className="bg-linear-to-r from-gray-900 via-gray-800 to-gray-900 text-white shadow-lg sticky top-0 z-50">
+    <header className={` ${isDark ? "dark-mode" : "light-mode"} bg-linear-to-r from-gray-900 via-gray-800 to-gray-900 text-white shadow-lg sticky top-0 z-50`}>
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
 

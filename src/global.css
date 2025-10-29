@@ -1,1 +1,13 @@
 @import "tailwindcss";
+
+body{
+    @apply w-screen h-screen;
+}
+
+.light-mode {
+    @apply bg-linear-to-r from-white via-white to-white text-gray-900;    
+}
+
+.dark-mode {
+    @apply bg-linear-to-r from-gray-900 via-gray-800 to-gray-900 text-white;    
+}
