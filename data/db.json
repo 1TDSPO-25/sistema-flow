@@ -32,7 +32,7 @@
       "descricao": "Ração balanceada para cães adultos de porte médio",
       "qtd": 15,
       "preco": 89.90,
-      "avatar": "racao_caes_adultos.jp"
+      "avatar": "../src/assets/racao-premium.jpg"
     },
     {
       "id": 2,
@@ -40,7 +40,7 @@
       "descricao": "Areia aglomerante com controle de odor",
       "qtd": 25,
       "preco": 24.50,
-      "avatar": "areia_gatos.jpg"
+      "avatar": "../src/assets/areia-sanitaria.jpg"
     },
     {
       "id": 3,
