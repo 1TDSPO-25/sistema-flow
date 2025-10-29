@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaHeart, FaShieldAlt, FaLightbulb } from 'react-icons/fa';
+import ImgEquipe from '../../assets/foto-equipe.png';
 
 export default function Sobre(){
     const nossosValores = [
@@ -37,7 +38,7 @@ export default function Sobre(){
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
               <img 
-                src="https://via.placeholder.com/600x400.png?text=Nossa+Equipe+Aqui" 
+                src={ImgEquipe} 
                 alt="Nossa clínica ou equipe" 
                 className="rounded-lg shadow-xl w-full h-auto object-cover"
               />
