@@ -23,15 +23,15 @@
 <li>[   ] FEATURE / Criar mostrador de dados da BMF/DOLAR e CLIMA no CABEÇALHO, veja exemplos nos sites UOL, MSN e TERRA. Utilize componentes separados para apresentar estes elementos. / Bebé - Jonas - Julia</li>
 <li>[   ] FEATURE / Tipar os dados para o sistema de agendamento: id, nomePet, data, horário / Lucca - Rafa</li>
 <li>[   ] FEATURE / Criar a rota faq com componentes / Alef - Paulo - Emanuel</li>
+<li>[   ] FEATURE / Criar os componentes principais dentro dos padrões estabelecidos com nomes e pastas / Bebé - Jonas - Julia / </li>
+<li>[   ] FEATURE / Criar mostrador de dados da BMF/DOLAR e CLIMA no CABEÇALHO, veja exemplos nos sites UOL, MSN e TERRA. Utilize componentes separados para apresentar estes elementos. / Bebé - Jonas - Julia</li>
+<li>[   ] FEATURE / Criação de um componente de login e cadastro, com validação de campos por useForm e estilização com tailwind / Isabela - BrunoA - GustavoC </li>
 </ul>
 
 ---
 ## EM DESENVOLVIMENTO:
 <ul style="color:yellow">
-<li>[   ] FEATURE / Criar os componentes principais dentro dos padrões estabelecidos com nomes e pastas / Bebé - Jonas - Julia / <span style="color:red">DEADLINE[22:05]</span></li>
-<li>[   ] FEATURE / Criar mostrador de dados da BMF/DOLAR e CLIMA no CABEÇALHO, veja exemplos nos sites UOL, MSN e TERRA. Utilize componentes separados para apresentar estes elementos. / Bebé - Jonas - Julia</li>
 <li>[   ] FEATURE / Responsividade com Tailwind - APlicar @media-queria em um arquivo globals.css, se a lib não existir instale.Faça a responsividade para 3 resoluções. / Gabriel - Enzo - PedroA <span style="color:red">DEADLINE[22:40]</span></li>
-<li>[   ] FEATURE / Criação de um componente de login e cadastro, com validação de campos por useForm e estilização com tailwind / Isabela - BrunoA - GustavoC </li>
 <li>[   ] FEATURE / Criar cards para produtos / Stalise - Alef - GustavoG</li>
 <li>[   ] FEATURE / Criar um Carrossel de IMAGENS sobre os produtos com pelomenos 8 produtos na home / GabrielMuller-PedroPereira</li><span style="color:red">DEADLINE[22:40]</span>
 <li>[   ] FEATURE / Criar a página home referente ao petshop, a estilização toda inline. / MatheusB - PedroF</li><span style="color:red">DEADLINE[20:40]</span>
@@ -40,7 +40,12 @@
 <li>[   ] <strong>FEATURE / Criar Rota e Página "Detalhes do Produto":</strong> <ol> <li>Registrar a rota dinâmica <code>/produto/:id</code> em <code>main.tsx</code>.</li> <li>Criar o componente <code>routes/ProdutoDetalhe/index.tsx</code>.</li> <li>A página deve buscar os dados de um único produto (<code>http://localhost:5000/produtos/:id</code>).</li> <li>A página deve exibir todas as informações (imagem, nome, descrição, preço) e um botão "Adicionar ao Carrinho" (que usará o <code>CartContext</code>).</li> <li>Atualizar os Cards de Produto (na Home e em <code>/produtos</code>) para linkarem para esta página.</li> / <strong>Time: Alef - Paulo - Emanuel</strong> </li>
 <li>[   ] <strong>FEATURE / Criar Estado Global do Carrinho (Context API):</strong>  <li>Criar um <code>CartContext.tsx</code>. Ele deve gerenciar o estado do carrinho (lista de produtos, quantidade) e prover funções para <code>adicionarProduto</code>, <code>removerProduto</code>, e <code>atualizarQuantidade</code>.</li> / <strong>Time: Diego - Matheus A.</strong> </li>
 <li>[   ] <strong>FEATURE / Criar Rota e Landing Page "Banho e Tosa":</strong> <ol> <li>Registrar a rota <code>/banho-e-tosa</code> em <code>main.tsx</code>.</li> <li>Criar o componente <code>routes/BanhoETosa/index.tsx</code>.</li> <li>Estilizar esta página com a identidade visual do petshop com seções de texto, imagens e benefícios.</li> <li>Implementar o formulário de agendamento (usando a tipagem de <code>agendamento.ts</code>) <strong>dentro</strong> desta página.</li> </ol> / <strong>Time: Lucca - Rafa - Nicolas</strong> </li>
+<li>[   ] FEATURE / Criar rota Sobre e o conteúdo dela estilizado / <strong>Time: Diego - Matheus A.</strong></li>
 </ul>
 
 ---
 ## TEAM FREE
+
+Bebé - Jonas - Julia
+
+ Isabela - BrunoA - GustavoC

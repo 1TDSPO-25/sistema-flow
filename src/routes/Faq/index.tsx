@@ -29,8 +29,7 @@ const faqData: FaqItemType[] = [
   },
   {
     question: "5. Qual o horário de funcionamento?",
-    answer:
-      "Atendemos de segunda a sábado, das 8h às 19h.",
+    answer: "Atendemos de segunda a sábado, das 8h às 19h.",
   },
 ];
 
@@ -40,21 +39,21 @@ export default function Faq() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-gray-100 p-6 flex items-start justify-center">
+    <main className="min-h-screen w-full overflow-x-hidden bg-gray-100 flex justify-center px-3 py-4 sm:px-6 md:px-8 lg:px-10">
       <section
-        className="w-full max-w-2xl"
+        className="w-full mx-auto max-w-screen-sm sm:max-w-screen-md md:max-w-2xl lg:max-w-3xl xl:max-w-4xl px-1 sm:px-0"
         aria-labelledby="faq-heading"
         role="region"
       >
         <h1
           id="faq-heading"
-          className="text-center text-2xl font-bold mb-4 text-[#005b96]"
+          className="text-center text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 md:mb-8 text-[#005b96] leading-snug break-words whitespace-normal"
         >
           Perguntas Frequentes — Pet Shop
         </h1>
 
         <ul
-          className="space-y-3"
+          className="space-y-4 sm:space-y-5 md:space-y-6"
           role="list"
           aria-label="Lista de perguntas frequentes sobre o Pet Shop"
         >
