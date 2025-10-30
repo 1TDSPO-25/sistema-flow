@@ -1,6 +1,6 @@
 import { useState } from "react";
 import type { Produto } from "../../types/produto";
-import { useCarrinho } from "../CartContext/CartContext"; // ajuste o caminho conforme necessário
+import { useCarrinho } from "../CartContext/CartContext";
 
 export default function AddToCart({ produto }: { produto: Produto }) {
   const [showModal, setShowModal] = useState(false);
