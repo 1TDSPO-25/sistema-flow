@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import type { Produto } from "../../types/produto";
 import { CardProdutos } from "../../components/CardProdutos/CardProdutos";
-import { FaSearch } from "react-icons/fa";
+import { FaSearch as LupaIcon } from "react-icons/fa";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -55,9 +55,9 @@ export default function Produtos() {
   return (
     <section className="p-5">
       <div className="flex justify-between items-center py-5">
-        <h1 className="text-5xl font-bold text-orange-400">Produtos:</h1>
+        <h1 className="text-5xl font-bold text-orange-400">Produtos</h1>
         <div className="flex items-center">
-          <FaSearch
+          <LupaIcon
             className="text-2xl text-gray-800 mx-2 cursor-pointer"
             onClick={handleIconClick}
           />
