@@ -68,7 +68,7 @@ export default function Produtos() {
             placeholder="Pesquisar produto..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-64 p-2 rounded-md border border-gray-300"
+            className="w-100 p-2 rounded-md border border-gray-300"
           />
         </div>
       </div>
