@@ -1,61 +1,22 @@
-import React, { useEffect, useState } from "react";
-import type { Produto } from "../../types/produto";
+import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useCarrinho } from "../../components/CartContext/CartContext";
 
-function readCart(): (Produto & { quantidade: number })[] {
-  const raw = localStorage.getItem("cart");
-  if (!raw) return [];
-  try {
-    const parsed = JSON.parse(raw);
-    if (Array.isArray(parsed)) {
-      
-      return parsed.filter(
-        (item): item is Produto & { quantidade: number } =>
-          typeof item === "object" &&
-          item !== null &&
-          "id" in item &&
-          "nome" in item
-      );
-    }
-  } catch {
-    // ignore JSON parse error, return empty array
-  }
-  return [];
-}
+export default function Cart() {
+  const {
+    itens,
+    valorTotal,
+    removerProduto,
+    limparCarrinho,
+  } = useCarrinho();
 
-function writeCart(cart: (Produto & { quantidade: number })[]): void {
-  localStorage.setItem("cart", JSON.stringify(cart));
-}
-
-export default function CartPage() {
-  const [items, setItems] = useState<(Produto & { quantidade: number })[]>([]);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    setItems(readCart());
-  }, []);
-
-  function handleRemove(id: number | string) {
-    const next = items.filter((i) => String(i.id) !== String(id));
-    setItems(next);
-    writeCart(next);
-  }
-
-  function handleClear() {
-    setItems([]);
-    writeCart([]);
-  }
-
-  const total = items.reduce(
-    (s, i) => s + (Number(i.preco) || 0) * (i.quantidade || 1),
-    0
-  );
 
   return (
     <section className="max-w-4xl mx-auto p-6">
       <h1 className="text-2xl font-bold mb-4">Carrinho</h1>
 
-      {items.length === 0 ? (
+      {itens.length === 0 ? (
         <div className="bg-yellow-50 p-6 rounded-lg">
           <p className="mb-3">Seu carrinho está vazio.</p>
           <button
@@ -68,29 +29,29 @@ export default function CartPage() {
       ) : (
         <>
           <ul className="space-y-4 mb-6">
-            {items.map((it) => (
+            {itens.map(({ produto, quantidade }) => (
               <li
-                key={it.id}
+                key={produto.id}
                 className="flex items-center gap-4 bg-white p-4 rounded-lg shadow-sm"
               >
                 <img
-                  src={it.avatar || "/placeholder.png"}
-                  alt={it.nome}
+                  src={produto.avatar || "/placeholder.png"}
+                  alt={produto.nome}
                   className="w-20 h-20 object-cover rounded-md"
                 />
                 <div className="flex-1">
-                  <h3 className="font-semibold">{it.nome}</h3>
-                  <p className="text-sm text-gray-600">{it.descricao}</p>
+                  <h3 className="font-semibold">{produto.nome}</h3>
+                  <p className="text-sm text-gray-600">{produto.descricao}</p>
                   <p className="mt-1 font-bold">
-                    {(Number(it.preco) || 0).toLocaleString("pt-BR", {
+                    {(produto.preco || 0).toLocaleString("pt-BR", {
                       style: "currency",
                       currency: "BRL",
                     })}{" "}
-                    × {it.quantidade}
+                    × {quantidade}
                   </p>
                 </div>
                 <button
-                  onClick={() => handleRemove(it.id)}
+                  onClick={() => removerProduto(produto.id)}
                   className="text-red-600 underline text-sm"
                 >
                   Remover
@@ -103,7 +64,7 @@ export default function CartPage() {
             <div>
               <p className="text-sm text-gray-600">Total</p>
               <p className="text-xl font-bold">
-                {total.toLocaleString("pt-BR", {
+                {valorTotal.toLocaleString("pt-BR", {
                   style: "currency",
                   currency: "BRL",
                 })}
@@ -112,7 +73,7 @@ export default function CartPage() {
 
             <div className="flex gap-3">
               <button
-                onClick={handleClear}
+                onClick={limparCarrinho}
                 className="bg-gray-100 px-4 py-2 rounded-md"
               >
                 Limpar Carrinho

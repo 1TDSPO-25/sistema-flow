@@ -1,5 +1,6 @@
 import { useState } from "react";
 import type { Produto } from "../../types/produto";
+import { useCarrinho } from "../CartContext/CartContext";
 
 export default function AddToCart({ produto }: { produto: Produto }) {
   const [showModal, setShowModal] = useState(false);
@@ -7,27 +8,12 @@ export default function AddToCart({ produto }: { produto: Produto }) {
   const [erroEstoque, setErroEstoque] = useState("");
   const [showSuccess, setShowSuccess] = useState(false);
 
+  const { adicionarProduto, itens } = useCarrinho();
   const estoqueDisponivel = produto.qtd ?? 0;
 
   const handleConfirmar = () => {
-    const raw = localStorage.getItem("cart");
-    let cart: (Produto & { quantidade: number })[] = [];
-
-    if (raw) {
-      try {
-        const parsed = JSON.parse(raw);
-        if (Array.isArray(parsed)) {
-          cart = parsed;
-        }
-      } catch {
-        // Carrinho inicia vazio
-      }
-    }
-
-    const index = cart.findIndex(
-      (item) => String(item.id) === String(produto.id)
-    );
-    const quantidadeAtual = index >= 0 ? cart[index].quantidade : 0;
+    const itemExistente = itens.find((item) => item.produto.id === produto.id);
+    const quantidadeAtual = itemExistente?.quantidade ?? 0;
 
     if (quantidade <= 0) {
       setErroEstoque("Informe uma quantidade válida.");
@@ -39,13 +25,7 @@ export default function AddToCart({ produto }: { produto: Produto }) {
       return;
     }
 
-    if (index >= 0) {
-      cart[index].quantidade += quantidade;
-    } else {
-      cart.push({ ...produto, quantidade });
-    }
-
-    localStorage.setItem("cart", JSON.stringify(cart));
+    adicionarProduto(produto, quantidade);
     setShowModal(false);
     setQuantidade(1);
     setErroEstoque("");
@@ -60,7 +40,7 @@ export default function AddToCart({ produto }: { produto: Produto }) {
     <>
       <button
         onClick={() => setShowModal(true)}
-        className="flex items-center px-5 py-2 bg-orange-400 text-white font-semibold rounded-full shadow-md hover:bg-orange-500 transition-all"
+        className="cursor-pointer flex items-center px-5 py-2 bg-orange-400 text-white font-semibold rounded-full shadow-md hover:bg-orange-500 transition-all"
       >
         Comprar
       </button>
@@ -117,32 +97,31 @@ export default function AddToCart({ produto }: { produto: Produto }) {
         </div>
       )}
 
-{showSuccess && (
-  <div className="fixed inset-0 bg-black/20 backdrop-blur-sm flex justify-center items-center z-50">
-    <div className="bg-white p-6 rounded-lg shadow-lg w-80 text-center animate-fade-in">
-      <p className="text-orange-500 text-lg font-semibold mb-4">
-        Produto adicionado ao carrinho!
-      </p>
-      <div className="flex justify-center gap-4">
-        <button
-          onClick={() => setShowSuccess(false)}
-          className="px-4 py-2 bg-gray-800 bg-opacity-50 text-white rounded hover:bg-opacity-70 transition-all"
-        >
-          Voltar
-        </button>
-        <button
-          onClick={() =>
-            (window.location.href = "/sistema-flow/carrinho")
-          }
-          className="px-4 py-2 bg-orange-500 text-white rounded hover:bg-orange-600 transition-all"
-        >
-          Ir ao carrinho
-        </button>
-      </div>
-    </div>
-  </div>
-)}
-
+      {showSuccess && (
+        <div className="fixed inset-0 bg-black/20 backdrop-blur-sm flex justify-center items-center z-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg w-80 text-center animate-fade-in">
+            <p className="text-orange-500 text-lg font-semibold mb-4">
+              Produto adicionado ao carrinho!
+            </p>
+            <div className="flex justify-center gap-4">
+              <button
+                onClick={() => setShowSuccess(false)}
+                className="px-4 py-2 bg-gray-800 bg-opacity-50 text-white rounded hover:bg-opacity-70 transition-all"
+              >
+                Voltar
+              </button>
+              <button
+                onClick={() =>
+                  (window.location.href = "/sistema-flow/carrinho")
+                }
+                className="px-4 py-2 bg-orange-500 text-white rounded hover:bg-orange-600 transition-all"
+              >
+                Ir ao carrinho
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }
