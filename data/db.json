@@ -248,7 +248,7 @@
       "descricao": "Cortador profissional com limitador de corte",
       "qtd": 15,
       "preco": 32.50,
-      "avatar": ""
+      "avatar": "../src/assets/cortador_unhas.jpg"
     },
     {
       "id": 29,
