@@ -15,7 +15,7 @@ const socialLinks: SocialLink[] = [
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
-
+  
   return (
     <footer className="bg-gray-900 text-gray-400">
       <div className="container mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-6">
@@ -39,7 +39,7 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={label}
-              className="text-gray-400 hover:text-white transition-colors"
+              className="text-slate-500 hover:text-white transition-colors"
             >
               <IconComponent className="w-6 h-6" />
             </a>
