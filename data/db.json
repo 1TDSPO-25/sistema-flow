@@ -256,7 +256,7 @@
       "descricao": "Caminha macia com borda elevada",
       "qtd": 7,
       "preco": 69.90,
-      "avatar": ""
+      "avatar": "../src/assets/caminha_gato.jpg"
     },
     {
       "id": 30,
