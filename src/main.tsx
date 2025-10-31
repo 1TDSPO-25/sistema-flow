@@ -12,36 +12,13 @@ import Home from './routes/Home/index.tsx';
 import Faq from './routes/Faq/index.tsx';
 import ProdutoDetalhe from "./routes/ProdutoDetalhe/index.tsx";
 import CartPage from "./routes/Cart/index.tsx";
-import Servicos from "./routes/Servicos/index.tsx"; // import da nova rota
+import Servicos from "./routes/Servicos/index.tsx";
 import { CarrinhoProvider } from './components/CartContext/CartContext.tsx';
-<<<<<<< HEAD
 import BanhoETosa from './routes/BanhoeTosa/index.tsx';
-
-const router = createBrowserRouter([
-<<<<<<< HEAD
-=======
 import Sobre from './routes/Sobre/index.tsx';
+import Agendamento from './routes/BanhoeTosa/index.tsx';
 
 const router = createBrowserRouter([
->>>>>>> de8795ac6ee237911a4ff2d0b24541e097b78329
-    {
-        path: "/",
-        element: <App/>,
-        errorElement: <Error/>,
-        children: [
-            {path: "/", element: <Home/>},
-            {path: "/produtos", element: <Produtos/>},
-            {path: "/cadastro", element: <Cadastro/>},
-            {path: "/login", element: <Login/>},
-<<<<<<< HEAD
-            {path:"/noticias", element:<Noticias/>},
-            {path: "/produto/:id", element: <ProdutoDetalhe/>},
-            {path:"/faq", element:<Faq/>},
-            {path:"/BanhoeTosa",element:<BanhoETosa/>},
-            {path:"/carrinho", element: <CartPage/>} 
-        ]
-    }
-=======
   {
     path: "/",
     element: <App />,
@@ -54,22 +31,13 @@ const router = createBrowserRouter([
       { path: "/noticias", element: <Noticias /> },
       { path: "/produto/:id", element: <ProdutoDetalhe /> },
       { path: "/faq", element: <Faq /> },
-      { path: "/agendamento", element: <Agendamento /> },
       { path: "/carrinho", element: <CartPage /> },
-      { path: "/servicos", element: <Servicos /> }, // nova rota adicionada
-    ]
-  }
->>>>>>> 339ebb2e6b50c9b048fe5c50d99b010f593a59d9
-=======
-            {path: "/sobre", element: <Sobre/>},
-            {path:"/noticias", element:<Noticias/>},
-            {path: "/produto/:id", element: <ProdutoDetalhe/>},
-            {path:"/faq", element:<Faq/>},
-            {path:"/agendamento",element:<Agendamento/>},
-            {path:"/carrinho", element: <CartPage/>} 
-        ]
-    }
->>>>>>> de8795ac6ee237911a4ff2d0b24541e097b78329
+      { path: "/servicos", element: <Servicos /> },
+      { path: "/BanhoeTosa", element: <BanhoETosa /> },
+      { path: "/sobre", element: <Sobre /> },
+      { path: "/agendamento", element: <Agendamento /> },
+    ],
+  },
 ], { basename: "/sistema-flow/" });
 
 createRoot(document.getElementById('root')!).render(
