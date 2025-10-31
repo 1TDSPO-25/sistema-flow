@@ -17,8 +17,9 @@ interface NavLink {
 const navLinks: NavLink[] = [
   { to: "", label: "Início" },
   { to: "sobre", label: "Sobre" },
+  { to: "produtos", label: "Produtos" },
   { to: "servicos", label: "Serviços" },
-  { to: "faq", label: "FAQ" },
+  { to: "faq", label: "FAQ" }
 ];
 
 export function Header() {
@@ -45,8 +46,8 @@ export function Header() {
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <header className="bg-linear-to-r from-gray-800 via-gray-700 to-gray-800 text-white shadow-lg sticky top-0 z-50">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-3 md:py-4 flex items-center justify-between flex-wrap gap-3">
+    <header className="bg-linear-to-r from-gray-900 via-gray-800 to-gray-900 text-white shadow-lg sticky top-0 z-50">
+      <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
 
 
@@ -91,10 +92,9 @@ export function Header() {
 </Link>
           {/* Botões de Login e Cadastro */}
           <Link
-            to="login"
-            className="flex items-center px-5 py-2 bg-orange-400 text-white font-semibold rounded-full shadow-md hover:bg-orange-500 transition-all"
-          >
-            <BiUser className="inline mr-2 text-xl" />
+            to="/login"
+            className="flex items-center px-5 py-2 bg-orange-500 text-white font-semibold rounded-full shadow-md hover:bg-orange-400 transition-all"
+          ><BiUser className="inline mr-2 text-xl" />
             Login
           </Link>
           <Link
@@ -126,8 +126,8 @@ export function Header() {
         <Menu links={navLinks} orientation="vertical" onItemClick={closeMenu} />
         <div className="flex flex-col items-center gap-4 mt-4">
           <Link
-            to="login"
-            className="flex items-center justify-center w-3/4 px-5 py-2 bg-orange-400 text-white font-semibold rounded-full shadow-md hover:bg-orange-400 transition-all text-center"
+            to="/login"
+            className="flex items-center justify-center w-3/4 px-5 py-2 bg-orange-500 text-white font-semibold rounded-full shadow-md hover:bg-orange-400 transition-all text-center"
             onClick={closeMenu}
           >
             <BiUser className="inline mr-2 text-xl" />

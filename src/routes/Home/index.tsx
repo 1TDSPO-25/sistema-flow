@@ -49,7 +49,7 @@ export default function Home() {
           <p className="text-lg md:text-xl mb-8">
             Tudo que seu pet precisa em um só lugar. Qualidade, carinho e confiança para sua família.
           </p>
-          <Link to="/produtos" className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors duration-300">
+          <Link to="/produtos" className="bg-orange-500 hover:bg-orange-400 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors duration-300">
             Ver Produtos
           </Link>
         </div>
