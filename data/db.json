@@ -232,7 +232,7 @@
       "descricao": "Guia retrátil de 5 metros com trava",
       "qtd": 11,
       "preco": 52.90,
-      "avatar": "guia_retratil.jpg"
+      "avatar": "../src/assets/guia_retratil.jpg"
     },
     {
       "id": 27,
