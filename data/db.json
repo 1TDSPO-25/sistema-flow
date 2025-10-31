@@ -240,7 +240,7 @@
       "descricao": "Sachê com pedaços em molho para gatos",
       "qtd": 40,
       "preco": 4.90,
-      "avatar": "sache_gato.jpg"
+      "avatar": ""
     },
     {
       "id": 28,
@@ -248,7 +248,7 @@
       "descricao": "Cortador profissional com limitador de corte",
       "qtd": 15,
       "preco": 32.50,
-      "avatar": "cortador_unhas.jpg"
+      "avatar": ""
     },
     {
       "id": 29,
@@ -264,7 +264,7 @@
       "descricao": "Suplemento com glucosamina para articulações",
       "qtd": 12,
       "preco": 58.90,
-      "avatar": ""
+      "avatar": "../src/assets/suplemento_articular.jpg"
     }
   ]
 }
