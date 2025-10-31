@@ -192,7 +192,7 @@
       "descricao": "Petisco que ajuda na limpeza dos dentes",
       "qtd": 25,
       "preco": 28.90,
-      "avatar": ""
+      "avatar": "../src/assets/petisco_dental.jpg"
     },
     {
       "id": 22,
@@ -200,7 +200,7 @@
       "descricao": "Mochila transportadora com visão 360°",
       "qtd": 6,
       "preco": 79.90,
-      "avatar": "mochila_gato.jpg"
+      "avatar": "../src/assets/caixa-transportadora.jpg"
     },
     {
       "id": 23,
@@ -208,7 +208,7 @@
       "descricao": "Ração super premium para filhotes",
       "qtd": 13,
       "preco": 95.50,
-      "avatar": "racao_filhotes.jpg"
+      "avatar": "../src/assets/racao_filhotes.jpg"
     },
     {
       "id": 24,
@@ -216,7 +216,7 @@
       "descricao": "Brinquedo macio em formato de ossinho",
       "qtd": 19,
       "preco": 18.90,
-      "avatar": "pelucia_ossinho.jpg"
+      "avatar": "../src/assets/pelucia_ossinho.jpg"
     },
     {
       "id": 25,
@@ -224,7 +224,7 @@
       "descricao": "Filtro biológico para aquários de 50L",
       "qtd": 8,
       "preco": 65.00,
-      "avatar": "filtro_aquario.jpg"
+      "avatar": "../src/assets/filtroAquario50L.jpg"
     },
     {
       "id": 26,
