@@ -240,7 +240,7 @@
       "descricao": "Sachê com pedaços em molho para gatos",
       "qtd": 40,
       "preco": 4.90,
-      "avatar": ""
+      "avatar": "../src/assets/sache_gatos.jpg"
     },
     {
       "id": 28,
