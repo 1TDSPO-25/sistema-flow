@@ -1,10 +1,10 @@
-import { createContext, useContext, useReducer, useMemo, useEffect} from 'react';
-import type {PropsWithChildren} from 'react';
+import { createContext, useContext, useReducer, useMemo, useEffect } from 'react';
+import type { PropsWithChildren } from 'react';
 
 export type Produto = {
   id: string;
   nome: string;
-  preco: number;     
+  preco: number;
   avatar: string;
 };
 
@@ -20,7 +20,7 @@ type CarrinhoState = {
 
 type CarrinhoContextValue = {
   itens: ItemCarrinho[];
-  quantidadeTotal: number;
+  quantidadeTotal: number; // Agora representa produtos diferentes
   valorTotal: number;
   addedTicker: number;
   adicionarProduto: (produto: Produto, quantidade?: number) => void;
@@ -47,7 +47,7 @@ function loadInitialState(): CarrinhoState {
     const parsed = JSON.parse(raw) as { itens?: ItemCarrinho[] };
     return {
       itens: Array.isArray(parsed.itens) ? parsed.itens : [],
-      addedTicker: 0, 
+      addedTicker: 0,
     };
   } catch {
     return defaultState;
@@ -119,12 +119,12 @@ export function CarrinhoProvider({ children }: PropsWithChildren) {
     try {
       window.localStorage.setItem(STORAGE_KEY, JSON.stringify({ itens: state.itens }));
     } catch {
-      
+      // Falha silenciosa
     }
   }, [state.itens]);
 
   const quantidadeTotal = useMemo(
-    () => state.itens.reduce((acc, item) => acc + item.quantidade, 0),
+    () => state.itens.length,
     [state.itens]
   );
 
