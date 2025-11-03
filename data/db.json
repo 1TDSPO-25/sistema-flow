@@ -32,7 +32,7 @@
       "descricao": "Ração balanceada para cães adultos de porte médio",
       "qtd": 15,
       "preco": 89.90,
-      "avatar": "racao_caes_adultos.jpg"
+      "avatar": "../src/assets/racao-premium.jpg"
     },
     {
       "id": 2,
@@ -40,7 +40,7 @@
       "descricao": "Areia aglomerante com controle de odor",
       "qtd": 25,
       "preco": 24.50,
-      "avatar": "areia_gatos.jpg"
+      "avatar": "../src/assets/areia-sanitaria.jpg"
     },
     {
       "id": 3,
@@ -48,7 +48,7 @@
       "descricao": "Coleira com proteção contra pulgas e carrapatos",
       "qtd": 8,
       "preco": 45.00,
-      "avatar": "coleira_antipulgas.jpg"
+      "avatar": "../src/assets/coleira-antipulgas.jpg"
     },
     {
       "id": 4,
@@ -56,7 +56,7 @@
       "descricao": "Brinquedo com laser para entretenimento felino",
       "qtd": 12,
       "preco": 32.90,
-      "avatar": "brinquedo_gato.jpg"
+      "avatar": "../src/assets/brinquedo-interativo-gatos.jpg"
     },
     {
       "id": 5,
@@ -64,7 +64,7 @@
       "descricao": "Shampoo com extrato de aveia para pele sensível",
       "qtd": 18,
       "preco": 28.75,
-      "avatar": "shampoo_caes.jpg"
+      "avatar": "../src/assets/shampoo-hidratante-caes.jpg"
     },
     {
       "id": 6,
@@ -72,7 +72,7 @@
       "descricao": "Cama com memory foam para conforto articular",
       "qtd": 5,
       "preco": 159.90,
-      "avatar": "cama_ortopedica.jpg"
+      "avatar": "../src/assets/cama-ortopedica-caes.jpg"
     },
     {
       "id": 7,
@@ -80,7 +80,7 @@
       "descricao": "Alimentador automático com timer digital",
       "qtd": 7,
       "preco": 120.00,
-      "avatar": "comedouro_auto.jpg"
+      "avatar": "../src/assets/comedouro-com-visor.jpg"
     },
     {
       "id": 8,
@@ -88,7 +88,7 @@
       "descricao": "Biscoito natural com frango e vegetais",
       "qtd": 30,
       "preco": 15.90,
-      "avatar": "biscoito_caes.jpg"
+      "avatar": "../src/assets/petisco-canino.jpg"
     },
     {
       "id": 9,
@@ -96,7 +96,7 @@
       "descricao": "Caixa de transporte plástica para viagens",
       "qtd": 6,
       "preco": 89.90,
-      "avatar": "caixa_transporte.jpg"
+      "avatar": "../src/assets/caixa-transportadora.jpg"
     },
     {
       "id": 10,
@@ -104,7 +104,7 @@
       "descricao": "Vermífugo de amplo espectro para felinos",
       "qtd": 22,
       "preco": 35.50,
-      "avatar": "vermifugo_gatos.jpg"
+      "avatar": "../src/assets/vermifugo.jpg"
     },
     {
       "id": 11,
@@ -112,7 +112,7 @@
       "descricao": "Poste arranhador com plataformas múltiplas",
       "qtd": 4,
       "preco": 199.90,
-      "avatar": "arranhador.jpg"
+      "avatar": "../src/assets/arranhador-gato.jpg"
     },
     {
       "id": 12,
@@ -120,7 +120,7 @@
       "descricao": "Tapete absorvente para treinamento",
       "qtd": 35,
       "preco": 42.90,
-      "avatar": "tapete_higienico.jpg"
+      "avatar": ""
     },
     {
       "id": 13,
@@ -128,7 +128,7 @@
       "descricao": "Bebedouro com filtro e água corrente",
       "qtd": 9,
       "preco": 135.00,
-      "avatar": "bebedouro_fonte.jpg"
+      "avatar": "bebedouro-Fonte.jpg"
     },
     {
       "id": 14,
@@ -136,7 +136,7 @@
       "descricao": "Flocos balanceados para peixes tropicais",
       "qtd": 20,
       "preco": 18.90,
-      "avatar": "racao_peixes.jpg"
+      "avatar": "racao-Peixe.jpg"
     },
     {
       "id": 15,
@@ -144,7 +144,7 @@
       "descricao": "Gaiola espaçosa com acessórios inclusos",
       "qtd": 3,
       "preco": 89.90,
-      "avatar": "gaiola_passaros.jpg"
+      "avatar": "gaiola-Passaro.jpg"
     },
     {
       "id": 16,
@@ -152,7 +152,7 @@
       "descricao": "Pipeta antipulgas e carrapatos",
       "qtd": 16,
       "preco": 39.90,
-      "avatar": "antipulgas_topico.jpg"
+      "avatar": "../antipulga.jpg"
     },
     {
       "id": 17,
@@ -160,7 +160,7 @@
       "descricao": "Bola que emite sons para estimular brincadeiras",
       "qtd": 14,
       "preco": 22.50,
-      "avatar": "bola_som.jpg"
+      "avatar": "bolinha-Som.jpg"
     },
     {
       "id": 18,
@@ -168,7 +168,7 @@
       "descricao": "Ração especial para gatos castrados",
       "qtd": 11,
       "preco": 79.90,
-      "avatar": "racao_gatos_castrados.jpg"
+      "avatar": "racaogato-Castrado.jpg"
     },
     {
       "id": 19,
@@ -176,7 +176,7 @@
       "descricao": "Casa de plástico resistente para exterior",
       "qtd": 2,
       "preco": 229.90,
-      "avatar": "casa_caes.jpg"
+      "avatar": "casinha-Cachorro.jpg"
     },
     {
       "id": 20,
@@ -184,7 +184,7 @@
       "descricao": "Comedouro e bebedouro em base dupla",
       "qtd": 10,
       "preco": 45.90,
-      "avatar": "comedouro_duplo.jpg"
+      "avatar": "comedouro_Duplo.jpg"
     },
     {
       "id": 21,
@@ -192,7 +192,7 @@
       "descricao": "Petisco que ajuda na limpeza dos dentes",
       "qtd": 25,
       "preco": 28.90,
-      "avatar": "petisco_dental.jpg"
+      "avatar": "../src/assets/petisco_dental.jpg"
     },
     {
       "id": 22,
@@ -200,7 +200,7 @@
       "descricao": "Mochila transportadora com visão 360°",
       "qtd": 6,
       "preco": 79.90,
-      "avatar": "mochila_gato.jpg"
+      "avatar": "../src/assets/caixa-transportadora.jpg"
     },
     {
       "id": 23,
@@ -208,7 +208,7 @@
       "descricao": "Ração super premium para filhotes",
       "qtd": 13,
       "preco": 95.50,
-      "avatar": "racao_filhotes.jpg"
+      "avatar": "../src/assets/racao_filhotes.jpg"
     },
     {
       "id": 24,
@@ -216,7 +216,7 @@
       "descricao": "Brinquedo macio em formato de ossinho",
       "qtd": 19,
       "preco": 18.90,
-      "avatar": "pelucia_ossinho.jpg"
+      "avatar": "../src/assets/pelucia_ossinho.jpg"
     },
     {
       "id": 25,
@@ -224,7 +224,7 @@
       "descricao": "Filtro biológico para aquários de 50L",
       "qtd": 8,
       "preco": 65.00,
-      "avatar": "filtro_aquario.jpg"
+      "avatar": "../src/assets/filtroAquario50L.jpg"
     },
     {
       "id": 26,
@@ -232,7 +232,7 @@
       "descricao": "Guia retrátil de 5 metros com trava",
       "qtd": 11,
       "preco": 52.90,
-      "avatar": "guia_retratil.jpg"
+      "avatar": "../src/assets/guia_retratil.jpg"
     },
     {
       "id": 27,
@@ -240,7 +240,7 @@
       "descricao": "Sachê com pedaços em molho para gatos",
       "qtd": 40,
       "preco": 4.90,
-      "avatar": "sache_gato.jpg"
+      "avatar": "../src/assets/sache_gatos.jpg"
     },
     {
       "id": 28,
@@ -248,7 +248,7 @@
       "descricao": "Cortador profissional com limitador de corte",
       "qtd": 15,
       "preco": 32.50,
-      "avatar": "cortador_unhas.jpg"
+      "avatar": "../src/assets/cortador_unhas.jpg"
     },
     {
       "id": 29,
@@ -256,7 +256,7 @@
       "descricao": "Caminha macia com borda elevada",
       "qtd": 7,
       "preco": 69.90,
-      "avatar": "caminha_gato.jpg"
+      "avatar": "../src/assets/caminha_gato.jpg"
     },
     {
       "id": 30,
@@ -264,7 +264,7 @@
       "descricao": "Suplemento com glucosamina para articulações",
       "qtd": 12,
       "preco": 58.90,
-      "avatar": "suplemento_articular.jpg"
+      "avatar": "../src/assets/suplemento_articular.jpg"
     }
   ]
 }
