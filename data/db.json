@@ -112,7 +112,7 @@
       "descricao": "Poste arranhador com plataformas múltiplas",
       "qtd": 4,
       "preco": 199.90,
-      "avatar": "arranhador-gato.jpg"
+      "avatar": "../src/assets/arranhador-gato.jpg"
     },
     {
       "id": 12,
@@ -120,7 +120,7 @@
       "descricao": "Tapete absorvente para treinamento",
       "qtd": 35,
       "preco": 42.90,
-      "avatar": "tapete-Higienico.jpg"
+      "avatar": ""
     },
     {
       "id": 13,
